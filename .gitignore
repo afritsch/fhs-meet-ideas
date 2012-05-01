@@ -17,3 +17,5 @@
 deploy.rb
 secret_token.rb
 database.yml
+.buildpath
+.project
