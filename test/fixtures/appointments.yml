@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_id: 1
+  description: MyText
+  appointment: 2012-05-07 14:56:00
+
+two:
+  project_id: 1
+  description: MyText
+  appointment: 2012-05-07 14:56:00
