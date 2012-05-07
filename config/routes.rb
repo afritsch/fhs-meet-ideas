@@ -1,8 +1,9 @@
 FhsMeetIdeas::Application.routes.draw do
-  resources :projects, :only => [:index]
-
   # static pages
   get "pages/imprint"
+  
+  # resources
+  resources :projects
   
   # root route
   get "home/index"
