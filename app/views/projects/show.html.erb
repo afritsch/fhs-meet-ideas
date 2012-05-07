@@ -1,0 +1,13 @@
+<h1><%= @project.title %></h1>
+
+Status: [<%= @project.status %>]<br />
+<p>Beschreibung: <%= @project.description %></p>
+
+Vorname: <br />
+Nachname: <br />
+E-Mail: <br />
+Telefon:
+
+<p><%= link_to "Ändern", edit_project_path(@project) %></p>
+<p><%= link_to "Zurück", projects_path %></p>
+<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Aaaah!" %> // TODO</p>

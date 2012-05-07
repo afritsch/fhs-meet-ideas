@@ -5,6 +5,11 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
   
+  def show
+    @project = Project.find(params[:id])
+    
+  end
+  
   def new
     @project = Project.new
   end
@@ -17,5 +22,22 @@ class ProjectsController < ApplicationController
     else
       render action: 'new'
     end
+  end
+  
+  def edit
+    @project = Project.find(params[:id])
+  end
+  
+  def update
+    @project = Project.find(params[:id])
+    @project.update_attributes(params[:project])
+    
+    redirect_to project_path
+  end
+  
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path, :notice => 'Projekt wurde erfolgreich gelöscht!'
   end
 end
