@@ -3,11 +3,24 @@
 Status: [<%= @project.status %>]<br />
 <p>Beschreibung: <%= @project.description %></p>
 
-Vorname: <br />
-Nachname: <br />
-E-Mail: <br />
-Telefon:
+<!-- Test-Ausgabe -->
+
+<ul>
+  <% @roles.each do |role| %>
+    <li>
+      <%= role.title %>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @persons.each do |person| %>
+    <li>
+      <%= person.firstname %> <%= person.lastname %>
+    </li>
+  <% end %>
+</ul>
 
 <p><%= link_to "Ändern", edit_project_path(@project) %></p>
 <p><%= link_to "Zurück", projects_path %></p>
-<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Aaaah!" %> // TODO</p>
+<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Wirklich löschen?" %> // TODO</p>
