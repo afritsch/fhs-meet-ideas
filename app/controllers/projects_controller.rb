@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     if @project.save
-      redirect_to @project, notice: 'Projekt wurde erfolgreich hinzugefügt!'
+      redirect_to @project, :notice => 'Projekt wurde erfolgreich hinzugefügt!'
     else
       render action: 'new'
     end

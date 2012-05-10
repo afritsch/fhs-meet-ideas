@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>meet ideas - FH Salzburg</title>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <div id="wrapper"> 
 
-<%= yield %>
-
+    <div id="header">
+      <%= link_to "Home", root_path %>      
+    </div>
+    
+    <div id="content">
+      <%= yield %>
+    </div>
+    
+    <div id="footer">
+      <%= link_to "Impressum", pages_imprint_path %>
+    </div>
+    
+  </div>
 </body>
+
 </html>
