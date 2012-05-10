@@ -8,19 +8,31 @@ Status: [<%= @project.status %>]<br />
 <ul>
   <% @roles.each do |role| %>
     <li>
-      <%= role.title %>
+      <%= role.title %>: <%= role.firstname %> <%= role.lastname %>
     </li>
   <% end %>
 </ul>
 
 <ul>
-  <% @persons.each do |person| %>
-    <li>
-      <%= person.firstname %> <%= person.lastname %>
-    </li>
-  <% end %>
+<% @appointments.each do |appointment| %>
+  <li><%= appointment.appointment.strftime('%d.%m.%Y %H:%M') %> - <%= appointment.description %></li>
+<% end %>
+</ul>
+
+<ul>
+<% @pictures.each do |picture| %>
+  <li><%= image_tag(picture.path) %></li>
+<% end %>
+</ul>
+
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= comment.created_at.strftime('%d.%m.%Y %H:%M') %>:<br />
+    <%= comment.person_id %>: <%= comment.content %>
+  </li>
+<% end %>
 </ul>
 
 <p><%= link_to "Ändern", edit_project_path(@project) %></p>
 <p><%= link_to "Zurück", projects_path %></p>
-<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Wirklich löschen?" %> // TODO</p>
+<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Möchtest du dieses Projekt wirklich löschen?" %></p>
