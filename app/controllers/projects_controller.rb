@@ -15,7 +15,10 @@ class ProjectsController < ApplicationController
       INNER JOIN people
         ON persons_projects_roles.person_id = people.id
       WHERE persons_projects_roles.project_id = ' + params[:id]
-  )
+    )
+    @pictures = Project.find(params[:id]).pictures
+    @appointments = Project.find(params[:id]).appointments
+    @comments = Project.find(params[:id]).comments
   end
   
   def new
