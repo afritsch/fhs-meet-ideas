@@ -7,8 +7,16 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
-    @persons = Project.find(params[:id]).persons
-    @roles = Project.find(params[:id]).roles
+    @roles = Project.find_by_sql('
+      SELECT roles.title, people.firstname, people.lastname
+      FROM roles
+      INNER JOIN persons_projects_roles
+        ON persons_projects_roles.role_id = roles.id
+      INNER JOIN people
+        ON persons_projects_roles.person_id = people.id
+      WHERE persons_projects_roles.project_id = 1
+        
+  ')
   end
   
   def new

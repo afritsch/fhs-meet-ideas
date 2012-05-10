@@ -8,15 +8,7 @@ Status: [<%= @project.status %>]<br />
 <ul>
   <% @roles.each do |role| %>
     <li>
-      <%= role.title %>
-    </li>
-  <% end %>
-</ul>
-
-<ul>
-  <% @persons.each do |person| %>
-    <li>
-      <%= person.firstname %> <%= person.lastname %>
+      <%= role.title %>: <%= role.firstname %> <%= role.lastname %>
     </li>
   <% end %>
 </ul>
