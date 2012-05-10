@@ -15,4 +15,4 @@ Status: [<%= @project.status %>]<br />
 
 <p><%= link_to "Ändern", edit_project_path(@project) %></p>
 <p><%= link_to "Zurück", projects_path %></p>
-<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Wirklich löschen?" %> // TODO</p>
+<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Möchtest du dieses Projekt wirklich löschen?" %></p>

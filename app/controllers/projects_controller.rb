@@ -14,9 +14,8 @@ class ProjectsController < ApplicationController
         ON persons_projects_roles.role_id = roles.id
       INNER JOIN people
         ON persons_projects_roles.person_id = people.id
-      WHERE persons_projects_roles.project_id = 1
-        
-  ')
+      WHERE persons_projects_roles.project_id = ' + params[:id]
+  )
   end
   
   def new
