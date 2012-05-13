@@ -9,16 +9,25 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ * require_tree .
 */
 
-* {
-  padding: 0; 
-  margin: 0;
-}
-
-body {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
+html{overflow-y:scroll;height:100%;}
+body{margin:0 auto;height:100%;background:url('/images/noise.png') repeat #ebebeb;color:#333;text-shadow:0 1px 0 #ededed;font-size:.8em;font-family:'Trebuchet MS',Arial,Helvetica,sans-serif;}
+a{color:#666;text-decoration:none;font-weight:bold;-moz-transition-property:color;-moz-transition-duration:.5s;-moz-transition-timing-function:ease;-webkit-transition-property:color;-webkit-transition-duration:.5s;-o-transition-property:color;-o-transition-duration:.5s;}
+a:hover{color:#333;}
+img{border:none;}
+.clear{clear:both;}
+#outerWrapper{position:relative;min-height:100%;min-height:-moz-calc(100% - 120px);min-height:-webkit-calc(100% - 120px);min-height:calc(100% - 120px);padding-bottom:120px;}
+#innerWrapper{margin:0 auto;width:980px;}
+#logo{float:left;width:320px;height:100px;background:url('/images/logo.png') no-repeat;}
+#logo:hover{background-position:0 -100px;}
+#logo > a{display:block;width:100%;height:100%;}
+#button_login{float:right;margin-top:35px;width:114px;height:36px;background:url('/images/button_login.png') no-repeat;box-shadow:0px 0px 5px #aaa;cursor:pointer;-moz-transition-property:box-shadow;-moz-transition-duration:.5s;-moz-transition-timing-function:ease;-webkit-transition-property:box-shadow;-webkit-transition-duration:.5s;-o-transition-property:box-shadow;-o-transition-duration:.5s;}
+#button_login:hover{box-shadow:0px 0px 5px #feb3b3;}
+#content{margin-top:20px;padding:12px;}
+#footer{position:absolute;bottom:0;width:100%;height:90px;background:#fff;border-top:1px #c2c3c7 solid;}
+#footerContent{margin:0 auto;width:980px;}
+#fhsLogo{float:left;margin-top:13px;margin-right:50px;width:170px;height:65px;background:url('/images/fhsLogo.png') no-repeat;}
+#footerText{float:left;margin-top:18px;font-family:'Yanone Kaffeesatz','Trebuchet MS',Arial,Helvetica,sans-serif;font-size:1.5em;}
+#footerLinks{float:right;margin-top:38px;}

@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
+  <meta charset="utf-8" />
+  
   <title>meet ideas - FH Salzburg</title>
+  
+  <meta name="description" lang="de" content="" />
+  <meta name="keywords" lang="de" content="" />
+  <meta name="robots" content="index, follow" />
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <div id="wrapper"> 
-
-    <div id="header">
-      <%= link_to "Home", root_path %>      
+  <div id="outerWrapper">
+    <div id="innerWrapper">
+      <div id="logo">
+        <a href="<%= url_for root_path %>"></a>
+      </div>
+      <div id="button_login">
+        <!--Anmelden-->
+      </div>
+      <div class="clear"></div>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
-    
-    <div id="content">
-      <%= yield %>
-    </div>
-    
     <div id="footer">
-      <%= link_to "Impressum", pages_imprint_path %>
+      <div id="footerContent">
+        <div id="fhsLogo"></div>
+        <div id="footerText">meet-ideas ist eine Ideen-Plattform der Fachhochschule Salzburg.<br />Alle Rechte vorbehalten.</div>
+        <div id="footerLinks"><%= link_to "Kontakt", pages_imprint_path %> | <%= link_to "Impressum", pages_imprint_path %></div>
+      </div>
     </div>
-    
   </div>
 </body>
 
