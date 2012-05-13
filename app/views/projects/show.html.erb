@@ -3,9 +3,7 @@
 <h1><%= @project.title %></h1>
 
 Status: [<%= @project.status %>]<br />
-<p>Beschreibung: <%= @project.description %></p>
-
-<!-- Test-Ausgabe -->
+<div>Beschreibung: <%= simple_format(h(@project.description)) %></div>
 
 <ul>
   <% @roles.each do |role| %>
@@ -29,8 +27,8 @@ Status: [<%= @project.status %>]<br />
 
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.created_at.strftime('%d.%m.%Y %H:%M') %>:<br />
-    <%= comment.person_id %>: <%= comment.content %>
+  <li><%= comment.firstname %> <%= comment.lastname %> am <%= comment.created_at.strftime('%d.%m.%Y, %H:%Mh') %>:<br />
+    <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>
 </ul>
