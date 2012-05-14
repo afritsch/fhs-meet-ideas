@@ -40,13 +40,10 @@ img{
 #outerWrapper{
   position:relative;
   min-height:100%;
-  min-height:-moz-calc(100% - 120px);
-  min-height:-webkit-calc(100% - 120px);
-  min-height:calc(100% - 120px);
-  padding-bottom:120px;
 }
 #innerWrapper{
   margin:0 auto;
+  padding-bottom:120px;
   width:$width;
 }
 #logo{
