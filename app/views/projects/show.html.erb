@@ -1,9 +1,9 @@
+<% content_for :title, @project.title %>
+
 <h1><%= @project.title %></h1>
 
-Status: [<%= @project.status %>]<br />
-<p>Beschreibung: <%= @project.description %></p>
-
-<!-- Test-Ausgabe -->
+<%= t(".status") %>: [<%= @project.status %>]<br />
+<div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
 
 <ul>
   <% @roles.each do |role| %>
@@ -15,7 +15,7 @@ Status: [<%= @project.status %>]<br />
 
 <ul>
 <% @appointments.each do |appointment| %>
-  <li><%= appointment.appointment.strftime('%d.%m.%Y %H:%M') %> - <%= appointment.description %></li>
+  <li><%= appointment.appointment.strftime('%d.%m.%Y, %H:%Mh') %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
@@ -27,12 +27,12 @@ Status: [<%= @project.status %>]<br />
 
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.created_at.strftime('%d.%m.%Y %H:%M') %>:<br />
-    <%= comment.person_id %>: <%= comment.content %>
+  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime('%d.%m.%Y, %H:%Mh') %>:<br />
+    <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>
 </ul>
 
-<p><%= link_to "Ändern", edit_project_path(@project) %></p>
-<p><%= link_to "Zurück", projects_path %></p>
-<p><%= link_to "Löschen", project_path(@project), :method => :delete, :confirm => "Möchtest du dieses Projekt wirklich löschen?" %></p>
+<p><%= link_to t(".edit"), edit_project_path(@project) %></p>
+<p><%= link_to t(".back"), projects_path %></p>
+<p><%= link_to t(".delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>

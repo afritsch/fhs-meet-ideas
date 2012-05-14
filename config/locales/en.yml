@@ -1,5 +1,44 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      lang: "en"
+      meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
+      meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"
+      footerText_1: "meet-ideas ist die Ideen-Plattform der Fachhochschule Salzburg."
+      footerText_2: "All rights reserved."
+      contact: "Contact"
+      imprint: "Imprint"
+  home:
+    index:
+      title: "Homepage"
+      h3: "Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!"
+      projects: "Projects"
+  pages:
+    imprint:
+      title: "Imprint"
+      report: "Fehler und Probleme melden an"
+      institution: "University of Applied Sciences Salzburg GmbH"
+      country: "Austria"
+  projects:
+    edit:
+      title: "Edit project \"%{project}\""
+      edit: "Edit project"
+      back: "Back"
+    index:
+      title: "Projects"
+      new_project: "New project"
+    new:
+      title: "New project"
+      label_title: "Title:"
+      label_status: "Status:"
+      label_description: "Description:"
+      new_project: "Create project"
+      back: "Back"
+    show:
+      status: "Status"
+      description: "Description"
+      timeText: "on"
+      edit: "Edit"
+      back: "Back"
+      delete: "Delete"
+      deleteConfirmation: "Möchtest du dieses Projekt wirklich löschen?"

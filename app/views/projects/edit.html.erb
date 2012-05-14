@@ -1,4 +1,6 @@
-<h1>Projekt bearbeiten</h1>
+<% content_for :title, t(".title", :project => @project.title) %>
+
+<h1><%= t(".title", :project => @project.title) %></h1>
 
 <%= form_for(@project) do |f| %>
   <p>
@@ -11,8 +13,8 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.submit "Änderungen speichern" %>
+    <%= f.submit t(".edit") %>
   </p>
 <% end %>
 
-<%= link_to "Zurück", projects_path %>
+<%= link_to t(".back"), projects_path %>

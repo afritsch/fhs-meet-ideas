@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= t(".lang") %>">
 
 <head>
-  <title>meet ideas - FH Salzburg</title>
+  <meta charset="utf-8" />
+  
+  <title><%= yield :title %> - meet ideas - FH Salzburg</title>
+  
+  <meta name="description" lang="<%= t(".lang") %>" content="<%= t(".meta_description") %>" />
+  <meta name="keywords" lang="<%= t(".lang") %>" content="<%= t(".meta_keywords") %>" />
+  <meta name="robots" content="index, follow" />
+  
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="/assets/application.css"/>
 </head>
 
 <body>
-  <div id="wrapper"> 
-
-    <div id="header">
-      <%= link_to "Home", root_path %>      
+  <div id="outerWrapper">
+    <div id="innerWrapper">
+      <div id="logo">
+        <a href="<%= url_for root_path %>"></a>
+      </div>
+      <div id="button_login">
+        <!-- login -->
+      </div>
+      <div class="clear"></div>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
-    
-    <div id="content">
-      <%= yield %>
-    </div>
-    
     <div id="footer">
-      <%= link_to "Impressum", pages_imprint_path %>
+      <div id="footerContent">
+        <div id="fhsLogo"></div>
+        <div id="footerText"><%= t(".footerText_1") %><br /><%= t(".footerText_2") %></div>
+        <div id="footerLinks"><%= link_to t(".contact"), pages_imprint_path %> | <%= link_to t(".imprint"), pages_imprint_path %></div>
+      </div>
     </div>
-    
   </div>
 </body>
 
