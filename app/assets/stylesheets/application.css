@@ -63,12 +63,12 @@ img {
   background: url("/images/button_login.png") no-repeat;
   box-shadow: 0px 0px 5px #aaa;
   cursor: pointer;
-  -moz-transition-property: color;
+  -moz-transition-property: box-shadow;
   -moz-transition-duration: .5s;
   -moz-transition-timing-function: ease;
-  -webkit-transition-property: color;
+  -webkit-transition-property: box-shadow;
   -webkit-transition-duration: .5s;
-  -o-transition-property: color;
+  -o-transition-property: box-shadow;
   -o-transition-duration: .5s; }
   #button_login:hover {
     box-shadow: 0px 0px 5px #feb3b3; }
