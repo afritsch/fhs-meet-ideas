@@ -4,12 +4,13 @@
 
 <%= link_to t(".new_project"), new_project_path %>
 
-<ul>
+<ul id="projectlist">
   <% @projects.each do |project| %>
       <li>
-          <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %></a><br />
+          <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %><br />
           <%= project.status %><br />
           <%= truncate(project.description, :length => 160) %>
+          </a>
       </li>
   <% end %>
 </ul>
