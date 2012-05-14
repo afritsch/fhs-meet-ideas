@@ -1,5 +1,5 @@
-<% content_for :title, "Startseite" %>
+<% content_for :title, t('.title') %>
 
-<h3>Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!</h3>
+<h3><%= t('.h3') %></h3>
 
-<%= link_to "Projekte", projects_path %>
+<%= link_to t('.projects'), projects_path %>

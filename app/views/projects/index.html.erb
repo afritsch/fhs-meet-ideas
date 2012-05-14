@@ -1,8 +1,8 @@
-<% content_for :title, "Projekte" %>
+<% content_for :title, t(".title") %>
 
-<h1>Projekte</h1>
+<h1><%= t(".title") %></h1>
 
-<%= link_to "Neues Projekt", new_project_path %>
+<%= link_to t(".new_project"), new_project_path %>
 
 <ul>
   <% @projects.each do |project| %>

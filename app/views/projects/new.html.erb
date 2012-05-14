@@ -1,23 +1,23 @@
-<% content_for :title, "Neues Projekt" %>
+<% content_for :title, t(".title") %>
 
-<h1>Neues Projekt</h1>
+<h1><%= t(".title") %></h1>
 
 <%= form_for(@project) do |f| %>
   <div>
-    <label for="project_title">Titel:</label><br />
+    <label for="project_title"><%= t(".label_title") %></label><br />
     <%= f.text_field :title %>
   </div>
   <div>
-    <label for="project_status">Status:</label><br />
+    <label for="project_status"><%= t(".label_status") %></label><br />
     <%= f.text_field :status %>
   </div>
   <div>
-    <label for="project_description">Beschreibung:</label><br />
+    <label for="project_description"><%= t(".label_description") %></label><br />
     <%= f.text_area :description %>
   </div>
   <div>
-    <%= f.submit "Projekt anlegen" %>
+    <%= f.submit t(".new_project") %>
   </div>
 <% end %>
 
-<%= link_to "Zurück", projects_path %>
+<%= link_to t(".back"), projects_path %>
