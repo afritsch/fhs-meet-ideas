@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fhsid: MyString
+  firstname: MyString
+  surname: MyString
+  title: MyString
+  email: MyString
+  isfemale: 1
+  profile_visible: 1
+  type: 
+  is_admin: 1
+  description: MyText
+  cached_slug: MyString
+  avatar: MyString
+  fullname: MyString
+
+two:
+  fhsid: MyString
+  firstname: MyString
+  surname: MyString
+  title: MyString
+  email: MyString
+  isfemale: 1
+  profile_visible: 1
+  type: 
+  is_admin: 1
+  description: MyText
+  cached_slug: MyString
+  avatar: MyString
+  fullname: MyString

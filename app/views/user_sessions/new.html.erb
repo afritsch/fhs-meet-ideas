@@ -1,0 +1,16 @@
+<% user_session = @user_session || UserSession.new %>
+
+<h1>LDAP</h1>
+<%= form_for user_session, :url => url_for(:action => 'create', :controller => 'user_sessions', :only_path => false) do |f| %>  
+  <div class="login_box">
+      <p><%= f.label "login","fhs Nummer" %></p>
+      <p><%= f.text_field "login" %></p>
+      <p><%= f.label "password", "Passwort" %></p>
+      <p><%= f.password_field :password %></p>
+      Die Anmeldung erfolgt zu deiner Sicherheit SSL verschlüsselt.
+  </div>
+  <div class="login_buttons">
+    <%= f.submit "Anmelden", :class => "login_button float_left" %>
+    <%= link_to "Abbrechen", root_path, :class => "DATA-cancel_login input_button float_right" %>
+  </div>
+<% end %>

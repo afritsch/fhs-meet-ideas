@@ -1,10 +1,9 @@
 FhsMeetIdeas::Application.routes.draw do
-  get "persons/create"
-  get "persons/destroy"
+  resource :user_sessions, :constraints => { :protocol => "https" }
+  resource :user_sessions if Rails.env != "production"
   
-  
-  match "/auth/:provider/callback" => "persons#create"
-  match "/signout" => "persons#destroy", :as => :signout
+  match "logout" => "user_sessions#destroy"
+  match "login" => "user_sessions#new", :as => "login"
 
   # static pages
   get "pages/imprint"
