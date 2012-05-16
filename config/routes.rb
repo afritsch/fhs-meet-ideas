@@ -1,5 +1,5 @@
 FhsMeetIdeas::Application.routes.draw do
-  resource :user_sessions if Rails.env != "production"
+  resource :user_sessions
   
   match "logout" => "user_sessions#destroy"
   match "login" => "user_sessions#new", :as => "login"
