@@ -21,7 +21,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
       var noty_id = noty({
-        "text":"<%= notice %>",
+        "text":"<% if flash[:notice] %><%= flash[:notice] %><% else %><%= flash[:error] %><% end %>",
         "layout":"topCenter",
         "type":"<% if flash[:notice] %>success<% else %>error<% end %>"
       });

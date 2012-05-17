@@ -7,14 +7,17 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       session[:id] = @user_session.user_id
-      redirect_to root_url, :notice => t(:flash_login_success)
+      flash[:notice] = t(:flash_login_success)
+      redirect_to root_url
     else
-      redirect_to login_path, :error => t(:flash_login_failure)
+      flash[:error] = t(:flash_login_failure)
+      redirect_to login_path
     end
   end
 
   def destroy
     session[:id] = nil
-    redirect_to root_url, :notice => t(:flash_logout)
+    flash[:notice] = t(:flash_logout)
+    redirect_to root_url
   end
 end
