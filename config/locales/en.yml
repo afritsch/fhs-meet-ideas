@@ -22,6 +22,9 @@ en:
   projects:
     edit:
       title: "Edit project \"%{project}\""
+      label_title: "Title:"
+      label_status: "Status:"
+      label_description: "Description:"
       edit: "Edit project"
       back: "Back"
     index:
@@ -42,3 +45,10 @@ en:
       back: "Back"
       delete: "Delete"
       deleteConfirmation: "Möchtest du dieses Projekt wirklich löschen?"
+  user_sessions:
+    new:
+      title: "Anmelden"
+      fhsid: "FHS-Nummer"
+      password: "Password"
+      button_login: "Anmelden"
+      button_cancel: "Cancel"

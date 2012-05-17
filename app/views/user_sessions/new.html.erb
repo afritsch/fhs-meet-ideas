@@ -1,15 +1,16 @@
+<% content_for :title, t(".title") %>
 <% user_session = @user_session || UserSession.new %>
 
-<h1>Login</h1>
+<h1><%= t(".title") %></h1>
 <%= form_for user_session, :url => url_for(:action => 'create', :controller => 'user_sessions', :only_path => false) do |f| %>  
   <div>
-      <p><%= f.label "login","fhs Nummer" %></p>
+      <p><%= f.label "login", t(".fhsid") %></p>
       <p><%= f.text_field "login" %></p>
-      <p><%= f.label "password", "Passwort" %></p>
+      <p><%= f.label "password", t(".password") %></p>
       <p><%= f.password_field :password %></p>
   </div>
   <div class="login_buttons">
-    <%= f.submit "Anmelden" %>
-    <%= link_to "Abbrechen", root_path %>
+    <%= f.submit t(".button_login") %>
+    <%= link_to t(".button_cancel"), root_path %>
   </div>
 <% end %>
