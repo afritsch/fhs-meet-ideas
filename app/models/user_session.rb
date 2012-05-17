@@ -11,7 +11,13 @@ class UserSession < ActiveRecord::Base
     return false unless self.valid?
     
     user = User.find_by_fhsid self.login
-    return !user || !ldap(self.login, self.password) ? false : true
+    
+    if !user || !ldap(self.login, self.password)
+      return false
+    else
+      self.user_id = user.id
+      return true
+    end
   end 
 
   private
