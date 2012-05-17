@@ -2,7 +2,7 @@ de:
   auth:
     already_logged_in: "Du bist bereits angemeldet!"
     login_failure: "Die Kombination aus FHS-Nummer und Passwort war leider nicht korrekt!"
-    login_required: "Du musst angemeldet sein, um diese Seite sehen zu koennen"
+    login_required: "Du musst angemeldet sein, um diese Seite sehen zu können!"
     login_success: "Du wurdest erfolgreich angemeldet!"
     logout: "Du wurdest erfolgreich abgemeldet!"
   common:
@@ -19,7 +19,7 @@ de:
     intro_2: "Fachhochschule Salzburg"
     intro_3: "um Partner für ihre"
     intro_4: "Ideen zu finden."
-    teaser: "Brainstorming. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
+    teaser: "Brainstorme. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
     title: "Startseite"
     user:
       projects: "Projekte"

@@ -111,11 +111,10 @@ img {
 
 #button_login {
   float:right;
-  margin-top:35px;
+  margin-top:30px;
   width:114px;
   height:36px;
   background:url('/images/button_login.png') no-repeat;
-  box-shadow:$box-shadow;
   @include transition(box-shadow);
   
   &:hover {
@@ -209,6 +208,10 @@ img {
 #footerLinks {
   float:right;
   margin-top:38px;
+}
+
+.noty_bar {
+  margin-top:11px;
 }
 
 .noty_message {

@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
       @user_session = UserSession.new
     else
       flash[:error] = t("auth.already_logged_in")
-      redirect_to root_url
+      redirect_to :back
     end
   end
 

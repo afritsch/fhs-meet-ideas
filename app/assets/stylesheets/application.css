@@ -79,11 +79,10 @@ img {
 
 #button_login {
   float: right;
-  margin-top: 35px;
+  margin-top: 30px;
   width: 114px;
   height: 36px;
   background: url("/images/button_login.png") no-repeat;
-  box-shadow: 0 0 5px #aaaaaa;
   -moz-transition-property: box-shadow;
   -moz-transition-duration: .5s;
   -moz-transition-timing-function: ease;
@@ -172,6 +171,9 @@ img {
 #footerLinks {
   float: right;
   margin-top: 38px; }
+
+.noty_bar {
+  margin-top: 11px; }
 
 .noty_message {
   text-shadow: none; }
