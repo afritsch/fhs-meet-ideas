@@ -12,19 +12,22 @@ de:
     delete: "Löschen"
     send: "Absenden"
   home:
-    index:
+    guest:
       h3: "Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!"
+    title: "Startseite"
+    user:
       projects: "Projekte"
-      title: "Startseite"
   layouts:
     application:
       contact: "Kontakt"
+      fhboerse: "FH-Börse"
       footerText_1: "meet-ideas ist die Ideen-Plattform der Fachhochschule Salzburg."
       footerText_2: "Alle Rechte vorbehalten."
       imprint: "Impressum"
       lang: "de"
       meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
       meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"
+      portfolio: "Portfolio"
   pages:
     imprint:
       country: "Österreich"

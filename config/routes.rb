@@ -6,7 +6,8 @@ FhsMeetIdeas::Application.routes.draw do
   resources :projects, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
   resource :user_sessions, :only => [:new, :create, :destroy]
   
-  match "login" => "user_sessions#new", :as => "login"
+  # user authentication
+  match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
   
   # root route

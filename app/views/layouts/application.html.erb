@@ -41,10 +41,7 @@
       </div>
       <div class="clear"></div>
       <div id="content">
-        <% if(current_user) %>
-          Ich bin eingeloggt! (<%= link_to "Logout", logout_path %>)
-        <% else %>
-          Ich bin NICHT eingeloggt!
+        <% if(current_user) %><%= link_to "Logout", logout_path %>
         <% end %>
         <%= yield %>
       </div>
@@ -53,7 +50,11 @@
       <div id="footerContent">
         <div id="fhsLogo"><%= link_to "", "http://www.fh-salzburg.ac.at/" %></div>
         <div id="footerText"><%= t(".footerText_1") %><br /><%= t(".footerText_2") %></div>
-        <div id="footerLinks"><%= link_to t(".contact"), pages_imprint_path %> | <%= link_to t(".imprint"), pages_imprint_path %></div>
+        <div id="footerLinks">
+          <%= link_to t(".fhboerse"), "http://fhboerse.mediacube.at/" %> |
+          <%= link_to t(".portfolio"), "http://portfolio.multimediatechnology.at/" %> |
+          <%= link_to t(".contact"), pages_imprint_path %> |
+          <%= link_to t(".imprint"), pages_imprint_path %></div>
       </div>
     </div>
   </div>

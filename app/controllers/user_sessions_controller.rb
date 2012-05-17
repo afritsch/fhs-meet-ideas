@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
     unless logged_in?
       @user_session = UserSession.new
     else
-      flash[:error] = t('auth.already_logged_in')
+      flash[:error] = t("auth.already_logged_in")
       redirect_to root_url
     end
   end
@@ -14,17 +14,17 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       session[:id] = @user_session.user_id
-      flash[:notice] = t('auth.login_success')
+      flash[:notice] = t("auth.login_success")
       redirect_to root_url
     else
-      flash[:error] = t('auth.login_failure')
+      flash[:error] = t("auth.login_failure")
       redirect_to login_path
     end
   end
 
   def destroy
     session[:id] = nil
-    flash[:notice] = t('auth.logout')
+    flash[:notice] = t("auth.logout")
     redirect_to root_url
   end
 end
