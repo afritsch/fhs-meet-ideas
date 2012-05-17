@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
       session[:id] = @user_session.user_id
       redirect_to root_url, :notice => t(:flash_login_success)
     else
-      redirect_to root_url, :notice => t(:flash_login_failure)
+      redirect_to login_path, :error => t(:flash_login_failure)
     end
   end
 
