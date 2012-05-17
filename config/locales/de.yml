@@ -33,18 +33,16 @@ de:
       title: "Impressum"
   projects:
     edit:
+      title: "Projekt \"%{project}\" bearbeiten"
+      updated: "Das Projekt wurde erfolgreich bearbeitet!"
+    form:
       label_description: "Beschreibung:"
       label_status: "Status:"
       label_title: "Titel:"
-      title: "Projekt \"%{project}\" bearbeiten"
-      updated: "Das Projekt wurde erfolgreich bearbeitet!"
     index:
       new_project: "Neues Projekt"
       title: "Projekte"
     new:
-      label_description: "Beschreibung:"
-      label_status: "Status:"
-      label_title: "Titel:"
       new_project: "Projekt anlegen"
       saved: "Das Projekt wurde erfolgreich hinzugefügt!"
       title: "Neues Projekt"

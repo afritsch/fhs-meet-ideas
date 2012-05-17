@@ -7,14 +7,14 @@ License
 Fachhochschule Salzburg  
 University of Applied Sciences  
 
-Major: MultiMedia Technology  
-Specialization: Web & Communities  
+MultiMediaTechnology  
+Major: Web & Communities  
 
-Summersemester 2012  
+summer semester 2012  
 QPT 2b
 
-Project: FHS meet-ideas  
+Project: fhs meet-ideas  
 http://meet-ideas.mediacube.at/  
-(C) Hentzschel Soeren, Fritsch Andreas  
+Sören Hentzschel, Andreas Fritsch  
 
 This project is licensed under the MIT License.

@@ -2,7 +2,7 @@
 <% user_session = @user_session || UserSession.new %>
 
 <h1><%= t(".title") %></h1>
-<%= form_for user_session, :url => url_for(:action => 'create', :controller => 'user_sessions', :only_path => false) do |f| %>  
+<%= form_for user_session do |f| %>  
   <div>
       <p><%= f.label "login", t(".fhsid") %></p>
       <p><%= f.text_field "login" %></p>

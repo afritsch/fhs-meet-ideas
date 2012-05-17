@@ -33,18 +33,16 @@ en:
       title: "Imprint"
   projects:
     edit:
+      title: "Edit project \"%{project}\""
+      updated: "Das Projekt wurde erfolgreich bearbeitet!"
+    form:
       label_description: "Description:"
       label_status: "Status:"
       label_title: "Title:"
-      title: "Edit project \"%{project}\""
-      updated: "Das Projekt wurde erfolgreich bearbeitet!"
     index:
       new_project: "New project"
       title: "Projects"
     new:
-      label_description: "Description:"
-      label_status: "Status:"
-      label_title: "Title:"
       new_project: "Create project"
       saved: "Das Projekt wurde erfolgreich hinzugefügt!"
       title: "New project"

@@ -2,22 +2,6 @@
 
 <h1><%= t(".title", :project => @project.title) %></h1>
 
-<%= form_for(@project) do |f| %>
-  <div>
-    <%= f.label :title, t(".label_title") %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :status, t(".label_status") %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div>
-    <%= f.label :description, t(".label_description") %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div>
-    <%= f.submit t("common.edit") %>
-  </div>
-<% end %>
+<%= render "projects" %>
 
 <%= link_to t("common.back"), projects_path %>
