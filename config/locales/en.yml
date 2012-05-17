@@ -37,6 +37,7 @@ en:
       label_status: "Status:"
       label_title: "Title:"
       title: "Edit project \"%{project}\""
+      updated: "Das Projekt wurde erfolgreich bearbeitet!"
     index:
       new_project: "New project"
       title: "Projects"
@@ -48,7 +49,7 @@ en:
       saved: "Das Projekt wurde erfolgreich hinzugefügt!"
       title: "New project"
     show:
-      deleteConfirmation: "Möchtest du dieses Projekt wirklich löschen?"
+      deleteConfirmation: "Möchtest du das Projekt wirklich löschen?"
       description: "Description"
       destroyed: "Das Projekt wurde erfolgreich gelöscht!"
       status: "Status"

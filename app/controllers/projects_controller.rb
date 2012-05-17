@@ -50,12 +50,14 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.update_attributes(params[:project])
     
-    redirect_to project_path
+    flash[:notice] = t('projects.edit.updated')
+    redirect_to @project
   end
   
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    
     flash[:notice] = t('projects.show.destroyed')
     redirect_to projects_path
   end
