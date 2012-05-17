@@ -1,4 +1,7 @@
 de:
+  flash_login_success: "Du wurdest erfolgreich angemeldet!"
+  flash_login_failure: "Die Kombination aus FHS-Nummer und Passwort war leider nicht korrekt!"
+  flash_logout: "Du wurdest erfolgreich abgemeldet!"
   layouts:
     application:
       lang: "de"

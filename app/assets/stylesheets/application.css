@@ -9,7 +9,8 @@ body {
   color: #333;
   text-shadow: 0 1px 0 #ededed;
   font-size: .8em;
-  font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif; }
+  font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
+  text-shadow: #fefefe 1px 1px 0; }
 
 a {
   color: #666;
@@ -127,3 +128,6 @@ img {
 #footerLinks {
   float: right;
   margin-top: 38px; }
+
+.noty_message {
+  text-shadow: none; }

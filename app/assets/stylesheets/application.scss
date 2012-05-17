@@ -1,6 +1,6 @@
 $width: 980px;
 
-@mixin transition($property:color){
+@mixin transition($property:color) {
   -moz-transition-property:$property;
   -moz-transition-duration:.5s;
   -moz-transition-timing-function:ease;
@@ -10,11 +10,12 @@ $width: 980px;
   -o-transition-duration:.5s;
 }
 
-html{
+html {
   overflow-y:scroll;
   height:100%;
 }
-body{
+
+body {
   margin:0 auto;
   height:100%;
   background:url('/images/noise.png') repeat #ebebeb;
@@ -22,58 +23,72 @@ body{
   text-shadow:0 1px 0 #ededed;
   font-size:.8em;
   font-family:'Trebuchet MS',Arial,Helvetica,sans-serif;
+  text-shadow: #fefefe 1px 1px 0;
 }
-a{
+
+a {
   color:#666;
   text-decoration:none;
   font-weight:bold;
   @include transition;
-  &:hover{
+  
+  &:hover {
     color:#333;
   }
 }
-img{
+
+img {
   border:none;
 }
-.clear{
+
+.clear {
   clear:both;
 }
-#outerWrapper{
+
+#outerWrapper {
   position:relative;
   min-height:100%;
 }
-#innerWrapper{
+
+#innerWrapper {
   margin:0 auto;
   padding-bottom:120px;
   width:$width;
 }
-#projectlist{
+
+#projectlist {
   list-style: none;
   @include transition;
-  a{
+  
+  a {
     display:block;
     width: 100%;
     height: 100%;
   }
-  a:hover{
+  
+  a:hover {
     background-color: #ddd;
   }
 }
-#logo{
+
+#logo {
   float:left;
   width:320px;
   height:100px;
   background:url('/images/logo.png') no-repeat;
-  &:hover{
+  
+  &:hover {
     background-position:0 -100px;
   }
-  > a{
+  
+  > a {
     display:block;
     width:100%;
     height:100%;
   }
 }
-#button_login{
+
+#button_login {
   float:right;
   margin-top:35px;
   width:114px;
@@ -82,20 +97,24 @@ img{
   box-shadow:0px 0px 5px #aaa;
   cursor:pointer;
   @include transition(box-shadow);
-  &:hover{
+  
+  &:hover {
     box-shadow:0px 0px 5px #feb3b3;
   }
-  > a{
+  
+  > a {
     display:block;
     width:100%;
     height:100%;
   }
 }
-#content{
+
+#content {
   margin-top:20px;
   padding:12px;
 }
-#footer{
+
+#footer {
   position:absolute;
   bottom:0;
   width:100%;
@@ -103,30 +122,39 @@ img{
   background:#fff;
   border-top:1px #c2c3c7 solid;
 }
-#footerContent{
+
+#footerContent {
   margin:0 auto;
   width:$width;
 }
-#fhsLogo{
+
+#fhsLogo {
   float:left;
   margin-top:13px;
   margin-right:50px;
   width:170px;
   height:65px;
   background:url('/images/fhsLogo.png') no-repeat;
-  a{
+  
+  a {
     display:block;
     width:100%;
     height:100%;
   }
 }
-#footerText{
+
+#footerText {
   float:left;
   margin-top:18px;
   font-family:'Yanone Kaffeesatz','Trebuchet MS',Arial,Helvetica,sans-serif;
   font-size:1.5em;
 }
-#footerLinks{
+
+#footerLinks {
   float:right;
   margin-top:38px;
+}
+
+.noty_message {
+  text-shadow:none;
 }
