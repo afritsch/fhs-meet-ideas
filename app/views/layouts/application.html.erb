@@ -33,6 +33,7 @@
         <% else %>
           Ich bin NICHT eingeloggt!
         <% end %>
+        <% if flash[:notice] %><div><%= notice %></div><% end %>
         <%= yield %>
       </div>
     </div>

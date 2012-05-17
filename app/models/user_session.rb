@@ -1,15 +1,11 @@
 class UserSession < ActiveRecord::Base
-  attr_accessible :login, :password, :user_id
+  attr_accessible :login, :password
   
   def initialize (options = {})
     super
     self.login = options[:login]
     self.password = options[:password]
   end
-
-  def persisted?
-    false
-  end 
   
   def save()
     return false unless self.valid?
@@ -30,7 +26,7 @@ class UserSession < ActiveRecord::Base
   private
 
   def ldap user, password
-    require 'net/ldap'
+    require "net/ldap"
 
     if Rails.env.production?
       ldap = Net::LDAP.new(

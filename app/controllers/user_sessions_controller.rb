@@ -7,9 +7,9 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       session[:id] = @user_session.user_id
-      redirect_to projects_path
+      redirect_to projects_path, :notice => "Angemeldet!"
     else
-      redirect_to root_path
+      redirect_to root_path, :notice => "Fehler!"
     end
   end
 
