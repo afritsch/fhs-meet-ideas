@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517082650) do
+ActiveRecord::Schema.define(:version => 20120517093453) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
@@ -23,25 +23,10 @@ ActiveRecord::Schema.define(:version => 20120517082650) do
 
   create_table "comments", :force => true do |t|
     t.integer  "project_id"
-    t.integer  "person_id"
+    t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "people", :force => true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "persons_projects_roles", :id => false, :force => true do |t|
-    t.integer "person_id"
-    t.integer "project_id"
-    t.integer "role_id"
   end
 
   create_table "pictures", :force => true do |t|
@@ -57,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20120517082650) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "projects_roles_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.integer "role_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -80,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120517082650) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "phone"
   end
 
 end

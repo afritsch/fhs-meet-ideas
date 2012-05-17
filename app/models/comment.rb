@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :content, :date, :person_id, :project_id
+  attr_accessible :content, :date, :user_id, :project_id
   
   belongs_to :projects
-  belongs_to :persons
+  belongs_to :users
 end

@@ -8,22 +8,22 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @roles = Project.find_by_sql(['
-      SELECT roles.title, people.firstname, people.lastname
+      SELECT roles.title, users.firstname, users.lastname
       FROM roles
-      INNER JOIN persons_projects_roles
-        ON persons_projects_roles.role_id = roles.id
-      INNER JOIN people
-        ON persons_projects_roles.person_id = people.id
-      WHERE persons_projects_roles.project_id = ?',
+      INNER JOIN projects_roles_users
+        ON projects_roles_users.role_id = roles.id
+      INNER JOIN users
+        ON users.id = projects_roles_users.user_id
+      WHERE projects_roles_users.project_id = ?',
       params[:id]
     ])
     @pictures = Project.find(params[:id]).pictures
     @appointments = Project.find(params[:id]).appointments
     @comments = Project.find_by_sql(['
-      SELECT comments.created_at, comments.content, people.firstname, people.lastname
+      SELECT comments.created_at, comments.content, users.firstname, users.lastname
       FROM comments
-      INNER JOIN people
-        ON people.id = comments.person_id
+      INNER JOIN users
+        ON users.id = comments.user_id
       WHERE comments.project_id = ?',
       params[:id]
     ])
