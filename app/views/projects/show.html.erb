@@ -17,7 +17,7 @@ Rollen:<br />
 Termine:<br />
 <ul>
 <% @appointments.each do |appointment| %>
-  <li><%= appointment.appointment.strftime('%d.%m.%Y, %H:%Mh') %> - <%= appointment.description %></li>
+  <li><%= appointment.appointment.strftime("%d.%m.%Y, %H:%Mh") %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
@@ -31,7 +31,7 @@ Bilder:<br />
 Kommentare:<br />
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime('%d.%m.%Y, %H:%Mh') %>:<br />
+  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime("%d.%m.%Y, %H:%Mh") %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>

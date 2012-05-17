@@ -1,3 +1,10 @@
-<% content_for :title, t('home.title') %>
+<% content_for :title, t("home.title") %>
 
-<h3><%= t('.h3') %></h3>
+<p id="intro"><%= t("home.intro_1") %><br />
+<span class="highlight"><%= t("home.intro_2") %></span> <%= t("home.intro_3") %><br />
+<%= t("home.intro_4") %></p>
+
+<div id="teaserBox">
+  <div><%= t("home.teaser") %></div>
+  <a href="<%= url_for login_path %>" class="actionButton"><span><%= t("home.button_login") %></span></a>
+</div>

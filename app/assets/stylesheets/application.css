@@ -32,6 +32,30 @@ img {
 .clear {
   clear: both; }
 
+.actionButton {
+  background: url("/images/actionButton_green.png") no-repeat scroll top right;
+  display: block;
+  float: left;
+  height: 42px;
+  margin-right: 8px;
+  padding-right: 8px;
+  color: #fff;
+  font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
+  font-size: .7em;
+  text-shadow: #777777 -1px -1px 0; }
+  .actionButton > span {
+    display: block;
+    line-height: 32px;
+    margin-left: -8px;
+    background: url("/images/actionButton_green.png") no-repeat scroll top left;
+    padding: 5px 8px 5px 18px; }
+  .actionButton:hover {
+    background: url("/images/actionButton_green.png") no-repeat scroll bottom right;
+    color: #fff;
+    text-shadow: #aaaaaa -1px -1px 0; }
+  .actionButton:hover span {
+    background: url("/images/actionButton_green.png") no-repeat scroll bottom left; }
+
 #outerWrapper {
   position: relative;
   min-height: 100%; }
@@ -40,22 +64,6 @@ img {
   margin: 0 auto;
   padding-bottom: 120px;
   width: 980px; }
-
-#projectlist {
-  list-style: none;
-  -moz-transition-property: color;
-  -moz-transition-duration: .5s;
-  -moz-transition-timing-function: ease;
-  -webkit-transition-property: color;
-  -webkit-transition-duration: .5s;
-  -o-transition-property: color;
-  -o-transition-duration: .5s; }
-  #projectlist a {
-    display: block;
-    width: 100%;
-    height: 100%; }
-  #projectlist a:hover {
-    background-color: #ddd; }
 
 #logo {
   float: left;
@@ -75,8 +83,7 @@ img {
   width: 114px;
   height: 36px;
   background: url("/images/button_login.png") no-repeat;
-  box-shadow: 0px 0px 5px #aaa;
-  cursor: pointer;
+  box-shadow: 0 0 5px #aaaaaa;
   -moz-transition-property: box-shadow;
   -moz-transition-duration: .5s;
   -moz-transition-timing-function: ease;
@@ -94,6 +101,43 @@ img {
 #content {
   margin-top: 20px;
   padding: 12px; }
+
+#intro {
+  margin-top: 10px;
+  font-size: 2.5em;
+  line-height: 1.5; }
+  #intro > .highlight {
+    color: #a0092d; }
+
+#teaserBox {
+  padding-top: 20px;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 0 5px #aaaaaa;
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz','Trebuchet MS',Arial,Helvetica,sans-serif;
+  font-size: 1.8em; }
+  #teaserBox > div {
+    float: left;
+    margin-top: 5px;
+    width: 700px; }
+
+#projectlist {
+  list-style: none;
+  -moz-transition-property: color;
+  -moz-transition-duration: .5s;
+  -moz-transition-timing-function: ease;
+  -webkit-transition-property: color;
+  -webkit-transition-duration: .5s;
+  -o-transition-property: color;
+  -o-transition-duration: .5s; }
+  #projectlist > a {
+    display: block;
+    width: 100%;
+    height: 100%; }
+  #projectlist > a:hover {
+    background-color: #ddd; }
 
 #footer {
   position: absolute;
@@ -114,7 +158,7 @@ img {
   width: 170px;
   height: 65px;
   background: url("/images/fhsLogo.png") no-repeat; }
-  #fhsLogo a {
+  #fhsLogo > a {
     display: block;
     width: 100%;
     height: 100%; }

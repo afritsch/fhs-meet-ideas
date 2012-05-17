@@ -12,8 +12,14 @@ de:
     delete: "Löschen"
     send: "Absenden"
   home:
+    button_login: "Mit FHS-Daten Anmelden!"
     guest:
       h3: "Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!"
+    intro_1: "meet-ideas ist die Anlaufstelle für Studenten der"
+    intro_2: "Fachhochschule Salzburg"
+    intro_3: "um Partner für ihre"
+    intro_4: "Ideen zu finden."
+    teaser: "Brainstorming. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
     title: "Startseite"
     user:
       projects: "Projekte"
