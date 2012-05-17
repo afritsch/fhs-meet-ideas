@@ -32,19 +32,17 @@ class UserSession < ActiveRecord::Base
   def ldap user, password
     require 'net/ldap'
 
-    # in development modus ist kein Zugriff auf LDAP möglich, deshalb muss hier immer true zurückgegeben werden
     if Rails.env.production?
-      ldap = Net::LDAP.new(:host=>"denise.core.fh-salzburg.ac.at",
-        :port=>636, :encryption => :simple_tls)
+      ldap = Net::LDAP.new(
+        :host=>"denise.core.fh-salzburg.ac.at",
+        :port=>636,
+        :encryption => :simple_tls
+      )
 
-      if ldap.bind_as(:base => "uid=#{user},ou=People,ou=Urstein,o=fh-salzburg.ac.at,o=FHS", :password=>password)
-        return true
-      else
-        return false
-      end
+      return ldap.bind_as(:base => "uid=#{user},ou=People,ou=Urstein,o=fh-salzburg.ac.at,o=FHS", :password=>password) ? true : false
     else
-      return true # Nur im Development-Modus
+      # return true on development
+      return true
     end
-
   end
 end
