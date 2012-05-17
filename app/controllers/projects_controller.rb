@@ -1,5 +1,3 @@
-# coding: UTF-8
-
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
@@ -37,7 +35,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     if @project.save
-      redirect_to @project, :notice => 'Projekt wurde erfolgreich hinzugefügt!'
+      flash[:notice] = t('projects.new.saved')
+      redirect_to @project
     else
       render action: 'new'
     end
@@ -57,6 +56,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to projects_path, :notice => 'Projekt wurde erfolgreich gelöscht!'
+    flash[:notice] = t('projects.show.destroyed')
+    redirect_to projects_path
   end
 end

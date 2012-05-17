@@ -5,6 +5,7 @@
 <%= t(".status") %>: [<%= @project.status %>]<br />
 <div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
 
+Rollen:<br />
 <ul>
   <% @roles.each do |role| %>
     <li>
@@ -13,18 +14,21 @@
   <% end %>
 </ul>
 
+Termine:<br />
 <ul>
 <% @appointments.each do |appointment| %>
   <li><%= appointment.appointment.strftime('%d.%m.%Y, %H:%Mh') %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
+Bilder:<br />
 <ul>
 <% @pictures.each do |picture| %>
   <li><%= image_tag(picture.path) %></li>
 <% end %>
 </ul>
 
+Kommentare:<br />
 <ul>
 <% @comments.each do |comment| %>
   <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime('%d.%m.%Y, %H:%Mh') %>:<br />
@@ -33,6 +37,6 @@
 <% end %>
 </ul>
 
-<p><%= link_to t(".edit"), edit_project_path(@project) %></p>
-<p><%= link_to t(".back"), projects_path %></p>
-<p><%= link_to t(".delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>
+<p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
+<p><%= link_to t("common.back"), projects_path %></p>
+<p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>

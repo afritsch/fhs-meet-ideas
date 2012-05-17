@@ -1,57 +1,60 @@
 en:
-  flash_login_success: "Du wurdest erfolgreich angemeldet!"
-  flash_login_failure: "Die Kombination aus FHS-Nummer und Passwort war leider nicht korrekt!"
-  flash_logout: "Du wurdest erfolgreich abgemeldet!"
+  auth:
+    already_logged_in: "Du bist bereits angemeldet!"
+    login_failure: "Die Kombination aus FHS-Nummer und Passwort war leider nicht korrekt!"
+    login_required: "Du musst angemeldet sein, um diese Seite sehen zu koennen"
+    login_success: "Du wurdest erfolgreich angemeldet!"
+    logout: "Du wurdest erfolgreich abgemeldet!"
+  common:
+    back: "Back"
+    cancel: "Cancel"
+    edit: "Edit"
+    delete: "Delete"
+    send: "Send"
+  home:
+    index:
+      h3: "Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!"
+      projects: "Projects"
+      title: "Homepage"
   layouts:
     application:
+      contact: "Contact"
+      footerText_1: "meet-ideas ist die Ideen-Plattform der Fachhochschule Salzburg."
+      footerText_2: "All rights reserved."
+      imprint: "Imprint"
       lang: "en"
       meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
       meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"
-      footerText_1: "meet-ideas ist die Ideen-Plattform der Fachhochschule Salzburg."
-      footerText_2: "All rights reserved."
-      contact: "Contact"
-      imprint: "Imprint"
-  home:
-    index:
-      title: "Homepage"
-      h3: "Du hast eine Idee für ein Projekt und suchst noch Kollegen? Sprich mit ihnen!"
-      projects: "Projects"
   pages:
     imprint:
-      title: "Imprint"
-      report: "Fehler und Probleme melden an"
-      institution: "University of Applied Sciences Salzburg GmbH"
       country: "Austria"
+      institution: "University of Applied Sciences Salzburg GmbH"
+      report: "Fehler und Probleme melden an"
+      title: "Imprint"
   projects:
     edit:
+      label_description: "Description:"
+      label_status: "Status:"
+      label_title: "Title:"
       title: "Edit project \"%{project}\""
-      label_title: "Title:"
-      label_status: "Status:"
-      label_description: "Description:"
-      edit: "Edit project"
-      back: "Back"
     index:
-      title: "Projects"
       new_project: "New project"
+      title: "Projects"
     new:
-      title: "New project"
-      label_title: "Title:"
-      label_status: "Status:"
       label_description: "Description:"
+      label_status: "Status:"
+      label_title: "Title:"
       new_project: "Create project"
-      back: "Back"
+      saved: "Das Projekt wurde erfolgreich hinzugefügt!"
+      title: "New project"
     show:
-      status: "Status"
-      description: "Description"
-      timeText: "on"
-      edit: "Edit"
-      back: "Back"
-      delete: "Delete"
       deleteConfirmation: "Möchtest du dieses Projekt wirklich löschen?"
+      description: "Description"
+      destroyed: "Das Projekt wurde erfolgreich gelöscht!"
+      status: "Status"
+      timeText: "on"
   user_sessions:
     new:
-      title: "Anmelden"
       fhsid: "FHS-Nummer"
       password: "Password"
-      button_login: "Anmelden"
-      button_cancel: "Cancel"
+      title: "Anmelden"
