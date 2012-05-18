@@ -17,7 +17,7 @@ Rollen:<br />
 Termine:<br />
 <ul>
 <% @appointments.each do |appointment| %>
-  <li><%= appointment.appointment.strftime("%d.%m.%Y, %H:%Mh") %> - <%= appointment.description %></li>
+  <li><%= appointment.date.strftime("%d.%m.%Y, %H:%Mh") %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
@@ -36,6 +36,16 @@ Kommentare:<br />
   </li>
 <% end %>
 </ul>
+<%= form_for([@project, @project.comments.build]) do |f| %>
+  <div>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <%= f.label :content, "Kommentar:" %><br />
+    <%= f.text_area :content, :rows => 3 %>
+  </div>
+  <div>
+    <%= f.submit t("common.send") %>
+  </div>
+<% end %>
 
 <p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
 <p><%= link_to t("common.back"), projects_path %></p>

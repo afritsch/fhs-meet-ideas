@@ -3,7 +3,10 @@ FhsMeetIdeas::Application.routes.draw do
   get "pages/imprint"
   
   # resources
-  resources :projects, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
+  #resources :projects, :only => [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :projects do
+    resources :comments
+  end
   resource :user_sessions, :only => [:new, :create, :destroy]
   
   # user authentication

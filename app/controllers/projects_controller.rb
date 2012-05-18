@@ -29,6 +29,8 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
+    3.times { @project.appointments.build }
+    3.times { @project.pictures.build }
   end
   
   def create

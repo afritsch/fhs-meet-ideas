@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
-  attr_accessible :appointment, :description, :project_id
+  attr_accessible :date, :description, :project_id
   
   belongs_to :projects
 end

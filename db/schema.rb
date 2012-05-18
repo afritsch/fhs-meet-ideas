@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517093453) do
+ActiveRecord::Schema.define(:version => 20120518134731) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
     t.text     "description"
-    t.datetime "appointment"
+    t.datetime "date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
