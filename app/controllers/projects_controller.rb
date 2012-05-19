@@ -1,10 +1,18 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.order("id DESC")
   end
   
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find_by_sql(["
+      SELECT projects.*, users.firstname, users.lastname
+      FROM projects
+      INNER JOIN users
+        ON users.id = projects.user_id
+      WHERE projects.id = ?",
+      params[:id]
+    ]).first()
+    
     @roles = Project.find_by_sql(["
       SELECT roles.title, users.firstname, users.lastname
       FROM roles
@@ -35,6 +43,7 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(params[:project])
+    @project.user_id = current_user.id
 
     if @project.save
       flash[:notice] = t("projects.new.saved")

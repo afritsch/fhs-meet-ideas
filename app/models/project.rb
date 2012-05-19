@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :status, :title, :pictures_attributes, :appointments_attributes
+  attr_accessible :description, :status, :title, :appointments_attributes, :pictures_attributes
   
   has_and_belongs_to_many :users, :join_table => 'projects_roles_users'
   has_and_belongs_to_many :roles, :join_table => 'projects_roles_users'

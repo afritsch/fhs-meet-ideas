@@ -2,6 +2,8 @@
 
 <h1><%= @project.title %></h1>
 
+<p>Das Projekt wurde angelegt von: <%= @project.firstname %> <%= @project.lastname %></p>
+
 <%= t(".status") %>: [<%= @project.status %>]<br />
 <div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
 
@@ -38,7 +40,7 @@ Kommentare:<br />
 </ul>
 <%= form_for([@project, @project.comments.build]) do |f| %>
   <div>
-    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.label :content, "Kommentar:" %><br />
     <%= f.text_area :content, :rows => 3 %>
   </div>
