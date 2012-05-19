@@ -4,7 +4,7 @@
 
 <p><%= t(".published_by") %>: <%= @project.firstname %> <%= @project.lastname %></p>
 
-<%= t(".status") %>: [<%= @project.status %>]<br />
+<%= t(".status") %>: <%= @project.status %><br />
 <div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
 
 <%= t("projects.headlines.roles") %><br />

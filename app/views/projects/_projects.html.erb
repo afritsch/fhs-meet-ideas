@@ -13,24 +13,18 @@
     <%= f.text_area :description %>
   </div>
   <h3><%= t("projects.headlines.appointments") %>:</h3>
-  <div>
+  <div class="fields">
     <%= f.fields_for :appointments do |builder| %>
-      <%= builder.label :date, "Datum:" %>
-      <%= builder.text_field :date %>
-      <%= builder.label :description, "Beschreibung:" %>
-      <%= builder.text_field :description %><br />
-      <%= builder.check_box :_destroy %>
-      <%= builder.label :_destroy, "Termin löschen" %><br />
+      <%= render "appointments", :f => builder %>
     <% end %>
+    <p><%= link_to_add_fields "Add Appointment", f, :appointments %></p>
   </div>
   <h3><%= t("projects.headlines.pictures") %>:</h3>
-  <div>
+  <div class="fields">
     <%= f.fields_for :pictures do |builder| %>
-      <%= builder.label :path, "Bildpfad:" %><br />
-      <%= builder.text_field :path %><br />
-      <%= builder.check_box :_destroy %>
-      <%= builder.label :_destroy, "Bild löschen" %><br />
+      <%= render "pictures", :f => builder %>
     <% end %>
+    <p><%= link_to_add_fields "Add Picture", f, :pictures %></p>
   </div>
   <div>
     <%= f.submit t("common.send") %>
