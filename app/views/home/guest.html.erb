@@ -1,8 +1,6 @@
 <% content_for :title, t("home.title") %>
 
-<p id="intro"><%= t("home.intro_1") %><br />
-<span class="highlight"><%= t("home.intro_2") %></span> <%= t("home.intro_3") %><br />
-<%= t("home.intro_4") %></p>
+<%= render "intro" %>
 
 <div id="teaserBox">
   <div><%= t("home.teaser") %></div>

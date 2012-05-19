@@ -22,7 +22,7 @@ en:
     teaser: "Brainstorme. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
     title: "Homepage"
     user:
-      projects: "Projects"
+      projects: "Show all projects"
   layouts:
     application:
       contact: "Contact"
@@ -31,6 +31,7 @@ en:
       footerText_2: "All rights reserved."
       imprint: "Imprint"
       lang: "en"
+      login: "Anmelden"
       logout: "Logout"
       meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
       meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"

@@ -1,5 +1,5 @@
 <%= form_for(@project) do |f| %>
-  <h3><%= t("projects.headlines.description") %></h3>
+  <h2><%= t("projects.headlines.description") %></h2>
   <div>
     <%= f.label :title, t("projects.form.label_title") %><br />
     <%= f.text_field :title %>
@@ -12,14 +12,14 @@
     <%= f.label :description, t("projects.form.label_description") %><br />
     <%= f.text_area :description %>
   </div>
-  <h3><%= t("projects.headlines.appointments") %></h3>
+  <h2><%= t("projects.headlines.appointments") %></h2>
   <div>
     <%= f.fields_for :appointments do |builder| %>
       <%= render "appointments", :f => builder %>
     <% end %>
     <p><%= link_to_add_fields t("projects.form.add_appointment"), f, :appointments %></p>
   </div>
-  <h3><%= t("projects.headlines.pictures") %></h3>
+  <h2><%= t("projects.headlines.pictures") %></h2>
   <div>
     <%= f.fields_for :pictures do |builder| %>
       <%= render "pictures", :f => builder %>

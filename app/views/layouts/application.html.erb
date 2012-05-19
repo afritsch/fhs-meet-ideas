@@ -36,13 +36,15 @@
       <div id="logo">
         <a href="<%= url_for root_path %>"></a>
       </div>
-      <div id="button_login">
-        <%= link_to "", login_path %>
+      <div id="headerButtons">
+        <% if(current_user) %>
+          <div class="headerButton"><span><%= current_user.firstname %> <%= current_user.lastname %> | <%= link_to t(".logout"), logout_path %></span></div>
+        <% else %>
+          <a href="<%= url_for login_path %>" class="headerButton"><span><%= t(".login") %></span></a>
+        <% end %>
       </div>
       <div class="clear"></div>
       <div id="content">
-        <% if(current_user) %><%= link_to t(".logout"), logout_path %>
-        <% end %>
         <%= yield %>
       </div>
     </div>

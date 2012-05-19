@@ -1,8 +1,8 @@
 <% content_for :title, @project.title %>
 
-<h1><%= @project.title %></h1>
+<h1><%= image_tag "/images/headlines/info.png" %> <%= @project.title %></h1>
 
-<h3><%= t("projects.headlines.description") %></h3>
+<h2><%= t("projects.headlines.description") %></h2>
 
 <p><strong><%= t(".published_by") %></strong> <%= @project.firstname %> <%= @project.lastname %></p>
 
@@ -10,7 +10,7 @@
 <p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
 
 <% if @roles.count > 0 %>
-  <h3><%= t("projects.headlines.roles") %></h3>
+  <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
       <li><%= role.title %>: <%= role.firstname %> <%= role.lastname %></li>
@@ -19,7 +19,7 @@
 <% end %>
 
 <% if @appointments.count > 0 %>
-  <h3><%= t("projects.headlines.appointments") %></h3>
+  <h2><%= t("projects.headlines.appointments") %></h2>
   <ul>
     <% @appointments.each do |appointment| %>
       <li><%= l(appointment.date) %> - <%= appointment.description %></li>
@@ -28,7 +28,7 @@
 <% end %>
 
 <% if @pictures.count > 0 %>
-  <h3><%= t("projects.headlines.pictures") %></h3>
+  <h2><%= t("projects.headlines.pictures") %></h2>
   <ul>
     <% @pictures.each do |picture| %>
       <li><%= image_tag(picture.path) %></li>
@@ -36,7 +36,7 @@
   </ul>
 <% end %>
 
-<h3><%= t("projects.headlines.comments") %></h3>
+<h2><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
   <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
@@ -55,7 +55,7 @@
   </div>
 <% end %>
 
-<h3><%= t(".contact") %></h3>
+<h2><%= t(".contact") %></h2>
 
 <%= mail_to @project.email, @project.email, :encode => "hex" %>
 

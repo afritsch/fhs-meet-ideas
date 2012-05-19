@@ -1,3 +1,8 @@
 <% content_for :title, t("home.title") %>
 
-<p><%= link_to t(".projects"), projects_path %></p>
+<%= render "intro" %>
+
+<div id="teaserBox">
+  <div><%= t("home.teaser") %></div>
+  <a href="<%= url_for projects_path %>" class="actionButton"><span><%= t(".projects") %></span></a>
+</div>
