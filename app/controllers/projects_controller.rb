@@ -44,6 +44,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.user_id = current_user.id
+    update_date(:date)
 
     if @project.save
       flash[:notice] = t("projects.new.saved")
@@ -64,6 +65,8 @@ class ProjectsController < ApplicationController
   
   def update
     @project = Project.find(params[:id])
+    
+    update_date(:date)
     @project.update_attributes(params[:project])
     
     flash[:notice] = t("projects.edit.updated")

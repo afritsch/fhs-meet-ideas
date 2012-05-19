@@ -22,7 +22,8 @@ en:
     teaser: "Brainstorme. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
     title: "Homepage"
     user:
-      projects: "Show all projects"
+      new_project: "Idee starten!"
+      projects: "Idee finden!"
   layouts:
     application:
       contact: "Contact"
@@ -83,7 +84,7 @@ en:
       timeText: "on"
   time:
     formats:
-      default: "%d.%m.%Y, %H:%Mh"
+      default: "%d.%m.%Y, %H:%M"
   user_sessions:
     new:
       fhsid: "FHS-Nummer"

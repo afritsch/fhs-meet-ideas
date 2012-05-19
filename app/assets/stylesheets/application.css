@@ -68,11 +68,10 @@ h1 {
     padding: 5px 8px 5px 18px; }
 
 .actionButton {
-  background: url("/images/actionButton_green.png") no-repeat scroll top right;
   display: block;
   float: left;
   height: 42px;
-  margin-right: 8px;
+  margin-right: 20px;
   padding-right: 8px;
   color: #fff;
   font-family: 'Trebuchet MS',Arial,Helvetica,sans-serif;
@@ -82,14 +81,28 @@ h1 {
     display: block;
     line-height: 32px;
     margin-left: -8px;
-    background: url("/images/actionButton_green.png") no-repeat scroll top left;
-    padding: 5px 8px 5px 18px; }
+    padding: 5px 18px 5px 28px; }
   .actionButton:hover {
-    background: url("/images/actionButton_green.png") no-repeat scroll bottom right;
     color: #fff;
     text-shadow: #aaaaaa -1px -1px 0; }
-  .actionButton:hover span {
+
+.actionButtonGreen {
+  background: url("/images/actionButton_green.png") no-repeat scroll top right; }
+  .actionButtonGreen > span {
+    background: url("/images/actionButton_green.png") no-repeat scroll top left; }
+  .actionButtonGreen:hover {
+    background: url("/images/actionButton_green.png") no-repeat scroll bottom right; }
+  .actionButtonGreen:hover span {
     background: url("/images/actionButton_green.png") no-repeat scroll bottom left; }
+
+.actionButtonBlue {
+  background: url("/images/actionButton_blue.png") no-repeat scroll top right; }
+  .actionButtonBlue > span {
+    background: url("/images/actionButton_blue.png") no-repeat scroll top left; }
+  .actionButtonBlue:hover {
+    background: url("/images/actionButton_blue.png") no-repeat scroll bottom right; }
+  .actionButtonBlue:hover span {
+    background: url("/images/actionButton_blue.png") no-repeat scroll bottom left; }
 
 #outerWrapper {
   position: relative;
@@ -137,8 +150,11 @@ h1 {
   font-size: 1.8em; }
   #teaserBox > div {
     float: left;
-    margin-top: 5px;
-    width: 700px; }
+    margin-top: 5px; }
+  #teaserBox > div.guest {
+    width: 680px; }
+  #teaserBox > div.user {
+    width: 630px; }
 
 #projectlist {
   list-style: none;

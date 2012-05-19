@@ -1,6 +1,6 @@
 <div class="fields">
   <%= f.label :date, t("projects.form.date") %>
-  <%= f.text_field :date %>
+  <%= f.text_field :date, :value => f.object.date ? l(f.object.date) : "" %>
   <%= f.label :description, t("projects.form.appointment_description") %>
   <%= f.text_field :description %>
   <%= link_to_remove_fields t("projects.form.remove_appointment"), f %>

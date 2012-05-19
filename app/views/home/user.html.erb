@@ -3,6 +3,7 @@
 <%= render "intro" %>
 
 <div id="teaserBox">
-  <div><%= t("home.teaser") %></div>
-  <a href="<%= url_for projects_path %>" class="actionButton"><span><%= t(".projects") %></span></a>
+  <div class="user"><%= t("home.teaser") %></div>
+  <a href="<%= url_for projects_path %>" class="actionButton actionButtonGreen"><span><%= t(".projects") %></span></a>
+  <a href="<%= url_for new_project_path %>" class="actionButton actionButtonBlue"><span><%= t(".new_project") %></span></a>
 </div>

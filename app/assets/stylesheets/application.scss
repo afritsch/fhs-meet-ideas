@@ -91,11 +91,10 @@ h1 {
 }
 
 .actionButton {
-  background:url('/images/actionButton_green.png') no-repeat scroll top right;
   display:block;
   float:left;
   height:42px;
-  margin-right:8px;
+  margin-right:20px;
   padding-right:8px;
   color:#fff;
   font-family:'Trebuchet MS',Arial,Helvetica,sans-serif;
@@ -106,18 +105,44 @@ h1 {
     display:block;
     line-height:32px;
     margin-left:-8px;
+    padding:5px 18px 5px 28px;
+  }
+  
+  &:hover {
+    color:#fff;
+    text-shadow:#aaa -1px -1px 0;
+  }
+}
+
+.actionButtonGreen {
+  background:url('/images/actionButton_green.png') no-repeat scroll top right;
+  
+  > span {
     background:url('/images/actionButton_green.png') no-repeat scroll top left;
-    padding:5px 8px 5px 18px;
   }
   
   &:hover {
     background:url('/images/actionButton_green.png') no-repeat scroll bottom right;
-    color:#fff;
-    text-shadow:#aaa -1px -1px 0;
   }
   
   &:hover span {
     background:url('/images/actionButton_green.png') no-repeat scroll bottom left;
+  }
+}
+
+.actionButtonBlue {
+  background:url('/images/actionButton_blue.png') no-repeat scroll top right;
+  
+  > span {
+    background:url('/images/actionButton_blue.png') no-repeat scroll top left;
+  }
+  
+  &:hover {
+    background:url('/images/actionButton_blue.png') no-repeat scroll bottom right;
+  }
+  
+  &:hover span {
+    background:url('/images/actionButton_blue.png') no-repeat scroll bottom left;
   }
 }
 
@@ -178,7 +203,14 @@ h1 {
   > div {
     float:left;
     margin-top:5px;
-    width:700px;
+  }
+  
+  > div.guest {
+    width:680px;
+  }
+  
+  > div.user {
+    width:630px;
   }
 }
 

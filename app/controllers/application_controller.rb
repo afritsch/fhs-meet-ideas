@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :require_login
+  
+  def update_date(*args)
+    rec = args.shift
+    args.each do |e|
+      d,m,y,time = params[rec][e].split(/\.| /)
+      params[rec][e] = y + '-' + m + '-' + d + ' ' + time unless y.nil?
+    end
+  end
  
   private
  
