@@ -19,7 +19,7 @@
 <% end %>
 
 <% if @appointments.count > 0 %>
-  <h3><%= t("projects.headlines.appointments") %><h3>
+  <h3><%= t("projects.headlines.appointments") %></h3>
   <ul>
     <% @appointments.each do |appointment| %>
       <li><%= l(appointment.date) %> - <%= appointment.description %></li>
@@ -28,7 +28,7 @@
 <% end %>
 
 <% if @pictures.count > 0 %>
-  <h3><%= t("projects.headlines.pictures") %><h3>
+  <h3><%= t("projects.headlines.pictures") %></h3>
   <ul>
     <% @pictures.each do |picture| %>
       <li><%= image_tag(picture.path) %></li>
