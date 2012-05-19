@@ -31,9 +31,11 @@ en:
       footerText_2: "All rights reserved."
       imprint: "Imprint"
       lang: "en"
+      logout: "Logout"
       meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
       meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"
       portfolio: "Portfolio"
+      title_suffix: " - meet ideas - FH Salzburg"
   pages:
     imprint:
       country: "Austria"
@@ -46,10 +48,17 @@ en:
       title: "Edit project \"%{project}\""
       updated: "Das Projekt wurde erfolgreich bearbeitet!"
     form:
+      add_appointment: "Add appointment"
+      add_picture: "Add picture"
+      appointment_description: "Description:"
+      date: "Date:"
       label_comment: "Kommentar:"
       label_description: "Description:"
       label_status: "Status:"
       label_title: "Title:"
+      picture_path: "Path:"
+      remove_appointment: "Remove appointment"
+      remove_picture: "Remove picture"
     headlines:
       appointments: "Appointments"
       comments: "Comments"
@@ -70,6 +79,9 @@ en:
       published_by: "Das Projekt wurde angelegt von"
       status: "Status"
       timeText: "on"
+  time:
+    formats:
+      default: "%d.%m.%Y, %H:%Mh"
   user_sessions:
     new:
       fhsid: "FHS-Nummer"

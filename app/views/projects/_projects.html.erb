@@ -13,18 +13,18 @@
     <%= f.text_area :description %>
   </div>
   <h3><%= t("projects.headlines.appointments") %>:</h3>
-  <div class="fields">
+  <div>
     <%= f.fields_for :appointments do |builder| %>
       <%= render "appointments", :f => builder %>
     <% end %>
-    <p><%= link_to_add_fields "Add Appointment", f, :appointments %></p>
+    <p><%= link_to_add_fields t("projects.form.add_appointment"), f, :appointments %></p>
   </div>
   <h3><%= t("projects.headlines.pictures") %>:</h3>
-  <div class="fields">
+  <div>
     <%= f.fields_for :pictures do |builder| %>
       <%= render "pictures", :f => builder %>
     <% end %>
-    <p><%= link_to_add_fields "Add Picture", f, :pictures %></p>
+    <p><%= link_to_add_fields t("projects.form.add_picture"), f, :pictures %></p>
   </div>
   <div>
     <%= f.submit t("common.send") %>

@@ -1,7 +1,7 @@
 <div class="fields">
-  <%= f.label :date, "Datum:" %>
+  <%= f.label :date, t("projects.form.date") %>
   <%= f.text_field :date %>
-  <%= f.label :description, "Beschreibung:" %>
+  <%= f.label :description, t("projects.form.appointment_description") %>
   <%= f.text_field :description %>
-  <%= link_to_remove_fields "Termin löschen", f %>
+  <%= link_to_remove_fields t("projects.form.remove_appointment"), f %>
 </div>

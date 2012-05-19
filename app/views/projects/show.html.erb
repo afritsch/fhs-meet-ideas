@@ -19,7 +19,7 @@
 <%= t("projects.headlines.appointments") %>:<br />
 <ul>
 <% @appointments.each do |appointment| %>
-  <li><%= appointment.date.strftime("%d.%m.%Y, %H:%Mh") %> - <%= appointment.description %></li>
+  <li><%= l(appointment.date) %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
@@ -33,7 +33,7 @@
 <%= t("projects.headlines.comments") %>:<br />
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime("%d.%m.%Y, %H:%Mh") %>:<br />
+  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>
