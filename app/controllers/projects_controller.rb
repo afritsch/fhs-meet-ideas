@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find_by_sql(["
-      SELECT projects.*, users.firstname, users.lastname
+      SELECT projects.*, users.firstname, users.lastname, users.email
       FROM projects
       INNER JOIN users
         ON users.id = projects.user_id
@@ -37,8 +37,8 @@ class ProjectsController < ApplicationController
   
   def new
     @project = Project.new
-    3.times { @project.appointments.build }
-    3.times { @project.pictures.build }
+    1.times { @project.appointments.build }
+    1.times { @project.pictures.build }
   end
   
   def create

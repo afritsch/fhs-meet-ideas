@@ -60,11 +60,11 @@ de:
       remove_appointment: "Termin entfernen"
       remove_picture: "Bild entfernen"
     headlines:
-      appointments: "Termine"
-      comments: "Kommentare"
-      description: "Projektbeschreibung"
-      pictures: "Bilder"
-      roles: "Rollen"
+      appointments: "Termine:"
+      comments: "Kommentare:"
+      description: "Projektbeschreibung:"
+      pictures: "Bilder:"
+      roles: "Rollen:"
     index:
       new_project: "Neues Projekt"
       title: "Projekte"
@@ -73,11 +73,12 @@ de:
       saved: "Das Projekt wurde erfolgreich hinzugefügt!"
       title: "Neues Projekt"
     show:
+      contact: "Kontaktdaten:"
       deleteConfirmation: "Möchtest du das Projekt wirklich löschen?"
-      description: "Beschreibung"
+      description: "Beschreibung:"
       destroyed: "Das Projekt wurde erfolgreich gelöscht!"
-      published_by: "Das Projekt wurde angelegt von"
-      status: "Status"
+      published_by: "Das Projekt wurde angelegt von:"
+      status: "Status:"
       timeText: "am"
   time:
     formats:

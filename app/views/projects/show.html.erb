@@ -2,35 +2,41 @@
 
 <h1><%= @project.title %></h1>
 
-<p><%= t(".published_by") %>: <%= @project.firstname %> <%= @project.lastname %></p>
+<h3><%= t("projects.headlines.description") %></h3>
 
-<%= t(".status") %>: <%= @project.status %><br />
-<div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
+<p><strong><%= t(".published_by") %></strong> <%= @project.firstname %> <%= @project.lastname %></p>
 
-<%= t("projects.headlines.roles") %><br />
-<ul>
-  <% @roles.each do |role| %>
-    <li>
-      <%= role.title %>: <%= role.firstname %> <%= role.lastname %>
-    </li>
-  <% end %>
-</ul>
+<p><strong><%= t(".status") %></strong> <%= @project.status %></p>
+<p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
 
-<%= t("projects.headlines.appointments") %>:<br />
-<ul>
-<% @appointments.each do |appointment| %>
-  <li><%= l(appointment.date) %> - <%= appointment.description %></li>
+<% if @roles.count > 0 %>
+  <h3><%= t("projects.headlines.roles") %></h3>
+  <ul>
+    <% @roles.each do |role| %>
+      <li><%= role.title %>: <%= role.firstname %> <%= role.lastname %></li>
+    <% end %>
+  </ul>
 <% end %>
-</ul>
 
-<%= t("projects.headlines.pictures") %>:<br />
-<ul>
-<% @pictures.each do |picture| %>
-  <li><%= image_tag(picture.path) %></li>
+<% if @appointments.count > 0 %>
+  <h3><%= t("projects.headlines.appointments") %><h3>
+  <ul>
+    <% @appointments.each do |appointment| %>
+      <li><%= l(appointment.date) %> - <%= appointment.description %></li>
+    <% end %>
+  </ul>
 <% end %>
-</ul>
 
-<%= t("projects.headlines.comments") %>:<br />
+<% if @pictures.count > 0 %>
+  <h3><%= t("projects.headlines.pictures") %><h3>
+  <ul>
+    <% @pictures.each do |picture| %>
+      <li><%= image_tag(picture.path) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h3><%= t("projects.headlines.comments") %></h3>
 <ul>
 <% @comments.each do |comment| %>
   <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
@@ -48,6 +54,10 @@
     <%= f.submit t("common.send") %>
   </div>
 <% end %>
+
+<h3><%= t(".contact") %></h3>
+
+<%= mail_to @project.email, @project.email, :encode => "hex" %>
 
 <p><%= link_to t("common.back"), projects_path %></p>
 <% if allowed? %>
