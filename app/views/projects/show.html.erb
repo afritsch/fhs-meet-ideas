@@ -2,12 +2,12 @@
 
 <h1><%= @project.title %></h1>
 
-<p>Das Projekt wurde angelegt von: <%= @project.firstname %> <%= @project.lastname %></p>
+<p><%= t(".published_by") %>: <%= @project.firstname %> <%= @project.lastname %></p>
 
 <%= t(".status") %>: [<%= @project.status %>]<br />
 <div><%= t(".description") %>: <%= simple_format(h(@project.description)) %></div>
 
-Rollen:<br />
+<%= t("projects.headlines.roles") %><br />
 <ul>
   <% @roles.each do |role| %>
     <li>
@@ -16,21 +16,21 @@ Rollen:<br />
   <% end %>
 </ul>
 
-Termine:<br />
+<%= t("projects.headlines.appointments") %>:<br />
 <ul>
 <% @appointments.each do |appointment| %>
   <li><%= appointment.date.strftime("%d.%m.%Y, %H:%Mh") %> - <%= appointment.description %></li>
 <% end %>
 </ul>
 
-Bilder:<br />
+<%= t("projects.headlines.pictures") %>:<br />
 <ul>
 <% @pictures.each do |picture| %>
   <li><%= image_tag(picture.path) %></li>
 <% end %>
 </ul>
 
-Kommentare:<br />
+<%= t("projects.headlines.comments") %>:<br />
 <ul>
 <% @comments.each do |comment| %>
   <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= comment.created_at.strftime("%d.%m.%Y, %H:%Mh") %>:<br />
@@ -41,7 +41,7 @@ Kommentare:<br />
 <%= form_for([@project, @project.comments.build]) do |f| %>
   <div>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.label :content, "Kommentar:" %><br />
+    <%= f.label :content, t("projects.form.label_comment") %><br />
     <%= f.text_area :content, :rows => 3 %>
   </div>
   <div>
@@ -49,6 +49,8 @@ Kommentare:<br />
   </div>
 <% end %>
 
-<p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
 <p><%= link_to t("common.back"), projects_path %></p>
-<p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>
+<% if allowed? %>
+  <p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
+  <p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>
+<% end %>

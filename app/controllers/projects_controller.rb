@@ -55,6 +55,11 @@ class ProjectsController < ApplicationController
   
   def edit
     @project = Project.find(params[:id])
+    
+    unless @project.user_id === current_user.id
+      flash[:error] = t("projects.edit.denied")
+      redirect_to @project
+    end
   end
   
   def update

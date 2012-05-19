@@ -42,12 +42,20 @@ en:
       title: "Imprint"
   projects:
     edit:
+      denied: "Das ist nicht dein Projekt!"
       title: "Edit project \"%{project}\""
       updated: "Das Projekt wurde erfolgreich bearbeitet!"
     form:
+      label_comment: "Kommentar:"
       label_description: "Description:"
       label_status: "Status:"
       label_title: "Title:"
+    headlines:
+      appointments: "Appointments"
+      comments: "Comments"
+      description: "Projektbeschreibung"
+      pictures: "Pictures"
+      roles: "Roles"
     index:
       new_project: "New project"
       title: "Projects"
@@ -59,6 +67,7 @@ en:
       deleteConfirmation: "Möchtest du das Projekt wirklich löschen?"
       description: "Description"
       destroyed: "Das Projekt wurde erfolgreich gelöscht!"
+      published_by: "Das Projekt wurde angelegt von"
       status: "Status"
       timeText: "on"
   user_sessions:
