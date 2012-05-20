@@ -81,6 +81,7 @@ en:
       deleteConfirmation: "Möchtest du das Projekt wirklich löschen?"
       description: "Description:"
       destroyed: "Das Projekt wurde erfolgreich gelöscht!"
+      last_modified: "This page was last modified on %{last_modified}."
       published_by: "Das Projekt wurde angelegt von:"
       status: "Status:"
       timeText: "on"

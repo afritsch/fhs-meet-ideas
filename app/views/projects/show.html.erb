@@ -59,6 +59,8 @@
 
 <%= mail_to @project.email, @project.email, :encode => "hex" %>
 
+<p class="center small"><%= t(".last_modified", :last_modified => l(@project.updated_at)) %></p>
+
 <p><%= link_to t("common.back"), projects_path %></p>
 <% if allowed? %>
   <p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
