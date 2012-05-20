@@ -18,7 +18,7 @@
   </div>
   <div>
     <%= f.label :status, t("projects.form.label_status") %><br />
-    <%= f.text_field :status %>
+    <%= f.autocomplete_field :status, autocomplete_project_status_projects_path %>
   </div>
   <div>
     <%= f.label :description, t("projects.form.label_description") %><br />
