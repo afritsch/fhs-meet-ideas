@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     @appointments = Project.find(params[:id]).appointments
     
     @comments = Project.find_by_sql(["
-      SELECT comments.created_at, comments.content, users.fullname
+      SELECT comments.created_at, comments.content, users.email, users.fullname
       FROM comments
       INNER JOIN users
         ON users.id = comments.user_id
