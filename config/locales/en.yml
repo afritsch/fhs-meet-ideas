@@ -11,6 +11,8 @@ en:
     edit: "Edit"
     delete: "Delete"
     send: "Send"
+  errors:
+    format: "%{message}"
   home:
     button_login: "Mit FHS-Daten Anmelden!"
     guest:
@@ -90,3 +92,11 @@ en:
       fhsid: "FHS-Nummer"
       password: "Password"
       title: "Anmelden"
+  validations:
+    attr:
+      description: "Die Beschreibung"
+      status: "Der Status"
+      title: "Der Title"
+    length:
+      long: "Der Titel muss weniger als %{count} Zeichen besitzen!"
+      short: "Der Titel muss mehr als %{count} Zeichen besitzen!"

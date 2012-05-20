@@ -1,3 +1,15 @@
+<% if @project.errors.any? %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var noty_id = noty({
+        "text":"<% @project.errors.full_messages.each do |message| %><%= message %><br /><% end %>",
+        "layout":"topCenter",
+        "type":"error"
+      });
+    });
+  </script>
+<% end %>
+
 <%= form_for(@project) do |f| %>
   <h2><%= t("projects.headlines.description") %></h2>
   <div>
