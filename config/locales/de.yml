@@ -62,11 +62,11 @@ de:
       label_status: "Status:"
       label_title: "Titel:"
       name: "Name:"
-      picture_path: "Bildpfad:"
       remove_appointment: "Termin entfernen"
       remove_picture: "Bild entfernen"
       remove_role: "Rolle entfernen"
       role: "Rolle:"
+      select_picture: "Bild auswählen:"
     headlines:
       appointments: "Termine:"
       comments: "Kommentare:"

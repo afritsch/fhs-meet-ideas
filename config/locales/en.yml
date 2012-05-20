@@ -62,11 +62,11 @@ en:
       label_status: "Status:"
       label_title: "Title:"
       name: "Name:"
-      picture_path: "Path:"
       remove_appointment: "Remove appointment"
       remove_picture: "Remove picture"
       remove_role: "Remove role"
       role: "Rolle:"
+      select_picture: "Select picture:"
     headlines:
       appointments: "Appointments:"
       comments: "Comments:"

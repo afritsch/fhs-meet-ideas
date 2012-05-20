@@ -1,9 +1,11 @@
 <div class="fields">
-  <%= f.label :image, t("projects.form.picture_path") %>
+  <%= f.label :image, t("projects.form.select_picture") %>
   <%= f.file_field :image %>
-  <%= f.label :remote_image_url, "or test: remote upload" %>
-  <%= f.text_field :remote_image_url %>
-  <%= f.label :title, t("projects.form.title") %>
-  <%= f.text_field :title %>
+  <% if f.object.title.present? %>
+    <%= f.object.title %>
+  <% else %>
+    <%= f.label :title, t("projects.form.title") %>
+    <%= f.text_field :title %>
+  <% end %>
   <%= link_to_remove_fields t("projects.form.remove_picture"), f %><br />
 </div>
