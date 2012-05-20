@@ -1,6 +1,8 @@
 class Role < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :title, :name
   
-  has_and_belongs_to_many :users, :join_table => 'projects_roles_users'
-  has_and_belongs_to_many :projects, :join_table => 'projects_roles_users'
+  belongs_to :projects
+  belongs_to :users
+  
+  scope :uniquely_named, group(:title)
 end

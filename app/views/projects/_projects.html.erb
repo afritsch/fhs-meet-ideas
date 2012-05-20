@@ -24,6 +24,13 @@
     <%= f.label :description, t("projects.form.label_description") %><br />
     <%= f.text_area :description %>
   </div>
+  <h2><%= t("projects.headlines.roles") %></h2>
+  <div>
+    <%= f.fields_for :roles do |builder| %>
+      <%= render "roles", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields t("projects.form.add_role"), f, :roles %></p>
+  </div>
   <h2><%= t("projects.headlines.appointments") %></h2>
   <div>
     <%= f.fields_for :appointments do |builder| %>

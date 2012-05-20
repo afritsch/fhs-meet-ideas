@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
+  autocomplete :role, :title, :full => true, :scopes => [:uniquely_named]
+  autocomplete :user, :fullname, :full => true
+  
   def index
     @projects = Project.order("id DESC")
   end
   
   def show
     @project = Project.find_by_sql(["
-      SELECT projects.*, users.firstname, users.lastname, users.email
+      SELECT projects.*, users.fullname, users.email
       FROM projects
       INNER JOIN users
         ON users.id = projects.user_id
@@ -13,20 +16,12 @@ class ProjectsController < ApplicationController
       params[:id]
     ]).first()
     
-    @roles = Project.find_by_sql(["
-      SELECT roles.title, users.firstname, users.lastname
-      FROM roles
-      INNER JOIN projects_roles_users
-        ON projects_roles_users.role_id = roles.id
-      INNER JOIN users
-        ON users.id = projects_roles_users.user_id
-      WHERE projects_roles_users.project_id = ?",
-      params[:id]
-    ])
+    @roles = Project.find(params[:id]).roles
     @pictures = Project.find(params[:id]).pictures
     @appointments = Project.find(params[:id]).appointments
+    
     @comments = Project.find_by_sql(["
-      SELECT comments.created_at, comments.content, users.firstname, users.lastname
+      SELECT comments.created_at, comments.content, users.fullname
       FROM comments
       INNER JOIN users
         ON users.id = comments.user_id
@@ -39,6 +34,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @project.appointments.build
     @project.pictures.build
+    @project.roles.build
   end
   
   def create

@@ -1,3 +1,6 @@
+/*
+*= require jquery-ui
+*/
 html {
   overflow-y: scroll;
   height: 100%; }

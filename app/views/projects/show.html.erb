@@ -4,7 +4,7 @@
 
 <h2><%= t("projects.headlines.description") %></h2>
 
-<p><strong><%= t(".published_by") %></strong> <%= @project.firstname %> <%= @project.lastname %></p>
+<p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>
 
 <p><strong><%= t(".status") %></strong> <%= @project.status %></p>
 <p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
@@ -13,7 +13,7 @@
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%= role.firstname %> <%= role.lastname %></li>
+      <li><%= role.title %>: <%if role.name.present? %><%= role.name %><% else %><strong>Gesucht! Kommentar hinterlassen!</strong><%end %></li>
     <% end %>
   </ul>
 <% end %>
@@ -39,7 +39,7 @@
 <h2><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.firstname %> <%= comment.lastname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
+  <li><%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>

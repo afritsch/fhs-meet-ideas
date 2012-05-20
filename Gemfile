@@ -26,6 +26,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rails3-jquery-autocomplete'
 gem 'capistrano'
 
 gem 'net-ldap'
