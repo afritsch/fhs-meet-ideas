@@ -16,10 +16,30 @@
 //= require autocomplete-rails
 // require_tree .
 
+$(document).ready(function() {
+  $.timepicker.regional['de'] = {
+    timeOnlyTitle: 'Uhrzeit auswählen',
+    timeText: 'Zeit',
+    hourText: 'Stunde',
+    minuteText: 'Minute',
+    secondText: 'Sekunde',
+    currentText: 'Jetzt',
+    closeText: 'Auswählen',
+    dateFormat: 'dd.mm.yy,',
+    ampm: false
+  };
+  $.timepicker.setDefaults($.timepicker.regional['de']);
+  $('.timepicker').timepicker();
+});
+
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
+  
+  if(association === 'appointments') {
+    $('.timepicker').timepicker();
+  }
 }
 
 function remove_fields(link) {

@@ -61,7 +61,8 @@ module FhsMeetIdeas
       'jquery.noty.css', 
       'noty_theme_default.css',
       'application.js',
-      'jquery.noty.js'
+      'jquery.noty.js',
+      'timepicker.js'
     ]
   end
 end
