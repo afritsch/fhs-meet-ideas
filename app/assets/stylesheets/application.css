@@ -144,6 +144,19 @@ h2 {
   margin-top: 20px;
   padding: 12px; }
 
+#breadcrumbs {
+  float: right;
+  margin-top: -10px; }
+  #breadcrumbs > li {
+    float: left;
+    margin-left: 20px; }
+  #breadcrumbs > li:first-child {
+    list-style-type: none; }
+  #breadcrumbs > li, #breadcrumbs > li > a {
+    color: #aaa; }
+  #breadcrumbs > li > a:hover {
+    color: #888; }
+
 #intro {
   margin-top: 10px;
   line-height: 1.5;

@@ -28,10 +28,12 @@ de:
       projects: "Idee finden!"
   layouts:
     application:
+      breadcrumbs: "Du befindest dich hier:"
       contact: "Kontakt"
       fhboerse: "FH-Börse"
       footerText_1: "meet-ideas ist die Ideen-Plattform der Fachhochschule Salzburg."
       footerText_2: "Alle Rechte vorbehalten."
+      homepage: "Startseite"
       imprint: "Impressum"
       lang: "de"
       login: "Anmelden"

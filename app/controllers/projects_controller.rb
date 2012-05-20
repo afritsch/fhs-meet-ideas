@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  add_breadcrumb I18n.t("projects.index.title"), "/projects"
+  
   autocomplete :role, :title, :full => true, :scopes => [:uniquely_named]
   autocomplete :user, :fullname, :full => true
   
@@ -28,6 +30,8 @@ class ProjectsController < ApplicationController
       WHERE comments.project_id = ?",
       params[:id]
     ])
+    
+    add_breadcrumb @project.title, @project
   end
   
   def new
@@ -35,6 +39,8 @@ class ProjectsController < ApplicationController
     @project.appointments.build
     @project.pictures.build
     @project.roles.build
+    
+    add_breadcrumb t("projects.new.title"), new_project_path
   end
   
   def create
@@ -52,6 +58,9 @@ class ProjectsController < ApplicationController
   
   def edit
     @project = Project.find(params[:id])
+    
+    add_breadcrumb @project.title, @project
+    add_breadcrumb t("common.edit"), edit_project_path(@project)
     
     unless @project.user_id === current_user.id
       flash[:error] = t("projects.edit.denied")

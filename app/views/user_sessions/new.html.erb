@@ -1,7 +1,7 @@
-<% content_for :title, t(".title") %>
 <% user_session = @user_session || UserSession.new %>
 
-<h1><%= image_tag "/images/headlines/login.png" %> <%= t(".title") %></h1>
+<% content_for :title, t(".title") %>
+<% content_for :headline do %><%= image_tag "/images/headlines/login.png" %> <%= t(".title") %><% end %>
 
 <%= form_for user_session do |f| %>  
   <div>

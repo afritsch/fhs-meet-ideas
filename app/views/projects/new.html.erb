@@ -1,6 +1,5 @@
 <% content_for :title, t(".title") %>
-
-<h1><%= image_tag "/images/headlines/new.png" %> <%= t(".title") %></h1>
+<% content_for :headline do %><%= image_tag "/images/headlines/new.png" %> <%= t(".title") %><% end %>
 
 <%= render "projects" %>
 

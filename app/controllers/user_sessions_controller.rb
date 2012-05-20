@@ -4,6 +4,8 @@ class UserSessionsController < ApplicationController
   def new
     unless logged_in?
       @user_session = UserSession.new
+      
+      add_breadcrumb t("user_sessions.new.title"), login_path
     else
       flash[:error] = t("auth.already_logged_in")
       

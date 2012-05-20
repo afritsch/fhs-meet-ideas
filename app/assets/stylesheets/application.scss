@@ -196,6 +196,28 @@ h2 {
   padding:12px;
 }
 
+#breadcrumbs {
+  float:right;
+  margin-top:-10px;
+  
+  > li {
+    float:left;
+    margin-left:20px;
+  }
+  
+  > li:first-child {
+    list-style-type:none;
+  }
+  
+  > li, > li > a {
+    color:#aaa;
+  }
+  
+  > li > a:hover {
+    color:#888;
+  }
+}
+
 #intro {
   margin-top:10px;
   line-height:1.5;

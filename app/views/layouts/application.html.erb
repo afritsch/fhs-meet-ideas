@@ -42,6 +42,17 @@
       </div>
       <div class="clear"></div>
       <div id="content">
+        <% if content_for?(:headline) %><h1><%= yield :headline %></h1><% end %>
+        
+        <% if @breadcrumbs %>
+          <ul id="breadcrumbs">
+            <li><%= t(".breadcrumbs") %> <%= link_to t(".homepage"), root_url %></li>
+            <% @breadcrumbs.each do |txt, path| %>
+              <li><%= link_to(h(txt), path) %></li>
+            <% end %>
+          </ul>
+          <div class="clear"></div>
+        <% end %>
         <%= yield %>
       </div>
     </div>
