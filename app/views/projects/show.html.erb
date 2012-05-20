@@ -13,7 +13,7 @@
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%if role.name.present? %><%= role.name %><% else %><strong>Gesucht! Kommentar hinterlassen!</strong><%end %></li>
+      <li><%= role.title %>: <%if role.name.present? %><%= role.name %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
   </ul>
 <% end %>
@@ -31,7 +31,11 @@
   <h2><%= t("projects.headlines.pictures") %></h2>
   <ul>
     <% @pictures.each do |picture| %>
-      <li><%= image_tag(picture.path) %></li>
+      <%= image_tag picture.image_url(:thumb) %>
+    <% end %>
+    <br />
+    <% @pictures.each do |picture| %>
+      <%= picture.title %>
     <% end %>
   </ul>
 <% end %>
@@ -44,7 +48,7 @@
   </li>
 <% end %>
 </ul>
-<%= form_for([@project, @project.comments.build]) do |f| %>
+<%= form_for [@project, @project.comments.build] do |f| %>
   <div>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.label :content, t("projects.form.label_comment") %><br />

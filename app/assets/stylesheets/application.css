@@ -40,6 +40,12 @@ h1 {
     height: 48px;
     vertical-align: middle; }
 
+h2 {
+  margin: 20px 0;
+  border-bottom: 1px #ccc dotted;
+  color: #aaa;
+  text-transform: uppercase; }
+
 .clear {
   clear: both; }
 

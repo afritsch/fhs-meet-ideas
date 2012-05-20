@@ -89,6 +89,7 @@ en:
       published_by: "Das Projekt wurde angelegt von:"
       status: "Status:"
       timeText: "on"
+      wanted: "Gesucht! Kommentar hinterlassen!"
   time:
     formats:
       default: "%d.%m.%Y, %H:%M"

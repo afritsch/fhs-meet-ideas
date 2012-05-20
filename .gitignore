@@ -21,3 +21,4 @@ database.yml
 .buildpath
 .project
 .DS_Store
+/public/uploads/

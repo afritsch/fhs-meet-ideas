@@ -10,7 +10,7 @@
   </script>
 <% end %>
 
-<%= form_for(@project) do |f| %>
+<%= form_for @project, :html => { :multipart => true } do |f| %>
   <h2><%= t("projects.headlines.description") %></h2>
   <div>
     <%= f.label :title, t("projects.form.label_title") %><br />
@@ -44,6 +44,8 @@
       <%= render "pictures", :f => builder %>
     <% end %>
     <p><%= link_to_add_fields t("projects.form.add_picture"), f, :pictures %></p>
+  </div>
+  <div>
   </div>
   <div>
     <%= f.submit t("common.send") %>

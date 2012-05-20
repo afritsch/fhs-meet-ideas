@@ -28,12 +28,11 @@ end
 gem 'jquery-rails'
 gem 'rails3-jquery-autocomplete'
 gem 'capistrano'
-
+gem 'rmagick'
+gem 'carrierwave'
 gem 'net-ldap'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
