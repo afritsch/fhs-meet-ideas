@@ -104,7 +104,7 @@ en:
     attr:
       description: "Die Beschreibung"
       status: "Der Status"
-      title: "Der Title"
+      title: "Der Titel"
     length:
       long: "Der Titel muss weniger als %{count} Zeichen besitzen!"
       short: "Der Titel muss mehr als %{count} Zeichen besitzen!"

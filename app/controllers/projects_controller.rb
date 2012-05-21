@@ -73,6 +73,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     
     update_date(:date)
+    @project.updated_at = Time.now
     @project.update_attributes(params[:project])
     
     flash[:notice] = t("projects.edit.updated")
