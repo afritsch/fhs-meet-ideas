@@ -256,14 +256,13 @@ h2 {
 }
 
 #projectlist {
-  list-style: none;
   @include transition;
   
-  > a {
+  > li > a {
     @include a-block;
   }
   
-  > a:hover {
+  > li > a:hover {
     background-color: #ddd;
   }
 }
