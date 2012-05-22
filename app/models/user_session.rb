@@ -25,6 +25,7 @@ class UserSession < ActiveRecord::Base
   def ldap user, password
     require "net/ldap"
 
+    # thanks to mediacube portfolio
     if Rails.env.production?
       ldap = Net::LDAP.new(
         :host=>"denise.core.fh-salzburg.ac.at",

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :require_login
   
+  # thanks to ruby-forum.com/topic/187836
   def update_date(*args)
     rec = args.shift
     args.each do |e|
@@ -13,6 +14,8 @@ class ApplicationController < ActionController::Base
   
   protected
   
+  # thanks to
+  # http://szeryf.wordpress.com/2008/06/13/easy-and-flexible-breadcrumbs-for-rails/
   def add_breadcrumb name, url = ''
     @breadcrumbs ||= []
     url = eval(url) if url =~ /_path|_url|@/

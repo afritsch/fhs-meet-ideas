@@ -3,5 +3,6 @@ class Picture < ActiveRecord::Base
   
   belongs_to :projects
   
+  # carrierwave picture uploader gem
   mount_uploader :image, PictureUploader
 end
