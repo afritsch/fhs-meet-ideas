@@ -185,7 +185,6 @@ h2 {
     width: 630px; }
 
 #projectlist {
-  list-style: none;
   -moz-transition-property: color;
   -moz-transition-duration: .5s;
   -moz-transition-timing-function: ease;
@@ -193,11 +192,11 @@ h2 {
   -webkit-transition-duration: .5s;
   -o-transition-property: color;
   -o-transition-duration: .5s; }
-  #projectlist > a {
+  #projectlist > li > a {
     display: block;
     width: 100%;
     height: 100%; }
-  #projectlist > a:hover {
+  #projectlist > li > a:hover {
     background-color: #ddd; }
 
 #footer {
