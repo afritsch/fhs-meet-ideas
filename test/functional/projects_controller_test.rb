@@ -14,7 +14,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
   
   test "should show project" do
-    #TODO: get :show, :id => projects(:one).id
+    get :show, :id => projects(:one).id
     assert_response :success
   end
   

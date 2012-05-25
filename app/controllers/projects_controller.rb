@@ -10,28 +10,12 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = Project.find_by_sql(["
-      SELECT projects.*, users.fullname, users.email
-      FROM projects
-      INNER JOIN users
-        ON users.id = projects.user_id
-      WHERE projects.id = ?",
-      params[:id]
-    ]).first()
-    
-    @roles = Project.find(params[:id]).roles
-    @pictures = Project.find(params[:id]).pictures
-    @appointments = Project.find(params[:id]).appointments
-    
-    @comments = Project.find_by_sql(["
-      SELECT comments.created_at, comments.content, users.email, users.fullname
-      FROM comments
-      INNER JOIN users
-        ON users.id = comments.user_id
-      WHERE comments.project_id = ?",
-      params[:id]
-    ])
-    
+    @project = Project.find(params[:id], :select => "projects.*, users.email, users.fullname", :joins => :user)
+    @roles = @project.roles.select("name, title")
+    @pictures = @project.pictures.select("image, title")
+    @appointments = @project.appointments.select("date, description")
+    @comments = @project.comments.find(:all, :select => "comments.content, comments.created_at, users.email, users.fullname", :joins => :user)
+        
     add_breadcrumb @project.title, @project
   end
   

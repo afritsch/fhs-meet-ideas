@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_many :pictures, :dependent => :destroy
   has_many :roles, :dependent => :destroy
-  has_many :users
+  belongs_to :user
   
   accepts_nested_attributes_for :appointments, :reject_if => lambda { |a| a[:date].blank? || a[:description].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :pictures, :reject_if => lambda { |a| a[:image].blank? || a[:title].blank? }, :allow_destroy => true
