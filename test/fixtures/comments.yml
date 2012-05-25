@@ -2,12 +2,10 @@
 
 one:
   project_id: 1
-  person_id: 1
-  content: MyText
-  date: 2012-05-07 14:52:43
+  user_id: 1
+  content: Das ist ein Testkommentar.
 
 two:
   project_id: 1
-  person_id: 1
-  content: MyText
-  date: 2012-05-07 14:52:43
+  user_id: 1
+  content: Und auch das ist ein Kommentar.

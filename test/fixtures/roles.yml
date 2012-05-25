@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  title: Programmierer
+  project_id: 1
+  name: Andreas Fritsch
 
 two:
-  title: MyString
+  title: Designer
+  project_id: 2
+  name: Soeren Hentzschel

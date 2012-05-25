@@ -2,8 +2,10 @@
 
 one:
   project_id: 1
-  path: MyText
+  image: /img/picture_1.png
+  title: Bild 1
 
 two:
   project_id: 1
-  path: MyText
+  image: /img/picture_2.png
+  title: Bild 2

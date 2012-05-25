@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  status: MyString
-  description: MyText
+  title: meet-ideas
+  status: in Entwicklung
+  description: meet-ideas ist die Ideen-Plattform der FH-Salzburg.
+  user_id: 651
 
 two:
-  title: MyString
-  status: MyString
-  description: MyText
+  title: FH-Boerse
+  status: in Betrieb
+  description: Die FH-Boerse ist die Boerse fuer alles an der FH-Salzburg.
+  user_id: 551

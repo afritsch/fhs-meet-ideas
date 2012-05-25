@@ -1,31 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  fhsid: MyString
-  firstname: MyString
-  surname: MyString
-  title: MyString
-  email: MyString
-  isfemale: 1
-  profile_visible: 1
-  type: 
-  is_admin: 1
-  description: MyText
-  cached_slug: MyString
-  avatar: MyString
-  fullname: MyString
+  id: 651
+  fhsid: fhs32637
+  email: shentzschel.mmt-b2010@fh-salzburg.ac.at
+  fullname: Soeren Hentzschel
+  phone: 0301234567
 
 two:
-  fhsid: MyString
-  firstname: MyString
-  surname: MyString
-  title: MyString
-  email: MyString
-  isfemale: 1
-  profile_visible: 1
-  type: 
-  is_admin: 1
-  description: MyText
-  cached_slug: MyString
-  avatar: MyString
-  fullname: MyString
+  id: 551
+  fhsid: fhs31457
+  email: afritsch.mmt-b2009@fh-salzburg.ac.at
+  fullname: Andreas Fritsch
+  phone: 0301234567

@@ -1,24 +1,15 @@
 require 'test_helper'
 
 class UserSessionsControllerTest < ActionController::TestCase
-  test "should get new" do
+  test "should get new when not logged in" do
+    @request.session[:id] = nil
     get :new
     assert_response :success
   end
-
-  test "should get create" do
-    get :create
-    assert_response :success
+  
+  test "should get new when logged in" do
+    get :new
+    assert_redirected_to root_url
+    assert_equal I18n.t("auth.already_logged_in"), flash[:error]
   end
-
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
-
-  test "should get show" do
-    get :show
-    assert_response :success
-  end
-
 end
