@@ -13,17 +13,6 @@
   <%= stylesheet_link_tag "application", "jquery.noty", "noty_theme_default" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" %>
   <%= csrf_meta_tags %>
-  <% if flash[:notice] || flash[:error] %>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      var noty_id = noty({
-        "text":"<% if flash[:notice] %><%= flash[:notice] %><% else %><%= flash[:error] %><% end %>",
-        "layout":"topCenter",
-        "type":"<% if flash[:notice] %>success<% else %>error<% end %>"
-      });
-    });
-  </script>
-  <% end %>
 </head>
 
 <body>
@@ -68,6 +57,18 @@
     </div>
   </div>
   <%= javascript_include_tag "application", "jquery.noty", "timepicker" %>
+  <% if flash[:notice] || flash[:error] %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var noty_id = noty({
+        "text":"<% if flash[:notice] %><%= flash[:notice] %><% else %><%= flash[:error] %><% end %>",
+        "layout":"topCenter",
+        "type":"<% if flash[:notice] %>success<% else %>error<% end %>"
+      });
+    });
+  </script>
+  <% end %>
+  <%= yield :javascript %>
 </body>
 
 </html>

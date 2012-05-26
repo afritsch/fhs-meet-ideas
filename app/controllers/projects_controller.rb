@@ -58,10 +58,13 @@ class ProjectsController < ApplicationController
     
     update_date(:date)
     @project.updated_at = Time.now
-    @project.update_attributes(params[:project])
     
-    flash[:notice] = t("projects.edit.updated")
-    redirect_to @project
+    if @project.update_attributes(params[:project]) 
+      flash[:notice] = t("projects.edit.updated")
+      redirect_to @project
+    else
+      render "edit"
+    end
   end
   
   def destroy

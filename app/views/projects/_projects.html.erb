@@ -1,13 +1,15 @@
-<% if @project.errors.any? %>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      var noty_id = noty({
-        "text":"<% @project.errors.full_messages.each do |message| %><%= message %><br /><% end %>",
-        "layout":"topCenter",
-        "type":"error"
+<% content_for :javascript do %>
+  <% if @project.errors.any? %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var noty_id = noty({
+          "text":"<% @project.errors.full_messages.each do |message| %><%= message %><br /><% end %>",
+          "layout":"topCenter",
+          "type":"error"
+        });
       });
-    });
-  </script>
+    </script>
+  <% end %>
 <% end %>
 
 <%= form_for @project, :html => { :multipart => true } do |f| %>
