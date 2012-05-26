@@ -42,7 +42,7 @@
 <h2><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= image_tag avatar_url(comment) %> <%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
+  <li id="comment-<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>

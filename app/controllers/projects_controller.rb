@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
     @roles = @project.roles.select("name, title")
     @pictures = @project.pictures.select("image, title")
     @appointments = @project.appointments.select("date, description")
-    @comments = @project.comments.find(:all, :select => "comments.content, comments.created_at, users.email, users.fullname", :joins => :user)
+    @comments = @project.comments.find(:all, :select => "comments.content, comments.created_at, comments.id, users.email, users.fullname", :joins => :user)
         
     add_breadcrumb @project.title, @project
   end

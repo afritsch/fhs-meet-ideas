@@ -2,10 +2,10 @@
 
 one:
   project_id: 1
-  user_id: 1
+  user_id: 651
   content: Das ist ein Testkommentar.
 
 two:
   project_id: 1
-  user_id: 1
+  user_id: 551
   content: Und auch das ist ein Kommentar.
