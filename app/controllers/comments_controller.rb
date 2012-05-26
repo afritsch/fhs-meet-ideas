@@ -5,6 +5,6 @@ class CommentsController < ApplicationController
     @comment.user_id = params[:comment][:user_id]
     @comment.save
     
-    redirect_to project_path(@project) + "#comment-" + @comment.id.to_s
+    redirect_to project_path(@project), :anchor => "#comment-" + @comment.id.to_s
   end
 end
