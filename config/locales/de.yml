@@ -49,6 +49,9 @@ de:
       report: "Fehler und Probleme melden an"
       title: "Impressum"
   projects:
+    comment:
+      failed: "Kommentar muss mind. 3 Zeichen besitzen!"
+      saved: "Kommentar erfolgreich hinzugefügt!"
     edit:
       denied: "Das ist nicht dein Projekt!"
       title: "Projekt \"%{project}\" bearbeiten"
@@ -102,6 +105,7 @@ de:
       title: "Anmelden"
   validations:
     attr:
+      appointment_description: "Die Termin-Beschreibung"
       description: "Die Beschreibung"
       status: "Der Status"
       title: "Der Titel"
