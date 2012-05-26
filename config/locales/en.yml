@@ -105,7 +105,12 @@ en:
       title: "Anmelden"
   validations:
     attr:
+      appointment_description: "Die Termin-Beschreibung"
+      comment: "Der Kommentar"
       description: "Die Beschreibung"
+      picture_title: "Der Bild-Titel"
+      role_title: "Der Rollen-Titel"
+      role_name: "Der Name"
       status: "Der Status"
       title: "Der Titel"
     length:
