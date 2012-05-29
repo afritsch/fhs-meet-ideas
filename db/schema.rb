@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520151026) do
+ActiveRecord::Schema.define(:version => 20120529140339) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20120520151026) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "appointments", ["project_id"], :name => "index_appointments_on_project_id"
+
   create_table "comments", :force => true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -29,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20120520151026) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "comments", ["project_id", "user_id"], :name => "index_comments_on_project_id_and_user_id"
+
   create_table "pictures", :force => true do |t|
     t.integer  "project_id"
     t.text     "image"
@@ -36,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20120520151026) do
     t.datetime "updated_at", :null => false
     t.string   "title"
   end
+
+  add_index "pictures", ["project_id"], :name => "index_pictures_on_project_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title"
@@ -46,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20120520151026) do
     t.integer  "user_id"
   end
 
+  add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
@@ -53,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20120520151026) do
     t.integer  "project_id"
     t.string   "name"
   end
+
+  add_index "roles", ["project_id"], :name => "index_roles_on_project_id"
 
   create_table "user_sessions", :force => true do |t|
     t.string   "login"

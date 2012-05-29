@@ -1,6 +1,6 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/new.png" %> <%= t(".title") %><% end %>
 
-<%= render "projects" %>
+<%= render "projects", :project => @project %>
 
 <%= link_to t("common.back"), projects_path %>

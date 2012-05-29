@@ -21,7 +21,7 @@ class UserSessionsController < ApplicationController
       redirect_to root_url
     else
       flash[:error] = t("auth.login_failure")
-      redirect_to login_path
+      render "new"
     end
   end
 

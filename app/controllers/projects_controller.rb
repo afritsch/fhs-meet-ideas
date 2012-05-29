@@ -10,11 +10,11 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = Project.find(params[:id], :select => "projects.*, users.email, users.fullname", :joins => :user)
+    @project = Project.find(params[:id], :joins => :user, :select => "projects.*, users.email, users.fullname")
     @roles = @project.roles.select("name, title")
     @pictures = @project.pictures.select("image, title")
     @appointments = @project.appointments.select("date, description")
-    @comments = @project.comments.find(:all, :select => "comments.content, comments.created_at, comments.id, users.email, users.fullname", :joins => :user)
+    @comments = @project.comments.joins(:user).select("comments.content, comments.created_at, comments.id, users.email, users.fullname").order("comments.id")
         
     add_breadcrumb @project.title, @project
   end
@@ -44,13 +44,13 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     
-    add_breadcrumb @project.title, @project
-    add_breadcrumb t("common.edit"), edit_project_path(@project)
-    
     unless @project.user_id === current_user.id
       flash[:error] = t("projects.edit.denied")
       redirect_to @project
     end
+    
+    add_breadcrumb @project.title, @project
+    add_breadcrumb t("common.edit"), edit_project_path(@project)
   end
   
   def update
@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
     update_date(:date)
     @project.updated_at = Time.now
     
-    if @project.update_attributes(params[:project]) 
+    if @project.update_attributes(params[:project])
       flash[:notice] = t("projects.edit.updated")
       redirect_to @project
     else

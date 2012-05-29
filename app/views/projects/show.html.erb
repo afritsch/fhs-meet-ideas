@@ -12,7 +12,7 @@
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%if role.name.present? %><%= role.name %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
+      <li><%= role.title %>: <%if role.name? %><%= role.name %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
   </ul>
 <% end %>
@@ -34,7 +34,7 @@
     <% end %>
     <br />
     <% @pictures.each do |picture| %>
-      <%= picture.title %>
+      <%= picture.image_url %>
     <% end %>
   </ul>
 <% end %>
@@ -42,14 +42,13 @@
 <h2><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
-  <li id="comment-<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
+  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>
 </ul>
 <%= form_for [@project, @project.comments.build] do |f| %>
   <div>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.label :content, t("projects.form.label_comment") %><br />
     <%= f.text_area :content, :rows => 3 %>
   </div>

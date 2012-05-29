@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
+//= require jquery.noty
+//= require timepicker
 // require_tree .
 
 $(document).ready(function() {

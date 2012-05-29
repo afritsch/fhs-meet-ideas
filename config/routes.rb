@@ -8,7 +8,7 @@ FhsMeetIdeas::Application.routes.draw do
   match "logout" => "user_sessions#destroy"
   
   # projects
-  resources :projects, :only => [:index, :show, :new, :create, :edit, :update, :destroy] do
+  resources :projects do
     resources :comments, :only => [:create]
     get :autocomplete_project_status, :on => :collection
     get :autocomplete_role_title, :on => :collection

@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   # thanks to http://szeryf.wordpress.com/2008/06/13/easy-and-flexible-breadcrumbs-for-rails/
   def add_breadcrumb name, url = ''
     @breadcrumbs ||= []
-    url = eval(url) if url =~ /_path|_url|@/
     @breadcrumbs << [name, url]
   end
  

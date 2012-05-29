@@ -1,13 +1,13 @@
 class UserSession < ActiveRecord::Base
   attr_accessible :login, :password
   
-  def initialize (options = {})
+  def initialize(options = {})
     super
     self.login = options[:login]
     self.password = options[:password]
   end
   
-  def save()
+  def save
     return false unless self.valid?
     
     user = User.find_by_fhsid self.login

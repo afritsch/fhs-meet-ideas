@@ -3,7 +3,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         var noty_id = noty({
-          "text":"<% @project.errors.full_messages.each do |message| %><%= message %><br /><% end %>",
+          "text":"<%= escape_javascript(@project.errors.full_messages.join("<br />")).html_safe %>",
           "layout":"topCenter",
           "type":"error"
         });
@@ -12,7 +12,7 @@
   <% end %>
 <% end %>
 
-<%= form_for @project, :html => { :multipart => true } do |f| %>
+<%= form_for project, :html => { :multipart => true } do |f| %>
   <h2><%= t("projects.headlines.description") %></h2>
   <div>
     <%= f.label :title, t("projects.form.label_title") %><br />
