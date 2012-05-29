@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class UserSessionsControllerTest < ActionController::TestCase
+  def setup
+    @request.session[:id] = users(:one).id
+  end
+  
   test "should get new when not logged in" do
     @request.session[:id] = nil
     get :new

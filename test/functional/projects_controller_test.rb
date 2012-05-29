@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
+  def setup
+    @request.session[:id] = users(:one).id
+  end
+  
   test "should go to login page when not logged in" do
     @request.session[:id] = nil
     get :new
@@ -37,7 +41,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
   
   test "should update project" do
-    put :update, :id => projects(:one).id, :project => { }
+    put :update, :id => projects(:one).id, :project => { :title => projects(:two).title, :status => projects(:two).status, :description => projects(:two).description }
     assert_redirected_to project_path(assigns(:project))
     assert_equal I18n.t("projects.edit.updated"), flash[:notice]
   end
