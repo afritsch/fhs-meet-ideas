@@ -1,6 +1,7 @@
 class UserSession < ActiveRecord::Base
   attr_accessible :login, :password
   
+  # thanks to mediacube portfolio
   def initialize(options = {})
     super
     self.login = options[:login]
@@ -8,8 +9,6 @@ class UserSession < ActiveRecord::Base
   end
   
   def save
-    return false unless self.valid?
-    
     user = User.find_by_fhsid self.login
     
     if !user || !ldap(self.login, self.password)
@@ -25,7 +24,6 @@ class UserSession < ActiveRecord::Base
   def ldap user, password
     require "net/ldap"
 
-    # thanks to mediacube portfolio
     if Rails.env.production?
       ldap = Net::LDAP.new(
         :host=>"denise.core.fh-salzburg.ac.at",
