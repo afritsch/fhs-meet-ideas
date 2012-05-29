@@ -5,15 +5,6 @@ class ApplicationController < ActionController::Base
   
   protected
   
-  # thanks to ruby-forum.com/topic/187836
-  def update_date(*args)
-    rec = args.shift
-    args.each do |e|
-      d,m,y,time = params[rec][e].split(/\.| /)
-      params[rec][e] = y + '-' + m + '-' + d + ' ' + time unless y.nil?
-    end
-  end
-  
   # thanks to http://szeryf.wordpress.com/2008/06/13/easy-and-flexible-breadcrumbs-for-rails/
   def add_breadcrumb name, url = ''
     @breadcrumbs ||= []

@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id], :joins => :user, :select => "projects.*, users.email, users.fullname")
     @roles = @project.roles.select("name, title")
     @pictures = @project.pictures.select("image, title")
-    @appointments = @project.appointments.select("date, description")
+    @appointments = @project.appointments.select("date, description").order("date")
     @comments = @project.comments.joins(:user).select("comments.content, comments.created_at, comments.id, users.email, users.fullname").order("comments.id")
         
     add_breadcrumb @project.title, @project
@@ -31,7 +31,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.user_id = current_user.id
-    update_date(:date)
 
     if @project.save
       flash[:notice] = t("projects.new.saved")
@@ -56,7 +55,6 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     
-    update_date(:date)
     @project.updated_at = Time.now
     
     if @project.update_attributes(params[:project])
