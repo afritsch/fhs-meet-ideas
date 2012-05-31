@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CreateProjectTest < ActionDispatch::IntegrationTest
+class ProjectTest < ActionDispatch::IntegrationTest
   def login
     visit root_path
     click_link I18n.t("layouts.application.login")
