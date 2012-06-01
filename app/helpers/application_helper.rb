@@ -16,10 +16,21 @@ module ApplicationHelper
     fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
       render(association.to_s, :f => builder)
     end
-    link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
+    link_to(name, "#", :id => "add_" + association.to_s.singularize)
   end
   
   def link_to_remove_fields name, f
     f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
+  end
+  
+  private
+  
+  # reimplemented link_to_function because it's deprecated since rails 3.2.4.
+  # see http://api.rubyonrails.org/classes/ActionView/Helpers/JavaScriptHelper.html#method-i-link_to_function
+  def link_to_function(name, function, html_options={})
+    onclick = "#{"#{html_options[:onclick]}; " if html_options[:onclick]}#{function}; return false;"
+    href = html_options[:href] || '#'
+    
+    content_tag(:a, name, html_options.merge(:href => href, :onclick => onclick))
   end
 end
