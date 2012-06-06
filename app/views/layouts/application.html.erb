@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  
+
   <title><%= yield :title %><%= t(".title_suffix") %></title>
-  
+
   <meta name="description" lang="<%= t(".lang") %>" content="<%= t(".meta_description") %>" />
   <meta name="keywords" lang="<%= t(".lang") %>" content="<%= t(".meta_keywords") %>" />
   <meta name="robots" content="index, follow" />
-  
+
   <%= stylesheet_link_tag "application" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" %>
   <%= csrf_meta_tags %>
@@ -31,7 +31,7 @@
       <div class="clear"></div>
       <div id="content">
         <% if content_for?(:headline) %><h1><%= yield :headline %></h1><% end %>
-        
+
         <% if @breadcrumbs %>
           <ul id="breadcrumbs">
             <li><%= t(".breadcrumbs") %> <%= link_to t(".homepage"), root_url %></li>

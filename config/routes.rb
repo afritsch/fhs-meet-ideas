@@ -1,10 +1,10 @@
 FhsMeetIdeas::Application.routes.draw do
   # user authentication
-  scope :constraints => { :protocol => Rails.env.production? ? 'https'  : 'http' } do
-    resources :user_sessions, :only => [:new, :create, :destroy]
-  end
+  resource :user_sessions, :only => [:new, :create, :destroy], :constraints => { :protocol => "https" }
+  resource :user_sessions, :only => [:new, :create, :destroy] if Rails.env != "production"
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
+
 
   # projects
   resources :projects do
