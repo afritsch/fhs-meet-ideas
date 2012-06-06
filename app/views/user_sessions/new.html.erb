@@ -3,7 +3,7 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/login.png" %> <%= t(".title") %><% end %>
 
-<%= form_for user_session do |f| %>  
+<%= form_for user_session, { :protocol => 'https' } do |f| %>
   <div>
     <p><%= f.label "login", t(".fhsid") %></p>
     <p><%= f.text_field "login" %></p>

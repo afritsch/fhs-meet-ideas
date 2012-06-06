@@ -7,7 +7,8 @@ FhsMeetIdeas::Application.routes.draw do
   get "pages/imprint"
 
   # user authentication
-  resource :user_sessions, :only => [:new, :create, :destroy]
+  resource :user_sessions, :only => [:new, :create, :destroy], :constraints => { :protocol => "https" }
+  resource :user_sessions, :only => [:new, :create, :destroy] if Rails.env != "production"
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
