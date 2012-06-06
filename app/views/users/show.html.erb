@@ -1,0 +1,17 @@
+<% content_for :title, @user.fullname %>
+<% content_for :headline do %><%= image_tag "/images/headlines/projects.png" %> <%= @user.fullname %><% end %>
+
+<%= @user.fullname %> - <%= @user.email %>
+
+<div>
+Ist an folgenden Projekten beteiligt:<br />
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+        <a href="<%= url_for(project) %>">
+          <%= project.title %>
+        </a>
+    </li>
+  <% end %>
+</ul>
+</div>

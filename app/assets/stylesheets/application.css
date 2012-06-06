@@ -2,6 +2,7 @@
 *= require jquery-ui
 *= require jquery.noty
 *= require noty_theme_default
+*= require jquery.fancybox
 */
 html {
   overflow-y: scroll;

@@ -30,12 +30,14 @@
   <h2><%= t("projects.headlines.pictures") %></h2>
   <ul>
     <% @pictures.each do |picture| %>
-      <%= image_tag picture.image_url(:thumb) %>
+      <div style="float:left;margin-right:10px;">
+        <%= picture.title %><br />
+        <a class="fancybox" rel="gallery1" href="<%= picture.image_url %>" title="<%= picture.title %>">
+          <img src="<%= picture.image_url(:thumb) %>" alt="<%= picture.title %>" />
+        </a>
+      </div>
     <% end %>
-    <br />
-    <% @pictures.each do |picture| %>
-      <%= picture.title %>
-    <% end %>
+    <div style="clear:both;"></div>
   </ul>
 <% end %>
 

@@ -16,6 +16,7 @@
 //= require autocomplete-rails
 //= require jquery.noty
 //= require timepicker
+//= require jquery.fancybox
 // require_tree .
 
 $(document).ready(function() {
@@ -32,6 +33,11 @@ $(document).ready(function() {
   };
   $.timepicker.setDefaults($.timepicker.regional['de']);
   $('.timepicker').timepicker();
+
+  $(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
 });
 
 // thanks to railscasts 197
@@ -39,7 +45,7 @@ function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
-  
+
   if(association === 'appointments') {
     $('.timepicker').timepicker();
   }
