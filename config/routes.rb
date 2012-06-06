@@ -1,14 +1,8 @@
 FhsMeetIdeas::Application.routes.draw do
-  get "user/index"
-
-  get "user/show"
-
-  # static pages
-  get "pages/imprint"
-
   # user authentication
-  resource :user_sessions, :only => [:new, :create, :destroy], :constraints => { :protocol => "https" }
-  resource :user_sessions, :only => [:new, :create, :destroy] if Rails.env != "production"
+  scope :constraints => { :protocol => Rails.env.production? ? 'https'  : 'http' } do
+    resources :user_sessions, :only => [:new, :create, :destroy]
+  end
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
@@ -22,6 +16,9 @@ FhsMeetIdeas::Application.routes.draw do
 
   #user
   resources :users, :only => [:index, :show]
+
+  # static pages
+  get "pages/imprint"
 
   # root route
   get "home/index"
