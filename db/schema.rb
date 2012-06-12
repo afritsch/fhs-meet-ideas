@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612143311) do
+ActiveRecord::Schema.define(:version => 20120612145144) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20120612143311) do
   end
 
   add_index "comments", ["project_id", "user_id"], :name => "index_comments_on_project_id_and_user_id"
+
+  create_table "followups", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pictures", :force => true do |t|
     t.integer  "project_id"

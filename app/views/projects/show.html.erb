@@ -3,6 +3,8 @@
 
 <h2><%= t("projects.headlines.description") %></h2>
 
+<p><%= link_to "Folgen", followups_path(:project_id => @project), :method => :post %></p>
+
 <p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>
 
 <p><strong><%= t(".status") %></strong> <%= @project.status %></p>
@@ -41,10 +43,18 @@
   </ul>
 <% end %>
 
+<h2>Diese Leute folgen dem Projekt:</h2>
+
+<% @project.followups.each do |followup| %>
+  <a href="<%= url_for(followup.user) %>">
+    <%= followup.user.fullname %> |
+  </a>
+<% end %>
+
 <h2><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
-  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= comment.fullname %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
+  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>

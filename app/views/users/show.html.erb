@@ -14,4 +14,17 @@ Ist an folgenden Projekten beteiligt:<br />
     </li>
   <% end %>
 </ul>
+
+<h2><%= @user.fullname %> folgt folgenden Projekten:</h2>
+
+<ul>
+<% @user.followups.each do |followup| %>
+  <li>
+    <a href="<%= url_for(followup.project) %>">
+      <%= followup.project.title %>
+    </a> TODO: <%= link_to "Nicht mehr folgen", followup, :method => :delete %>
+  </li>
+<% end %>
+</ul>
+
 </div>

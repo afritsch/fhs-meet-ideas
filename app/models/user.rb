@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :projects
   has_many :roles
+
+  has_many :followups
+  has_many :projects, :through => :followups
 end

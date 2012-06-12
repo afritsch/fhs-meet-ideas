@@ -16,6 +16,9 @@ FhsMeetIdeas::Application.routes.draw do
   #user
   resources :users, :only => [:index, :show]
 
+  #followups
+  resources :followups, :only => [:create, :destroy]
+
   # static pages
   get "pages/imprint"
 

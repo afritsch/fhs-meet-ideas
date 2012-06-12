@@ -7,6 +7,9 @@ class Project < ActiveRecord::Base
   has_many :roles, :dependent => :destroy
   belongs_to :user
 
+  has_many :followups
+  has_many :users, :through => :followups
+
   accepts_nested_attributes_for :appointments, :reject_if => lambda { |a| a[:date].blank? || a[:description].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :pictures, :reject_if => lambda { |a| a[:image].blank? || a[:title].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :roles, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
