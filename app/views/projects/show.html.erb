@@ -43,12 +43,14 @@
   </ul>
 <% end %>
 
-<h2>Diese Leute folgen dem Projekt:</h2>
+<% if @project.followups.count > 0 %>
+  <h2>Diese Leute folgen dem Projekt:</h2>
 
-<% @project.followups.each do |followup| %>
-  <a href="<%= url_for(followup.user) %>">
-    <%= followup.user.fullname %> |
-  </a>
+  <% @project.followups.each do |followup| %>
+    <a href="<%= url_for(followup.user) %>">
+      <%= followup.user.fullname %> |
+    </a>
+  <% end %>
 <% end %>
 
 <h2><%= t("projects.headlines.comments") %></h2>
