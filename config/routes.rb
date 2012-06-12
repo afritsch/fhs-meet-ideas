@@ -5,7 +5,6 @@ FhsMeetIdeas::Application.routes.draw do
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
-
   # projects
   resources :projects do
     resources :comments, :only => [:create]

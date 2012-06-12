@@ -1,14 +1,28 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/projects.png" %> <%= t(".title") %><% end %>
 
+<h2>Diese Leute haben bereits Projekte:</h2>
 <ul>
-  <% @users.each do |user| %>
+  <% @users_with_projects.each do |user| %>
     <li>
         <a href="<%= url_for(user) %>">
-          <%= user.fullname %> gehoeren <%= user.projects.count %> Projekte
+          <%= user.fullname %> ist bei <%= user.projects.count %> Projekten dabei.
         </a>
     </li>
   <% end %>
 </ul>
 
-<%= will_paginate @users, :previous_label => '&laquo; Zurueck', :next_label => 'Vor &raquo;' %>
+<%= will_paginate @users_with_projects, :param_name => 'withProjects', :previous_label => '&laquo; Zurueck', :next_label => 'Vor &raquo;' %>
+
+<h2>Diese Leute haben noch keine Projekte:</h2>
+<ul>
+  <% @users_without_projects.each do |user| %>
+    <li>
+        <a href="<%= url_for(user) %>">
+          <%= user.fullname %>
+        </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @users_without_projects, :param_name => 'withoutProjects', :previous_label => '&laquo; Zurueck', :next_label => 'Vor &raquo;' %>
