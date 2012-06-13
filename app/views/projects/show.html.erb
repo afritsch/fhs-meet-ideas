@@ -6,7 +6,7 @@
 <% if following?(@project.id) %>
   <p><%= link_to t("followups.links.unfollow"), followup_path(following?(@project.id)), :method => :delete %></p>
 <% else %>
-  <p><%= link_to t("followups.links.unfollow"), followups_path(:project_id => @project), :method => :post %></p>
+  <p><%= link_to t("followups.links.follow"), followups_path(:project_id => @project), :method => :post %></p>
 <% end %>
 
 <p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>

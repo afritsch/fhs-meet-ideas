@@ -16,17 +16,17 @@ class ProjectTest < ActionDispatch::IntegrationTest
     visit projects_path
     page.has_content? I18n.t("user_sessions.new.title")
   end
-  
+
   test "login" do
     login
   end
-  
+
   test "show project list" do
     login
     click_link I18n.t("home.user.projects")
     assert current_path == projects_path
   end
-  
+
   test "create project" do
     login
     click_link I18n.t("home.user.projects")
@@ -43,7 +43,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
     click_button I18n.t("common.send")
     page.has_content? projects(:one).title
   end
-  
+
   test "show project" do
     login
     click_link I18n.t("home.user.projects")
@@ -51,7 +51,16 @@ class ProjectTest < ActionDispatch::IntegrationTest
     click_link projects(:one).title
     page.has_content? projects(:one).title
   end
-  
+
+  test "follow and unfollow project" do
+    login
+    click_link I18n.t("home.user.projects")
+    assert current_path == projects_path
+    click_link projects(:two).title
+    click_link I18n.t("followups.links.follow")
+    click_link I18n.t("followups.links.unfollow")
+  end
+
   test "edit project" do
     login
     click_link I18n.t("home.user.projects")
@@ -65,7 +74,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
     click_button I18n.t("common.send")
     page.has_content? projects(:two).title
   end
-  
+
   test "create comment" do
     login
     click_link I18n.t("home.user.projects")
@@ -76,7 +85,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
     click_button I18n.t("common.send")
     page.has_content? comments(:one).content
   end
-  
+
   test "destroy project" do
     login
     click_link I18n.t("home.user.projects")
@@ -86,7 +95,7 @@ class ProjectTest < ActionDispatch::IntegrationTest
     click_link I18n.t("common.delete")
     assert current_path == projects_path
   end
-  
+
   test "logout" do
     login
     click_link I18n.t("layouts.application.logout")
