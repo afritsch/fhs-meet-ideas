@@ -15,7 +15,7 @@ Ist an folgenden Projekten beteiligt:<br />
   <% end %>
 </ul>
 
-<% if @user.followups.count > 0 %>
+<% if @user.followups.exists? %>
   <h2><%= @user.fullname %> folgt folgenden Projekten:</h2>
 
   <ul>
@@ -23,7 +23,10 @@ Ist an folgenden Projekten beteiligt:<br />
     <li>
       <a href="<%= url_for(followup.project) %>">
         <%= followup.project.title %>
-      </a> TODO: <%= link_to "Nicht mehr folgen", followup, :method => :delete %>
+      </a>
+      <% if canUnfollow? %>
+        <%= link_to "Nicht mehr folgen", followup, :method => :delete %>
+      <% end %>
     </li>
   <% end %>
   </ul>

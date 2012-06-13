@@ -3,23 +3,27 @@
 
 <h2><%= t("projects.headlines.description") %></h2>
 
-<p><%= link_to "Folgen", followups_path(:project_id => @project), :method => :post %></p>
+<% if following?(@project.id) %>
+  <p><%= link_to "Nicht mehr folgen", followup_path(following?(@project.id)), :method => :delete %></p>
+<% else %>
+  <p><%= link_to "Folgen", followups_path(:project_id => @project), :method => :post %></p>
+<% end %>
 
 <p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>
 
 <p><strong><%= t(".status") %></strong> <%= @project.status %></p>
 <p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
 
-<% if @roles.count > 0 %>
+<% if @roles.exists? %>
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%if role.name? %><%= role.name %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
+      <li><%= role.title %>: <%if role.name? %><%= link_to role.name, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
   </ul>
 <% end %>
 
-<% if @appointments.count > 0 %>
+<% if @appointments.exists? %>
   <h2><%= t("projects.headlines.appointments") %></h2>
   <ul>
     <% @appointments.each do |appointment| %>
@@ -28,7 +32,7 @@
   </ul>
 <% end %>
 
-<% if @pictures.count > 0 %>
+<% if @pictures.exists? %>
   <h2><%= t("projects.headlines.pictures") %></h2>
   <ul>
     <% @pictures.each do |picture| %>
@@ -43,7 +47,7 @@
   </ul>
 <% end %>
 
-<% if @project.followups.count > 0 %>
+<% if @project.followups.exists? %>
   <h2>Diese Leute folgen dem Projekt:</h2>
 
   <% @project.followups.each do |followup| %>

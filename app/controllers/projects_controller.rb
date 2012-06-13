@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id], :joins => :user, :select => "projects.*, users.email, users.fullname")
-    @roles = @project.roles.select("name, title")
+    @roles = @project.roles.select("name, title, user_id")
     @pictures = @project.pictures.select("image, title")
     @appointments = @project.appointments.select("date, description").order("date")
     @comments = @project.comments.joins(:user).select("comments.content, comments.created_at, comments.id, comments.user_id, users.email, users.fullname").order("comments.id")

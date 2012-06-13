@@ -9,7 +9,12 @@
       <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %><br />
         <%= project.status %><br />
         <%= truncate(project.description, :length => 160) %>
-      </a>
+      </a><br />
+      <% if following?(project.id) %>
+        <%= link_to "Nicht mehr folgen", followup_path(following?(project.id)), :method => :delete %>
+      <% else %>
+        <%= link_to "Folgen", followups_path(:project_id => project), :method => :post %>
+      <% end %>
     </li>
   <% end %>
 </ul>
