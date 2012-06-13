@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ProjectUpdateMailerTest < ActionMailer::TestCase
-  def test_welcome_email
+  test "should deliver email" do
     user = users(:one)
     project = projects(:one)
 
@@ -12,5 +12,5 @@ class ProjectUpdateMailerTest < ActionMailer::TestCase
     assert_equal I18n.t("followups.mailer.subject", :project => project.title), email.subject
     assert_match(I18n.t("followups.mailer.body.welcome", :name => user.fullname), email.encoded)
     assert_match(I18n.t("followups.mailer.body.salutation"), email.encoded)
-  end
+  test
 end
