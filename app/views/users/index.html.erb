@@ -1,12 +1,12 @@
 <% content_for :title, t(".title") %>
-<% content_for :headline do %><%= image_tag "/images/headlines/projects.png" %> <%= t(".title") %><% end %>
+<% content_for :headline do %><%= image_tag "/images/headlines/users.png" %> <%= t(".title") %><% end %>
 
-<h2 id="with_projects">Diese Leute haben bereits Projekte:</h2>
+<h2 id="with_projects"><%= t(".headline_with_projects") %></h2>
 <ul>
   <% @users_with_projects.each do |user| %>
     <li>
         <a href="<%= url_for(user) %>">
-          <%= user.fullname %> ist bei <%= user.projects.count %> Projekten dabei.
+          <%= t(".involvement", :name => user.fullname, :count => user.projects.count) %>
         </a>
     </li>
   <% end %>
@@ -14,7 +14,7 @@
 
 <%= will_paginate @users_with_projects, :param_name => "with_projects", :params => { :anchor => "with_projects" } %>
 
-<h2 id="without_projects">Diese Leute haben noch keine Projekte:</h2>
+<h2 id="without_projects"><%= t(".headline_without_projects") %></h2>
 <ul>
   <% @users_without_projects.each do |user| %>
     <li>

@@ -4,6 +4,6 @@ class ProjectUpdateMailer < ActionMailer::Base
   def project_update(user, project)
     @user = user
     @project = project
-    mail(:to => "#{user.fullname} <#{user.email}>", :subject => "Es gibt Neues bei #{project.title}")
+    mail(:to => "#{user.fullname} <#{user.email}>", :subject => t("followups.mailer.subject", :project => @project.title))
   end
 end

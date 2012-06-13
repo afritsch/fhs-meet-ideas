@@ -13,6 +13,20 @@ en:
     send: "Send"
   errors:
     format: "%{message}"
+  followups:
+    fault: "Fehler beim Folgen des Projekts %{project}"
+    following: "Du folgst nun dem Projekt %{project}!"
+    links:
+      follow: "Projekt folgen"
+      unfollow: "Projekt nicht mehr folgen"
+    mailer:
+      body:
+        salutation: "Dein meet-ideas Team!"
+        text_1: "es gibt Änderungen bei %{project}!"
+        text_2: "Schaue direkt nach, was sich getan hat:"
+        welcome: "Hallo %{name},"
+      subject: "meet-ideas: Es gibt Neues bei %{project}!"
+    unfollowing: "Du folgst damit nicht länger dem Projekt %{project}!"
   home:
     button_login: "Mit FHS-Daten Anmelden!"
     guest:
@@ -45,9 +59,13 @@ en:
   pages:
     imprint:
       country: "Austria"
+      email: "Email:"
+      fax: "Fax:"
       institution: "University of Applied Sciences Salzburg GmbH"
+      phone: "Phone:"
       report: "Fehler und Probleme melden an"
       title: "Imprint"
+      website: "Internet:"
   projects:
     comment:
       failed: "Kommentar muss mind. 3 Zeichen besitzen!"
@@ -76,6 +94,7 @@ en:
       appointments: "Appointments:"
       comments: "Comments:"
       description: "Projektbeschreibung:"
+      followups: "Diese Leute folgen dem Projekt:"
       pictures: "Pictures:"
       roles: "Roles:"
     index:
@@ -103,6 +122,15 @@ en:
       fhsid: "FHS-Nummer"
       password: "Password"
       title: "Anmelden"
+  users:
+    index:
+      headline_with_projects: "Diese Leute haben bereits Projekte:"
+      headline_without_projects: "Diese Leute haben noch keine Projekte:"
+      involvement: "%{name} ist bei %{count} Projekten dabei."
+      title: "BenutzerInnen"
+    show:
+      followups: "Folgt folgenden Projekten:"
+      involvements: "Ist an folgenden Projekten beteiligt:"
   validations:
     attr:
       appointment_description: "Die Termin-Beschreibung"
@@ -117,6 +145,6 @@ en:
       long: "Der Titel muss weniger als %{count} Zeichen besitzen!"
       short: "Der Titel muss mehr als %{count} Zeichen besitzen!"
   will_paginate:
-    next_label: "Next &#8594;"
+    next_label: "Next page &#8594;"
     page_gap: "&hellip;"
-    previous_label: "&#8592; Previous"
+    previous_label: "&#8592; Previous page"

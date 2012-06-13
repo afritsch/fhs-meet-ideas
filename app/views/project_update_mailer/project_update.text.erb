@@ -1,8 +1,8 @@
-Hallo <%= @user.fullname %>,
+<%= t("followups.mailer.body.welcome", :name => @user.fullname) %>
 
-es gibt Änderungen bei <%= @project.title %>!
+<%= t("followups.mailer.body.text_1", :project => @project.title) %>
 
-Hier kannst du dir die Neuerungen ansehen:<br />
+<%= t("followups.mailer.body.text_2") %><br />
 <%= project_path(@project) %>
 
-Dein meet-ideas Team!
+<%= t("followups.mailer.body.salutation") %>

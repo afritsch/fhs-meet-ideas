@@ -8,10 +8,10 @@
     5412 Puch/Salzburg<br/>
     <%= t(".country") %>
   </address>
-  T +43-(0)50-2211-0<br/>
-  F +43-(0)50-2211-1099<br/>
-  E-Mail: <%= mail_to "press@fh-salzburg.ac.at", "press@fh-salzburg.ac.at", :encode => "hex" %><br/>
-  Web: <%= link_to "http://www.fh-salzburg.ac.at" %><br />
+  <%= t(".phone") %> +43-(0)50-2211-0<br/>
+  <%= t(".fax") %> +43-(0)50-2211-1099<br/>
+  <%= t(".email") %><%= mail_to "press@fh-salzburg.ac.at", "press@fh-salzburg.ac.at", :encode => "hex" %><br/>
+  <%= t(".website") %><%= link_to "http://www.fh-salzburg.ac.at" %><br />
   <br/>
   <%= t(".report") %>:<br/>
   <%= mail_to "afritsch.mmt-b2009@fh-salzburg.ac.at", "Andreas Fritsch", :encode => "hex" %><br />

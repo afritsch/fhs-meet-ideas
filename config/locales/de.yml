@@ -13,6 +13,20 @@ de:
     send: "Absenden"
   errors:
     format: "%{message}"
+  followups:
+    fault: "Fehler beim Folgen des Projekts %{project}"
+    following: "Du folgst nun dem Projekt %{project}!"
+    links:
+      follow: "Projekt folgen"
+      unfollow: "Projekt nicht mehr folgen"
+    mailer:
+      body:
+        salutation: "Dein meet-ideas Team!"
+        text_1: "es gibt Änderungen bei %{project}!"
+        text_2: "Schaue direkt nach, was sich getan hat:"
+        welcome: "Hallo %{name},"
+      subject: "meet-ideas: Es gibt Neues bei %{project}!"
+    unfollowing: "Du folgst damit nicht länger dem Projekt %{project}!"
   home:
     button_login: "Mit FHS-Daten Anmelden!"
     guest:
@@ -45,9 +59,13 @@ de:
   pages:
     imprint:
       country: "Österreich"
+      email: "E-Mail:"
+      fax: "Fax:"
       institution: "Fachhochschule Salzburg GmbH"
+      phone: "Telefon:"
       report: "Fehler und Probleme melden an"
       title: "Impressum"
+      website: "Internet:"
   projects:
     comment:
       failed: "Kommentar muss mind. 3 Zeichen besitzen!"
@@ -76,6 +94,7 @@ de:
       appointments: "Termine:"
       comments: "Kommentare:"
       description: "Projektbeschreibung:"
+      followups: "Diese Leute folgen dem Projekt:"
       pictures: "Bilder:"
       roles: "Rollen:"
     index:
@@ -103,6 +122,15 @@ de:
       fhsid: "FHS-Nummer"
       password: "Passwort"
       title: "Anmelden"
+  users:
+    index:
+      headline_with_projects: "Diese Leute haben bereits Projekte:"
+      headline_without_projects: "Diese Leute haben noch keine Projekte:"
+      involvement: "%{name} ist bei %{count} Projekten dabei."
+      title: "BenutzerInnen"
+    show:
+      followups: "Folgt folgenden Projekten:"
+      involvements: "Ist an folgenden Projekten beteiligt:"
   validations:
     attr:
       appointment_description: "Die Termin-Beschreibung"

@@ -11,9 +11,9 @@
         <%= truncate(project.description, :length => 160) %>
       </a><br />
       <% if following?(project.id) %>
-        <%= link_to "Nicht mehr folgen", followup_path(following?(project.id)), :method => :delete %>
+        <%= link_to t("followups.links.unfollow"), followup_path(following?(project.id)), :method => :delete %>
       <% else %>
-        <%= link_to "Folgen", followups_path(:project_id => project), :method => :post %>
+        <%= link_to t("followups.links.follow"), followups_path(:project_id => project), :method => :post %>
       <% end %>
     </li>
   <% end %>

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
   </head>
   <body>
-    <h1>Hallo <%= @user.fullname %>,</h1>
+    <p><%= t("followups.mailer.body.welcome", :name => @user.fullname) %></p>
+    <p><%= t("followups.mailer.body.text_1", :project => @project.title) %></p>
     <p>
-      es gibt Änderungen bei <%= @project.title %>!
-    </p>
-    <p>
-      Hier kannst du dir die Neuerungen ansehen:<br />
+      <%= t("followups.mailer.body.text_2") %><br />
       <%= project_path(@project) %>
     </p>
-    <p>Dein meet-ideas Team!</p>
+    <p><%= t("followups.mailer.body.salutation") %></p>
   </body>
 </html>
