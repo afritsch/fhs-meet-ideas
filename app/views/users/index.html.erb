@@ -6,7 +6,7 @@
   <% @users_with_projects.each do |user| %>
     <li>
         <a href="<%= url_for(user) %>">
-          <%= t(".involvement", :name => user.fullname, :count => user.projects.count) %>
+          <%= t(".involvement", :name => user.fullname, :count => user.count) %>
         </a>
     </li>
   <% end %>
