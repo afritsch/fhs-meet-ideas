@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
     @roles = @project.roles.select("name, title, user_id")
     @pictures = @project.pictures.select("image, title")
     @appointments = @project.appointments.select("date, description").order("date")
-    @comments = @project.comments.joins(:user).select("comments.content, comments.created_at, comments.id, comments.user_id, users.email, users.fullname").order("comments.id")
+    @comments = @project.comments.paginate(:joins => :user, :page => params[:comments_page], :per_page => 5).select("comments.content, comments.created_at, comments.id, comments.user_id, users.email, users.fullname").order("comments.id")
 
     add_breadcrumb @project.title, @project
   end

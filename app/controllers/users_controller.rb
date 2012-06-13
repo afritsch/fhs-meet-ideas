@@ -24,8 +24,8 @@ class UsersController < ApplicationController
       ORDER BY fullname
     "
 
-    @users_with_projects = User.paginate_by_sql(sql, :page => params[:withProjects], :per_page => 20)
-    @users_without_projects = User.paginate_by_sql(sql2, :page => params[:withoutProjects], :per_page => 20)
+    @users_with_projects = User.paginate_by_sql(sql, :page => params[:with_projects], :per_page => 20)
+    @users_without_projects = User.paginate_by_sql(sql2, :page => params[:without_projects], :per_page => 20)
   end
 
   def show
