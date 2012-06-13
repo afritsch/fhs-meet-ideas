@@ -88,5 +88,5 @@
 <p><%= link_to t("common.back"), projects_path %></p>
 <% if allowed? %>
   <p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
-  <p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :confirm => t(".deleteConfirmation") %></p>
+  <p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :data => { :confirm => t(".deleteConfirmation") } %></p>
 <% end %>
