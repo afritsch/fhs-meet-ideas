@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hallo <%= @user.fullname %>,</h1>
+    <p>
+      es gibt Änderungen bei <%= @project.title %>!
+    </p>
+    <p>
+      Hier kannst du dir die Neuerungen ansehen:<br />
+      <%= project_path(@project, :host => "http://meet-ideas.mediacube.at") %>
+    </p>
+    <p>Dein meet-ideas Team!</p>
+  </body>
+</html>

@@ -57,6 +57,10 @@ class ProjectsController < ApplicationController
 
     @project.updated_at = Time.now
 
+    @project.followups.each do |follower|
+      ProjectUpdateMailer.project_update(User.find(follower.user_id), @project).deliver
+    end
+
     if @project.update_attributes(params[:project])
       flash[:notice] = t("projects.edit.updated")
       redirect_to @project

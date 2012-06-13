@@ -1,0 +1,8 @@
+Hallo <%= @user.fullname %>,
+
+es gibt Änderungen bei <%= @project.title %>!
+
+Hier kannst du dir die Neuerungen ansehen:<br />
+<%= project_path(@project, :host => "http://meet-ideas.mediacube.at") %>
+
+Dein meet-ideas Team!

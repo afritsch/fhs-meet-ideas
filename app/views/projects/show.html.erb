@@ -49,12 +49,15 @@
 
 <% if @project.followups.exists? %>
   <h2>Diese Leute folgen dem Projekt:</h2>
-
-  <% @project.followups.each do |followup| %>
-    <a href="<%= url_for(followup.user) %>">
-      <%= followup.user.fullname %> |
-    </a>
-  <% end %>
+  <ul>
+    <% @project.followups.each do |followup| %>
+      <li>
+        <a href="<%= url_for(followup.user) %>">
+          <%= followup.user.fullname %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 
 <h2><%= t("projects.headlines.comments") %></h2>
