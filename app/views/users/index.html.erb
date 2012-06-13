@@ -12,7 +12,7 @@
   <% end %>
 </ul>
 
-<%= will_paginate @users_with_projects, :param_name => "with_projects", :params => { :anchor => "with_projects" }, :previous_label => "&laquo; Zurueck", :next_label => "Vor &raquo;" %>
+<%= will_paginate @users_with_projects, :param_name => "with_projects", :params => { :anchor => "with_projects" } %>
 
 <h2 id="without_projects">Diese Leute haben noch keine Projekte:</h2>
 <ul>
@@ -25,4 +25,4 @@
   <% end %>
 </ul>
 
-<%= will_paginate @users_without_projects, :param_name => "without_projects", :params => { :anchor => "without_projects" }, :previous_label => "&laquo; Zurueck", :next_label => "Vor &raquo;" %>
+<%= will_paginate @users_without_projects, :param_name => "without_projects", :params => { :anchor => "without_projects" } %>

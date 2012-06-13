@@ -68,7 +68,7 @@
   </li>
 <% end %>
 </ul>
-<%= will_paginate @comments, :param_name => "comments_page", :params => { :anchor => "comments" }, :previous_label => "&laquo; Zurueck", :next_label => "Vor &raquo;" %>
+<%= will_paginate @comments, :param_name => "comments_page", :params => { :anchor => "comments" } %>
 <%= form_for [@project, @project.comments.build] do |f| %>
   <div>
     <%= f.label :content, t("projects.form.label_comment") %><br />

@@ -116,3 +116,7 @@ de:
     length:
       long: "%{attr} muss weniger als %{count} Zeichen besitzen!"
       short: "%{attr} muss mehr als %{count} Zeichen besitzen!"
+  will_paginate:
+    next_label: "Nächste Seite &#8594;"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Vorherige Seite"
