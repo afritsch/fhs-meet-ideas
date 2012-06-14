@@ -1,7 +1,7 @@
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "meet-ideas.mediacube.at",
+ #:domain               => "meet-ideas.mediacube.at",
   :user_name            => "meet.ideas",
   :password             => "sdf87sdf",
   :authentication       => "plain",
