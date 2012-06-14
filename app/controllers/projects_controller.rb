@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.paginate(:page => params[:page], :per_page => 10).order("id DESC")
+    @status = Project.all(:group => "status")
   end
 
   def show
@@ -58,7 +59,7 @@ class ProjectsController < ApplicationController
     @project.updated_at = Time.now
 
     @project.followups.each do |follower|
-      ProjectUpdateMailer.delay.project_update(User.find(follower.user_id), @project)
+      ProjectUpdateMailer.project_update(User.find(follower.user_id), @project).deliver
     end
 
     if @project.update_attributes(params[:project])
