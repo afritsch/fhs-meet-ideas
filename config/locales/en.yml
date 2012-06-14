@@ -123,7 +123,9 @@ en:
     index:
       headline_with_projects: "Diese Leute haben bereits Projekte:"
       headline_without_projects: "Diese Leute haben noch keine Projekte:"
-      involvement: "%{name} ist bei %{count} Projekten dabei."
+      involvement:
+        one: "%{name} ist bei einem Projekt dabei."
+        other: "%{name} ist bei %{count} Projekten dabei."
       title: "BenutzerInnen"
     show:
       followups: "Folgt folgenden Projekten:"
