@@ -36,6 +36,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'net-ldap'
 gem 'will_paginate'
+gem 'delayed_job_active_record'
 
 # To use ActiveModel has_secure_password
 # To use Jbuilder templates for JSON

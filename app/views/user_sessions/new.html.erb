@@ -3,7 +3,7 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/login.png" %> <%= t(".title") %><% end %>
 
-<%= form_for user_session, :url => url_for(:action => 'create', :controller => 'user_sessions', :only_path => false, :protocol => ssl_protocol) do |f| %>
+<%= form_for user_session do |f| %>
   <div>
     <p><%= f.label "login", t(".fhsid") %></p>
     <p><%= f.text_field "login" %></p>
