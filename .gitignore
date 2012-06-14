@@ -17,6 +17,7 @@
 .sass-cache
 deploy.rb
 secret_token.rb
+setup_mail.rb
 database.yml
 .buildpath
 .project

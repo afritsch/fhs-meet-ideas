@@ -1,7 +1,7 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/projects.png" %> <%= t(".title") %><% end %>
 
-<%= link_to t(".new_project"), new_project_path %>
+<p><%= link_to t(".new_project"), new_project_path %></p>
 
 <ul id="projectlist">
   <% @projects.each do |project| %>

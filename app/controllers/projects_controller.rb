@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
     @project.updated_at = Time.now
 
     @project.followups.each do |follower|
-      ProjectUpdateMailer.project_update(User.find(follower.user_id), @project).deliver
+      ProjectUpdateMailer.delay.project_update(User.find(follower.user_id), @project)
     end
 
     if @project.update_attributes(params[:project])

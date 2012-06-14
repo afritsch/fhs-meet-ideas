@@ -8,8 +8,9 @@
     <p><%= t("followups.mailer.body.text_1", :project => @project.title) %></p>
     <p>
       <%= t("followups.mailer.body.text_2") %><br />
-      <%= project_path(@project) %>
+      <%= link_to project_path(@project, :only_path => false) %>
     </p>
     <p><%= t("followups.mailer.body.salutation") %></p>
+    <p><%= t("followups.mailer.body.noreply") %></p>
   </body>
 </html>

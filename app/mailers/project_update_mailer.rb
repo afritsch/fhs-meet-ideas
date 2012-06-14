@@ -1,5 +1,5 @@
 class ProjectUpdateMailer < ActionMailer::Base
-  default from: "meet-ideas@mediacube.at"
+  default from: "meet-ideas <meet.ideas@gmail.com>"
 
   def project_update(user, project)
     @user = user

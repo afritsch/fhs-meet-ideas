@@ -21,6 +21,7 @@ en:
       unfollow: "Projekt nicht mehr folgen"
     mailer:
       body:
+        noreply: "Dies ist eine automatisch generierte E-Mail. Du brauchst nicht darauf zu antworten."
         salutation: "Dein meet-ideas Team!"
         text_1: "es gibt Änderungen bei %{project}!"
         text_2: "Schaue direkt nach, was sich getan hat:"
