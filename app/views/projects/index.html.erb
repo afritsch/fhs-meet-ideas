@@ -3,6 +3,18 @@
 
 <p><%= link_to t(".new_project"), new_project_path %></p>
 
+<%= form_for @search_projects do |f| %>
+  <p>
+    <%= f.label "Projekte durchsuchen" %>
+    <%= f.text_field :title_or_description_contains %>
+    <%= f.submit "Suchen" %>
+  </p>
+  <%= sort_link @search_projects, :title %> |
+  <%= sort_link @search_projects, :status %> |
+  <%= sort_link @search_projects, :created_at %> |
+  <%= sort_link @search_projects, :updated_at %>
+<% end %>
+
 <ul id="projectlist">
   <% @projects.each do |project| %>
     <li>

@@ -1,7 +1,20 @@
 <% content_for :title, t(".title") %>
 <% content_for :headline do %><%= image_tag "/images/headlines/users.png" %> <%= t(".title") %><% end %>
 
+<%= form_for @search_with_projects do |f| %>
+  <p>
+    <%= f.label "Name" %>
+    <%= f.text_field :fullname_contains %>
+    <%= f.label "Studienrichtung" %>
+    <%= f.text_field :studypath_contains %>
+    <%= f.submit "Suchen" %>
+  </p>
+  <%= sort_link @search_with_projects, :fullname %> |
+  <%= sort_link @search_with_projects, :studypath %>
+<% end %>
+
 <h2 id="with_projects"><%= t(".headline_with_projects") %></h2>
+
 <ul>
   <% @users_with_projects.each do |user| %>
     <li>
@@ -15,11 +28,12 @@
 <%= will_paginate @users_with_projects, :param_name => "with_projects", :params => { :anchor => "with_projects" } %>
 
 <h2 id="without_projects"><%= t(".headline_without_projects") %></h2>
+
 <ul>
   <% @users_without_projects.each do |user| %>
     <li>
         <a href="<%= url_for(user) %>">
-          <%= user.fullname %>
+          <%= user.fullname %><% if user.studypath %> - <%= user.studypath %><% end %>
         </a>
     </li>
   <% end %>

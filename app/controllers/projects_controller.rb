@@ -6,8 +6,9 @@ class ProjectsController < ApplicationController
   autocomplete :user, :fullname, :full => true
 
   def index
-    @projects = Project.paginate(:page => params[:page], :per_page => 10).order("id DESC")
-    @status = Project.all(:group => "status")
+    # thanks to railscast 251 (meta_search)
+    @search_projects = Project.search(params[:search])
+    @projects =  @search_projects.order("id DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
