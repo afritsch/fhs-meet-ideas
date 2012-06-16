@@ -38,7 +38,7 @@ class ProjectsControllerTest < ActionController::TestCase
       post :create, :project => { :title => projects(:one).title, :status => projects(:one).status, :description => projects(:one).description }
     end
     assert_not_nil assigns(:project)
-    assert_equal I18n.t("projects.new.saved"), flash[:notice]
+    assert_equal I18n.t("projects.new.saved") +  " <a href=\"/versions/1/revert\" data-method=\"post\" rel=\"nofollow\">#{I18n.t("paper_trail.undo")}</a>", flash[:notice]
     assert_redirected_to project_path(assigns(:project))
   end
 
@@ -51,7 +51,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test "should update project" do
     put :update, :id => projects(:one).id, :project => { :title => projects(:two).title, :status => projects(:two).status, :description => projects(:two).description }
     assert_not_nil assigns(:project)
-    assert_equal I18n.t("projects.edit.updated"), flash[:notice]
+    assert_equal I18n.t("projects.edit.updated") + " <a href=\"/versions/1/revert\" data-method=\"post\" rel=\"nofollow\">#{I18n.t("paper_trail.undo")}</a>", flash[:notice]
     assert_redirected_to project_path(assigns(:project))
   end
 
@@ -60,7 +60,7 @@ class ProjectsControllerTest < ActionController::TestCase
       delete :destroy, :id => projects(:one).id
     end
     assert_not_nil assigns(:project)
-    assert_equal I18n.t("projects.show.destroyed"), flash[:notice]
+    assert_equal I18n.t("projects.show.destroyed") +  " <a href=\"/versions/1/revert\" data-method=\"post\" rel=\"nofollow\">#{I18n.t("paper_trail.undo")}</a>", flash[:notice]
     assert_redirected_to projects_path
   end
 end
