@@ -68,7 +68,6 @@ en:
   paper_trail:
     create: "Projekt anlegen"
     destroy: "Projekt löschen"
-    redo: "Wiederherstellen"
     update: "Projekt bearbeiten"
     undid: "Rückgängig gemacht:"
     undo: "Rückgängig"
