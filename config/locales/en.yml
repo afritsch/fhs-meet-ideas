@@ -11,6 +11,7 @@ en:
     edit: "Edit"
     delete: "Delete"
     send: "Send"
+    seach: "Search"
   errors:
     format: "%{message}"
   followups:
@@ -36,8 +37,8 @@ en:
     teaser: "Brainstorme. Finde Partner. Verteile Rollen. Schaffe großartige Projekte."
     title: "Homepage"
     user:
-      new_project: "Idee starten!"
-      projects: "Idee finden!"
+      new_project: "Projekt starten!"
+      projects: "Projekt finden!"
   layouts:
     application:
       breadcrumbs: "Du befindest dich hier:"
@@ -80,8 +81,11 @@ en:
       date: "Date:"
       label_comment: "Kommentar:"
       label_description: "Description:"
+      label_name: "Name"
+      label_search: "Projekte durchsuchen"
       label_status: "Status:"
       label_title: "Title:"
+      label_studypath: "Studienrichtung"
       name: "Name:"
       remove_appointment: "Remove appointment"
       remove_picture: "Remove picture"
@@ -97,6 +101,10 @@ en:
       roles: "Roles:"
     index:
       new_project: "New project"
+      sort_created: "Created at"
+      sort_status: "Status"
+      sort_title: "Name"
+      sort_updated: "Updated at"
       title: "Projects"
     new:
       new_project: "Create project"

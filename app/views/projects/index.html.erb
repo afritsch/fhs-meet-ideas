@@ -5,14 +5,14 @@
 
 <%= form_for @search_projects do |f| %>
   <p>
-    <%= f.label "Projekte durchsuchen" %>
+    <%= f.label :title_or_description_contains, t("projects.form.label_search") %>
     <%= f.text_field :title_or_description_contains %>
-    <%= f.submit "Suchen" %>
+    <%= f.submit t("common.search") %>
   </p>
-  <%= sort_link @search_projects, :title %> |
-  <%= sort_link @search_projects, :status %> |
-  <%= sort_link @search_projects, :created_at %> |
-  <%= sort_link @search_projects, :updated_at %>
+  <%= f.sort_link :title, t("projects.index.sort_title") %> |
+  <%= f.sort_link :status, t("projects.index.sort_status") %> |
+  <%= f.sort_link :created_at, t("projects.index.sort_created") %> |
+  <%= f.sort_link :updated_at, t("projects.index.sort_updated") %>
 <% end %>
 
 <ul id="projectlist">

@@ -14,7 +14,7 @@
 <p><strong><%= t(".status") %></strong> <%= @project.status %></p>
 <p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
 
-<% if @roles.count > 0 # ugly but necessary, because exists does not work here %>
+<% if @roles.count > 0 # ugly but necessary, because @roles.exists? does not work here %>
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>

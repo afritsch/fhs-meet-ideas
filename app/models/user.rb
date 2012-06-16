@@ -7,8 +7,4 @@ class User < ActiveRecord::Base
 
   has_many :followups
   has_many :projects, :through => :followups
-
-  def display_name
-    "#{self.fullname}".camelize
-  end
 end

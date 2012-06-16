@@ -1,6 +1,9 @@
- /*
- *= require jquery-ui
- */
+/*
+*= require jquery-ui
+*= require jquery.noty
+*= require noty_theme_default
+*= require jquery.fancybox
+*/
 
 $width:980px;
 $box-shadow:0 0 5px #aaa;
@@ -42,7 +45,7 @@ a {
   text-decoration:none;
   font-weight:bold;
   @include transition;
-  
+
   &:hover {
     color:#333;
   }
@@ -55,7 +58,7 @@ img {
 h1 {
   padding-bottom:5px;
   border-bottom:1px #ccc solid;
-  
+
   > img {
     width:48px;
     height:48px;
@@ -95,12 +98,12 @@ h2 {
   margin-right:8px;
   padding-right:8px;
   @include transition(box-shadow);
-  
+
   &:hover {
     color:#666;
     box-shadow:0 0 5px #feb3b3;
   }
-  
+
   > span {
     display:block;
     line-height:26px;
@@ -119,14 +122,14 @@ h2 {
   font-family:'Trebuchet MS',Arial,Helvetica,sans-serif;
   font-size:.7em;
   text-shadow:#777 -1px -1px 0;
-  
+
   > span {
     display:block;
     line-height:32px;
     margin-left:-8px;
-    padding:5px 18px 5px 28px;
+    padding:5px 13px 5px 25px;
   }
-  
+
   &:hover {
     color:#fff;
     text-shadow:#999 -1px -1px 0;
@@ -135,15 +138,15 @@ h2 {
 
 .actionButtonGreen {
   background:url('/images/actionButton_green.png') no-repeat scroll top right;
-  
+
   > span {
     background:url('/images/actionButton_green.png') no-repeat scroll top left;
   }
-  
+
   &:hover {
     background:url('/images/actionButton_green.png') no-repeat scroll bottom right;
   }
-  
+
   &:hover span {
     background:url('/images/actionButton_green.png') no-repeat scroll bottom left;
   }
@@ -151,15 +154,15 @@ h2 {
 
 .actionButtonBlue {
   background:url('/images/actionButton_blue.png') no-repeat scroll top right;
-  
+
   > span {
     background:url('/images/actionButton_blue.png') no-repeat scroll top left;
   }
-  
+
   &:hover {
     background:url('/images/actionButton_blue.png') no-repeat scroll bottom right;
   }
-  
+
   &:hover span {
     background:url('/images/actionButton_blue.png') no-repeat scroll bottom left;
   }
@@ -181,11 +184,11 @@ h2 {
   width:320px;
   height:100px;
   background:url('/images/logo.png') no-repeat;
-  
+
   &:hover {
     background-position:0 -100px;
   }
-  
+
   > a {
     @include a-block;
   }
@@ -199,20 +202,20 @@ h2 {
 #breadcrumbs {
   float:right;
   margin-top:-10px;
-  
+
   > li {
     float:left;
     margin-left:20px;
   }
-  
+
   > li:first-child {
     list-style-type:none;
   }
-  
+
   > li, > li > a {
     color:#aaa;
   }
-  
+
   > li > a:hover {
     color:#888;
   }
@@ -224,7 +227,7 @@ h2 {
   font-size:2.5em;
   font-weight:normal;
   border-bottom:none;
-  
+
   > .highlight {
     color:#a0092d;
   }
@@ -240,28 +243,28 @@ h2 {
   text-align:center;
   font-family:'Yanone Kaffeesatz','Trebuchet MS',Arial,Helvetica,sans-serif;
   font-size:1.8em;
-  
+
   > div {
     float:left;
     margin-top:5px;
   }
-  
+
   > div.guest {
     width:690px;
   }
-  
+
   > div.user {
-    width:630px;
+    width:600px;
   }
 }
 
 #projectlist {
   @include transition;
-  
+
   > li > a {
     @include a-block;
   }
-  
+
   > li > a:hover {
     background-color: #ddd;
   }
@@ -288,7 +291,7 @@ h2 {
   width:170px;
   height:65px;
   background:url('/images/fhsLogo.png') no-repeat;
-  
+
   > a {
     @include a-block;
   }

@@ -3,14 +3,14 @@
 
 <%= form_for @search_with_projects do |f| %>
   <p>
-    <%= f.label "Name" %>
+    <%= f.label :fullname_contains, t("projects.form.label_name") %>
     <%= f.text_field :fullname_contains %>
-    <%= f.label "Studienrichtung" %>
+    <%= f.label :fullname_contains, t("projects.form.label_studypath") %>
     <%= f.text_field :studypath_contains %>
-    <%= f.submit "Suchen" %>
+    <%= f.submit t("common.search") %>
   </p>
-  <%= sort_link @search_with_projects, :fullname %> |
-  <%= sort_link @search_with_projects, :studypath %>
+  <%= f.sort_link :fullname, t("projects.form.label_name") %> |
+  <%= f.sort_link :studypath,t("projects.form.label_studypath") %>
 <% end %>
 
 <h2 id="with_projects"><%= t(".headline_with_projects") %></h2>

@@ -35,9 +35,9 @@ $(document).ready(function() {
   $('.timepicker').timepicker();
 
   $(".fancybox").fancybox({
-		openEffect	: 'none',
-		closeEffect	: 'none'
-	});
+    openEffect	: 'none',
+    closeEffect	: 'none'
+  });
 });
 
 // thanks to railscasts 197

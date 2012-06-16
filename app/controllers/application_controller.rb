@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # localization support
   def set_locale
     I18n.locale = extract_locale_from_accept_language_header
   end
@@ -28,6 +29,7 @@ class ApplicationController < ActionController::Base
     request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
   end
 
+  # authentication methods
   def require_login
     unless logged_in?
       flash[:error] = t('auth.login_required')
