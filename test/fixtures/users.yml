@@ -6,6 +6,7 @@ one:
   email: shentzschel.mmt-b2010@fh-salzburg.ac.at
   fullname: Soeren Hentzschel
   phone: 0301234567
+  studypath: mmt
 
 two:
   id: 551
@@ -13,3 +14,4 @@ two:
   email: afritsch.mmt-b2009@fh-salzburg.ac.at
   fullname: Andreas Fritsch
   phone: 0301234567
+  studypath: mmt

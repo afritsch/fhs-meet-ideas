@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class FollowupsControllerTest < ActionController::TestCase
-  setup do
+  def setup
     @request.session[:id] = users(:one).id
     request.env["HTTP_REFERER"] = root_url
   end

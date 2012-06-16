@@ -3,9 +3,9 @@
 one:
   title: Programmierer
   project_id: 1
-  name: Andreas Fritsch
+  user_id: 551
 
 two:
   title: Designer
   project_id: 2
-  name: Soeren Hentzschel
+  user_id: 651
