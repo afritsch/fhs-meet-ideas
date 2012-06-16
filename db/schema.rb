@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614083624) do
+ActiveRecord::Schema.define(:version => 20120616115957) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20120614083624) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "project_id"
-    t.string   "name"
     t.integer  "user_id"
+    t.string   "name"
   end
 
   add_index "roles", ["project_id"], :name => "index_roles_on_project_id"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20120614083624) do
     t.datetime "updated_at", :null => false
     t.string   "phone"
     t.string   "fullname"
+    t.string   "studypath"
   end
 
 end
