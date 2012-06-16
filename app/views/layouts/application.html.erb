@@ -61,9 +61,10 @@
   <script type="text/javascript">
     $(document).ready(function(){
       var noty_id = noty({
-        "text":"<% if flash[:notice] %><%= flash[:notice] %><% else %><%= flash[:error] %><% end %>",
+        "text":"<% if flash[:notice] %><%= escape_javascript(flash[:notice].html_safe) %><% else %><%= escape_javascript(flash[:error].html_safe) %><% end %>",
         "layout":"topCenter",
-        "type":"<% if flash[:notice] %>success<% else %>error<% end %>"
+        "type":"<% if flash[:notice] %>success<% else %>error<% end %>",
+        "timeout":10000
       });
     });
   </script>

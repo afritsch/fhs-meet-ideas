@@ -65,6 +65,13 @@ de:
       report: "Fehler und Probleme melden an"
       title: "Impressum"
       website: "Internet:"
+  paper_trail:
+    create: "Projekt anlegen"
+    destroy: "Projekt löschen"
+    redo: "Wiederherstellen"
+    update: "Projekt bearbeiten"
+    undid: "Rückgängig gemacht:"
+    undo: "Rückgängig"
   projects:
     comment:
       failed: "Kommentar muss mind. 3 Zeichen besitzen!"

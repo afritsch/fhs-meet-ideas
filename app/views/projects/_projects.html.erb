@@ -5,7 +5,8 @@
         var noty_id = noty({
           "text":"<%= escape_javascript(@project.errors.full_messages.join("<br />")).html_safe %>",
           "layout":"topCenter",
-          "type":"error"
+          "type":"error",
+          "timeout":10000
         });
       });
     </script>

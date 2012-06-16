@@ -39,6 +39,8 @@ gem 'will_paginate'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'meta_search'
+gem 'paper_trail'
+gem 'whenever'
 
 # To use ActiveModel has_secure_password
 # To use Jbuilder templates for JSON

@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
   attr_accessible :description, :status, :title, :appointments_attributes, :pictures_attributes, :roles_attributes
 
+  has_paper_trail
+
   has_many :appointments, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :pictures, :dependent => :destroy
@@ -19,4 +21,8 @@ class Project < ActiveRecord::Base
   validates_length_of :description, :within => 10..5000, :too_short => I18n.t("validations.length.short", :attr => I18n.t("validations.attr.description"), :count => "%{count}"), :too_long => I18n.t("validations.length.long", :attr => I18n.t("validations.attr.description"), :count => "%{count}")
 
   scope :uniquely_named, group(:status)
+
+  def self.remove_old
+    Version.delete_all ["created_at < ?", 1.day.ago]
+  end
 end

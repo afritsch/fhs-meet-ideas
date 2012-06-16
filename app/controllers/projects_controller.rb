@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
     @project.user_id = current_user.id
 
     if @project.save
-      flash[:notice] = t("projects.new.saved")
+      flash[:notice] = t("projects.new.saved") + " #{undo_link}"
       redirect_to @project
     else
       render "new"
@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
     end
 
     if @project.update_attributes(params[:project])
-      flash[:notice] = t("projects.edit.updated")
+      flash[:notice] = t("projects.edit.updated") + " #{undo_link}"
       redirect_to @project
     else
       render "edit"
@@ -75,7 +75,13 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
 
-    flash[:notice] = t("projects.show.destroyed")
+    flash[:notice] = t("projects.show.destroyed") + " #{undo_link}"
     redirect_to projects_path
+  end
+
+  private
+
+  def undo_link
+    view_context.link_to I18n.t("paper_trail.undo"), revert_version_path(@project.versions.scoped.last), :method => :post
   end
 end

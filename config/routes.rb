@@ -4,6 +4,9 @@ FhsMeetIdeas::Application.routes.draw do
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
+  # undo actions
+  post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+
   # projects
   resources :projects do
     resources :comments, :only => [:create]
