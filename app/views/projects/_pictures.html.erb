@@ -3,7 +3,7 @@
   <%= f.file_field :image %>
   <% if f.object.title.present? %>
     <%= f.object.title %>
-    <img src="<%= f.object.image_url(:thumb) %>" alt="<%= f.object.title %>" />
+    <%= image_tag f.object.image_url(:thumb), :alt => f.object.title %>
   <% else %>
     <%= f.label :title, t("projects.form.title") %>
     <%= f.text_field :title %>

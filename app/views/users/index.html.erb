@@ -18,9 +18,7 @@
 <ul>
   <% @users_with_projects.each do |user| %>
     <li>
-        <a href="<%= url_for(user) %>">
-          <%= t(".involvement", :name => user.fullname, :count => user.count) %>
-        </a>
+      <%= link_to t(".involvement", :name => user.fullname, :count => user.count), url_for(user) %>
     </li>
   <% end %>
 </ul>
@@ -32,9 +30,9 @@
 <ul>
   <% @users_without_projects.each do |user| %>
     <li>
-        <a href="<%= url_for(user) %>">
-          <%= user.fullname %><% if user.studypath %> - <%= user.studypath %><% end %>
-        </a>
+      <%= link_to url_for(user) do %>
+        <%= user.fullname %><% if user.studypath %> - <%= user.studypath %><% end %>
+      <% end %>
     </li>
   <% end %>
 </ul>

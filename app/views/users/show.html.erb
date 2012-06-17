@@ -7,9 +7,7 @@
 <ul>
   <% @projects.each do |project| %>
     <li>
-        <a href="<%= url_for(project) %>">
-          <%= project.title %>
-        </a>
+      <%= link_to project.title, url_for(project) %>
     </li>
   <% end %>
 </ul>
@@ -20,9 +18,7 @@
   <ul>
   <% @user.followups.each do |followup| %>
     <li>
-      <a href="<%= url_for(followup.project) %>">
-        <%= followup.project.title %>
-      </a>
+      <%= link_to followup.project.title, url_for(followup.project) %>
       <% if canUnfollow? %>
         <%= link_to t("followups.links.unfollow"), followup, :method => :delete %>
       <% end %>

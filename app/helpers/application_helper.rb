@@ -10,7 +10,7 @@ module ApplicationHelper
   # thanks to railscasts 244
   def avatar_url(user, size = 32)
     default_url = "#{root_url}images/default_avatar.png"
-    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    gravatar_id = Digest::MD5.hexdigest(user.email.downcase) if user.email
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
   end
 
