@@ -61,7 +61,7 @@
 <h2 id="comments"><%= t("projects.headlines.comments") %></h2>
 <ul>
 <% @comments.each do |comment| %>
-  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment) %> <%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
+  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment), :alt => t("common.gravatar") %> <%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
   </li>
 <% end %>

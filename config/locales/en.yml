@@ -10,6 +10,7 @@ en:
     cancel: "Cancel"
     edit: "Edit"
     delete: "Delete"
+    gravatar: "Gravatar"
     send: "Send"
     seach: "Search"
   errors:

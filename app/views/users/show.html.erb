@@ -1,5 +1,5 @@
 <% content_for :title, @user.fullname %>
-<% content_for :headline do %><%= image_tag avatar_url(@user, 48) %> <%= @user.fullname %><% end %>
+<% content_for :headline do %><%= image_tag avatar_url(@user, 48), :alt => t("common.gravatar") %> <%= @user.fullname %><% end %>
 
 <%= @user.fullname %> - <%= @user.email %>
 
