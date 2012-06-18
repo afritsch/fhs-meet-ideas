@@ -25,7 +25,7 @@ de:
       body:
         noreply: "Dies ist eine automatisch generierte E-Mail. Du brauchst nicht darauf zu antworten."
         salutation: "Dein meet-ideas Team!"
-        text_1: "es gibt Änderungen bei %{project}!"
+        text_1: "Es gibt Änderungen bei %{project}!"
         text_2: "Schaue direkt nach, was sich getan hat:"
         welcome: "Hallo %{name},"
       subject: "meet-ideas: Es gibt Neues bei %{project}!"
