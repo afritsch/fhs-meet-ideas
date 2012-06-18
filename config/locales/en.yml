@@ -13,6 +13,23 @@ en:
     gravatar: "Gravatar"
     send: "Send"
     seach: "Search"
+  contact_form:
+    mailer:
+      subject: "[Contact] meet-ideas:"
+    new:
+      label_email: "Email adress:"
+      label_message: "Message:"
+      label_name: "Name:"
+      label_subject: "Subject:"
+      sent: "The message was successfully sent!"
+      title: "Contact form"
+    validations:
+      attr:
+        message: "a message"
+        name: "a name"
+        subject: "a subject"
+      email: "Bitte eine gültige E-Mail-Adresse angeben!"
+      message: "Bitte %{attr} angeben!"
   errors:
     format: "%{message}"
   followups:

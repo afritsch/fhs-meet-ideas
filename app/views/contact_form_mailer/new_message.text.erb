@@ -1,0 +1,9 @@
+<%= t("contact_form.mailer.body.intro") %>
+
+<%= t("contact_form.new.label_name") %> <%= @message.name %>
+<%= t("contact_form.new.label_email") %> <%= @message.email %>
+<%= t("contact_form.new.label_subject") %> <%= @message.subject %>
+
+----------------------------------
+
+<%= @message.message %>

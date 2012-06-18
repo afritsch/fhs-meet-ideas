@@ -1,0 +1,36 @@
+<% content_for :title, t(".title") %>
+<% content_for :headline do %><%= image_tag "/images/headlines/contact.png" %> <%= t(".title") %><% end %>
+<% content_for :javascript do %>
+  <% if @contact_form.errors.any? %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var noty_id = noty({
+          "text":"<%= escape_javascript(@contact_form.errors.full_messages.join("<br />")).html_safe %>",
+          "layout":"topCenter",
+          "type":"error",
+          "timeout":10000
+        });
+      });
+    </script>
+  <% end %>
+<% end %>
+
+<%= form_for @contact_form, :url => contact_path do |f| %>
+  <div>
+    <%= f.label :name, t(".label_name") %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email, t(".label_email") %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :subject, t(".label_subject") %>
+    <%= f.text_field :subject %>
+  </div>
+  <div>
+    <%= f.label :message, t(".label_message") %>
+    <%= f.text_area :message %>
+  </div>
+  <%= f.submit t("common.send") %>
+<% end %>

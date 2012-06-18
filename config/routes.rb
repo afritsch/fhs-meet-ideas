@@ -19,7 +19,11 @@ FhsMeetIdeas::Application.routes.draw do
   #followups
   resources :followups, :only => [:create, :destroy]
 
-  # static pages
+  #contact form
+  get "contact" => "contact_form#new"
+  post "contact" => "contact_form#create"
+
+  # imprint page
   get "pages/imprint"
 
   # root route

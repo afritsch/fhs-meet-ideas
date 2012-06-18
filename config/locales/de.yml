@@ -13,6 +13,25 @@ de:
     gravatar: "Gravatar"
     send: "Absenden"
     search: "Suchen"
+  contact_form:
+    mailer:
+      body:
+        intro: "Es gibt eine neue Anfrage auf meet-ideas."
+      subject: "[Kontakt] meet-ideas:"
+    new:
+      label_email: "E-Mail-Adresse:"
+      label_message: "Nachricht:"
+      label_name: "Name:"
+      label_subject: "Betreff:"
+      sent: "Die Nachricht wurde erfolgreich versendet!"
+      title: "Kontaktformular"
+    validations:
+      attr:
+        message: "eine Nachricht"
+        name: "einen Namen"
+        subject: "einen Betreff"
+      email: "Bitte eine gültige E-Mail-Adresse angeben!"
+      message: "Bitte %{attr} angeben!"
   errors:
     format: "%{message}"
   followups:
