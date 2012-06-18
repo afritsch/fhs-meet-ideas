@@ -1,5 +1,5 @@
 set :output, "whenever.log"
 
-every 1.day, :at => '2:00 am' do
-  runner "Version.remove_old"
+every 10.minutes do
+  runner "Project.remove_old"
 end
