@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616203046) do
+ActiveRecord::Schema.define(:version => 20120618171928) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "project_id"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(:version => 20120616203046) do
   end
 
   add_index "pictures", ["project_id"], :name => "index_pictures_on_project_id"
+
+  create_table "predefined_roles", :force => true do |t|
+    t.string "role"
+  end
+
+  create_table "predefined_statuses", :force => true do |t|
+    t.string "status"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "title"

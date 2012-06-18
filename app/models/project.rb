@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   attr_accessible :description, :status, :title, :appointments_attributes, :pictures_attributes, :roles_attributes
+  attr_searchable :created_at, :description, :status, :title, :updated_at
 
   has_paper_trail
 
@@ -17,10 +18,8 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :roles, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
 
   validates_length_of :title, :within => 3..255, :too_short => I18n.t("validations.length.short", :attr => I18n.t("validations.attr.title"), :count => "%{count}"), :too_long => I18n.t("validations.length.long", :attr => I18n.t("validations.attr.title"), :count => "%{count}")
-  validates_length_of :status, :within => 3..255, :too_short => I18n.t("validations.length.short", :attr => I18n.t("validations.attr.status"), :count => "%{count}"), :too_long => I18n.t("validations.length.long", :attr => I18n.t("validations.attr.status"), :count => "%{count}")
+  validates :status, :presence => { :message => I18n.t("validations.attr.status") }
   validates_length_of :description, :within => 10..5000, :too_short => I18n.t("validations.length.short", :attr => I18n.t("validations.attr.description"), :count => "%{count}"), :too_long => I18n.t("validations.length.long", :attr => I18n.t("validations.attr.description"), :count => "%{count}")
-
-  scope :uniquely_named, group(:status)
 
   def self.remove_old
     Version.delete_all ["created_at < ?", 1.day.ago]

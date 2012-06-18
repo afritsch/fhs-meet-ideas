@@ -154,7 +154,7 @@ de:
       picture_title: "Der Bild-Titel"
       role_title: "Der Rollen-Titel"
       role_name: "Der Name"
-      status: "Der Status"
+      status: "Keinen Status ausgewählt!"
       title: "Der Titel"
     length:
       long: "%{attr} muss weniger als %{count} Zeichen besitzen!"

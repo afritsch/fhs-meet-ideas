@@ -154,7 +154,7 @@ en:
       picture_title: "Image title"
       role_title: "Role title"
       role_name: "Name"
-      status: "Status"
+      status: "No status selected!"
       title: "Title"
     length:
       long: "The title has to contain less than %{count} characters!"

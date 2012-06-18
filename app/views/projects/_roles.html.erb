@@ -1,6 +1,6 @@
 <div class="fields">
   <%= f.label :title, t("projects.form.role") %>
-  <%= f.autocomplete_field :title, autocomplete_role_title_projects_path %>
+  <%= f.select :title, PredefinedRoles.all.collect { |r| [ r.role, r.role ] }, {:include_blank => true } %>
   <%= f.label :name, t("projects.form.name") %>
   <%= f.autocomplete_field :name, autocomplete_user_fullname_projects_path, :update_elements => {:id => "#user_id_" + f.object_id.to_s} %>
   <%= f.hidden_field :user_id, :id => "user_id_" + f.object_id.to_s %>

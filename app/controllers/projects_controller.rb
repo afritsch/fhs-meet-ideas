@@ -1,8 +1,6 @@
 class ProjectsController < ApplicationController
   add_breadcrumb I18n.t("projects.index.title"), "/projects"
 
-  autocomplete :role, :title, :full => true, :scopes => [:uniquely_named]
-  autocomplete :project, :status, :full => true, :scopes => [:uniquely_named]
   autocomplete :user, :fullname, :full => true
 
   def index
