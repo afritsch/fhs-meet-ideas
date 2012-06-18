@@ -56,14 +56,13 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-
     @project.updated_at = Time.now
 
-    @project.followups.each do |follower|
-      ProjectUpdateMailer.delay.project_update(User.find(follower.user_id), @project)
-    end
-
     if @project.update_attributes(params[:project])
+      @project.followups.each do |follower|
+        ProjectUpdateMailer.delay.project_update(User.find(follower.user_id), @project)
+      end
+
       flash[:notice] = t("projects.edit.updated") + " #{undo_link}"
       redirect_to @project
     else
