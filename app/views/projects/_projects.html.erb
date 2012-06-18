@@ -21,7 +21,7 @@
   </div>
   <div>
     <%= f.label :status, t("projects.form.label_status") %><br />
-    <%= f.select :status, PredefinedStatuses.all.collect { |s| [ s.status, s.status ] }, {:include_blank => true } %>
+    <%= f.select :status, @statuses.collect { |s| [ s.status, s.status ] }, {:include_blank => true } %>
   </div>
   <div>
     <%= f.label :description, t("projects.form.label_description") %><br />

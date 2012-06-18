@@ -25,6 +25,9 @@ class ProjectsController < ApplicationController
     @project.pictures.build
     @project.roles.build
 
+    @statuses = PredefinedStatuses.order("status")
+    @roles = PredefinedRoles.order("role")
+
     add_breadcrumb t("projects.new.title"), new_project_path
   end
 
@@ -42,6 +45,8 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @statuses = PredefinedStatuses.order("status")
+    @roles = PredefinedRoles.order("role")
 
     unless @project.user_id === current_user.id
       flash[:error] = t("projects.edit.denied")
