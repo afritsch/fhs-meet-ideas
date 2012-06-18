@@ -16,9 +16,9 @@ class ProjectTest < ActiveSupport::TestCase
     assert !project.save, "testcase 'title requires at least 3 characters' failed"
   end
 
-  test "should require status with at least 3 characters" do
-    project = Project.new(:title => "Title", :status => "st", :description => "Description")
-    assert !project.save, "testcase 'status requires at least 3 characters' failed"
+  test "should require status" do
+    project = Project.new(:title => "Title", :status => nil, :description => "Description")
+    assert !project.save, "testcase 'status required' failed"
   end
 
   test "should require description with at least 10 characters" do

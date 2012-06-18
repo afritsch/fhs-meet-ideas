@@ -4,8 +4,10 @@ one:
   title: Programmierer
   project_id: 1
   user_id: 551
+  name: Andreas Fritsch
 
 two:
   title: Designer
   project_id: 2
   user_id: 651
+  name: Soeren Hentzschel
