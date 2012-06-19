@@ -1,11 +1,21 @@
 class UserSession < ActiveRecord::Base
+  # thanks to mediacube portfolio
+  include ActiveModel::Validations
+  include ActiveModel::Conversion
+
   attr_accessible :login, :password
 
-  # thanks to mediacube portfolio
+  validates :login, :presence => true
+  validates :password, :presence => true
+
   def initialize(options = {})
     super
     self.login = options[:login]
     self.password = options[:password]
+  end
+
+  def persisted?
+    false
   end
 
   def save
