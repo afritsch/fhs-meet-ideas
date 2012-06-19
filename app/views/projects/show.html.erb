@@ -48,7 +48,7 @@
 
 <% if @project.followups.exists? %>
   <h2><%= t("projects.headlines.followups") %></h2>
-  <ul>
+  <ul id="followups">
     <% @project.followups.each do |followup| %>
       <li>
         <a href="<%= url_for(followup.user) %>">
@@ -57,6 +57,7 @@
       </li>
     <% end %>
   </ul>
+  <div class="clear"></div>
 <% end %>
 
 <h2 id="comments"><%= t("projects.headlines.comments") %></h2>

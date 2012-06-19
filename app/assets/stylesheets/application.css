@@ -316,6 +316,18 @@ h2 {
 #commentlist {
   list-style-type: none; }
 
+#followups {
+  padding: 0;
+  list-style-type: none; }
+  #followups > li {
+    float: left;
+    margin-right: 5px;
+    border: 1px #ccc solid;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
+
 #footer {
   position: absolute;
   bottom: 0;
