@@ -218,22 +218,30 @@ h2 {
 .followButtonGreen {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3c9f44), color-stop(1, #73b74b));
   background: -moz-linear-gradient(center top, #3c9f44 5%, #73b74b 100%);
+  background: -o-linear-gradient(center top, #3c9f44 5% #73b74b 100%);
+  background: linear-gradient(center top, #3c9f44 5%, #73b74b 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c9f44', endColorstr='#73b74b');
   background-color: #3c9f44; }
   .followButtonGreen:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #41bf52), color-stop(1, #48c25e));
     background: -moz-linear-gradient(center top, #41bf52 5%, #48c25e 100%);
+    background: -o-linear-gradient(center top, #41bf52 5%, #48c25e 100%);
+    background: linear-gradient(center top, #41bf52 5%, #48c25e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#41bf52', endColorstr='#48c25e');
     background-color: #41bf52; }
 
 .followButtonRed {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ae3232), color-stop(1, #e24343));
   background: -moz-linear-gradient(center top, #ae3232 5%, #e24343 100%);
+  background: -o-linear-gradient(center top, #ae3232 5%, #e24343 100%);
+  background: linear-gradient(center top, #ae3232 5%, #e24343 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ae3232', endColorstr='#e24343');
   background-color: #ae3232; }
   .followButtonRed:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d94040), color-stop(1, #df5f5f));
     background: -moz-linear-gradient(center top, #d94040 5%, #df5f5f 100%);
+    background: -o-linear-gradient(center top, #d94040 5%, #df5f5f 100%);
+    background: linear-gradient(center top, #d94040 5%, #df5f5f 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d94040', endColorstr='#df5f5f');
     background-color: #d94040; }
 

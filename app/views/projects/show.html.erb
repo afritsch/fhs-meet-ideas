@@ -19,7 +19,7 @@
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul>
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%if role.fullname? %><%= link_to role.fullname, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
+      <li><%= role.title %>: <%if role.name? %><%= link_to role.name, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
   </ul>
 <% end %>
