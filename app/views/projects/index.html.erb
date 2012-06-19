@@ -19,7 +19,7 @@
   <% @projects.each do |project| %>
     <li>
       <div class="left">
-        <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %></a><br />
+        <%= link_to truncate(project.title, :length => 60), url_for(project) %><br />
         <p>
           <%= project.status %><br />
           <%= truncate(project.description, :length => 160) %>

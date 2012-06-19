@@ -214,9 +214,6 @@ h2 {
   text-align: center;
   color: #fff !important;
   text-shadow: 1px 1px 0px #333; }
-  .followButton:active {
-    position: relative;
-    top: 1px; }
 
 .followButtonGreen {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3c9f44), color-stop(1, #73b74b));
@@ -354,7 +351,7 @@ h2 {
   margin-top: 38px; }
 
 .noty_bar {
-  margin-top: 11px; }
+  margin-top: 60px; }
 
 .noty_message {
   text-shadow: none; }

@@ -1,17 +1,18 @@
 <% content_for :title, @project.title %>
 <% content_for :headline do %><%= image_tag "/images/headlines/info.png" %> <%= @project.title %><% end %>
 
-<h2><%= t("projects.headlines.description") %></h2>
-
 <% if following?(@project.id) %>
-  <p><%= link_to t("followups.links.unfollow"), followup_path(following?(@project.id)), :method => :delete, :class => "followButton followButtonRed" %></p>
+  <p><%= link_to t("followups.links.unfollow"), followup_path(following?(@project.id)), :method => :delete, :class => "followButton followButtonRed right" %></p>
 <% else %>
-  <p><%= link_to t("followups.links.follow"), followups_path(:project_id => @project), :method => :post, :class => "followButton followButtonGreen" %></p>
+  <p><%= link_to t("followups.links.follow"), followups_path(:project_id => @project), :method => :post, :class => "followButton followButtonGreen right" %></p>
 <% end %>
 
-<p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>
+<h2><%= t("projects.headlines.description") %></h2>
 
-<p><strong><%= t(".status") %></strong> <%= @project.status %></p>
+<p>
+  <strong><%= t(".published_by") %></strong> <%= @project.fullname %><br />
+  <strong><%= t(".status") %></strong> <%= @project.status %>
+</p>
 <p><strong><%= t(".description") %></strong> <%= simple_format(h(@project.description)) %></p>
 
 <% if @roles.count > 0 # ugly but necessary, because @roles.exists? does not work here %>
@@ -83,8 +84,10 @@
 
 <p class="center small"><%= t(".last_modified", :last_modified => l(@project.updated_at)) %></p>
 
-<p><%= link_to t("common.back"), projects_path %></p>
-<% if allowed? %>
-  <p><%= link_to t("common.edit"), edit_project_path(@project) %></p>
-  <p><%= link_to t("common.delete"), project_path(@project), :method => :delete, :data => { :confirm => t(".deleteConfirmation") } %></p>
-<% end %>
+<p>
+  <%= link_to t("common.back"), projects_path %>
+  <% if allowed? %>
+    | <%= link_to t("common.edit"), edit_project_path(@project) %>
+    | <%= link_to t("common.delete"), project_path(@project), :method => :delete, :data => { :confirm => t(".deleteConfirmation") } %>
+  <% end %>
+</p>
