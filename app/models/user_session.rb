@@ -3,7 +3,7 @@ class UserSession
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
-  attr_accessor :login, :password
+  attr_accessor :login, :password, :user_id
 
   validates :login, :presence => true
   validates :password, :presence => true
