@@ -4,9 +4,9 @@
 <h2><%= t("projects.headlines.description") %></h2>
 
 <% if following?(@project.id) %>
-  <p><%= link_to t("followups.links.unfollow"), followup_path(following?(@project.id)), :method => :delete %></p>
+  <p><%= link_to t("followups.links.unfollow"), followup_path(following?(@project.id)), :method => :delete, :class => "followButton followButtonRed" %></p>
 <% else %>
-  <p><%= link_to t("followups.links.follow"), followups_path(:project_id => @project), :method => :post %></p>
+  <p><%= link_to t("followups.links.follow"), followups_path(:project_id => @project), :method => :post, :class => "followButton followButtonGreen" %></p>
 <% end %>
 
 <p><strong><%= t(".published_by") %></strong> <%= @project.fullname %></p>
@@ -59,7 +59,7 @@
 <% end %>
 
 <h2 id="comments"><%= t("projects.headlines.comments") %></h2>
-<ul>
+<ul id="commentlist">
 <% @comments.each do |comment| %>
   <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment), :alt => t("common.gravatar") %> <%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
     <%= simple_format(h(comment.content)) %><br />
@@ -68,7 +68,7 @@
 </ul>
 <%= will_paginate @comments, :param_name => "comments_page", :renderer => PaginationListLinkRenderer, :params => { :anchor => "comments" } %>
 <%= form_for [@project, @project.comments.build] do |f| %>
-  <div>
+  <div class="clear">
     <%= f.label :content, t("projects.form.label_comment") %><br />
     <%= f.text_area :content, :rows => 3 %>
   </div>

@@ -18,16 +18,20 @@
 <ul id="projectlist">
   <% @projects.each do |project| %>
     <li>
-      <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %><br />
-        <%= project.status %><br />
-        <%= truncate(project.description, :length => 160) %>
-      </a><br />
+      <div class="left">
+        <a href="<%= url_for(project) %>"><%= truncate(project.title, :length => 60) %></a><br />
+        <p>
+          <%= project.status %><br />
+          <%= truncate(project.description, :length => 160) %>
+        </p>
+      </div>
       <% if following?(project.id) %>
-        <%= link_to t("followups.links.unfollow"), followup_path(following?(project.id)), :method => :delete %>
+        <%= link_to t("followups.links.unfollow"), followup_path(following?(project.id)), :method => :delete, :class => "followButton followButtonRed right" %>
       <% else %>
-        <%= link_to t("followups.links.follow"), followups_path(:project_id => project), :method => :post %>
+        <%= link_to t("followups.links.follow"), followups_path(:project_id => project), :method => :post, :class => "followButton followButtonGreen right" %>
       <% end %>
     </li>
+    <div class="seperator"></div>
   <% end %>
 </ul>
 
