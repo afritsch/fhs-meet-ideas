@@ -1,9 +1,9 @@
-class UserSession < ActiveRecord::Base
+class UserSession
   # thanks to mediacube portfolio
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
-  attr_accessible :login, :password
+  attr_accessor :login, :password
 
   validates :login, :presence => true
   validates :password, :presence => true
@@ -19,6 +19,8 @@ class UserSession < ActiveRecord::Base
   end
 
   def save
+    return false unless self.valid?
+
     user = User.find_by_fhsid self.login
 
     if !user || !ldap(self.login, self.password)
