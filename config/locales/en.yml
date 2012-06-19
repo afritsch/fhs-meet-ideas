@@ -15,6 +15,8 @@ en:
     seach: "Search"
   contact_form:
     mailer:
+      body:
+        intro: "Es gibt eine neue Anfrage auf meet-ideas."
       subject: "[Contact] meet-ideas:"
     new:
       label_email: "Email adress:"
@@ -72,7 +74,9 @@ en:
       meta_description: "meet-ideas is the idea-platform of the Fachhochschule Salzburg."
       meta_keywords: "meet ideas, ideas, brainstorming, team building, concepts, FH Salzburg, Fachhochschule Salzburg"
       portfolio: "Portfolio"
+      projects: "Projekte"
       title_suffix: " - meet ideas - FH Salzburg"
+      users: "Users"
   pages:
     imprint:
       country: "Austria"

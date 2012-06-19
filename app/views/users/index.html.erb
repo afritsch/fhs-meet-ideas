@@ -23,7 +23,7 @@
   <% end %>
 </ul>
 
-<%= will_paginate @users_with_projects, :param_name => "with_projects", :params => { :anchor => "with_projects" } %>
+<%= will_paginate @users_with_projects, :param_name => "with_projects", :renderer => PaginationListLinkRenderer, :params => { :anchor => "with_projects" } %>
 
 <h2 id="without_projects"><%= t(".headline_without_projects") %></h2>
 
@@ -37,4 +37,4 @@
   <% end %>
 </ul>
 
-<%= will_paginate @users_without_projects, :param_name => "without_projects", :params => { :anchor => "without_projects" } %>
+<%= will_paginate @users_without_projects, :param_name => "without_projects", :renderer => PaginationListLinkRenderer, :params => { :anchor => "without_projects" } %>

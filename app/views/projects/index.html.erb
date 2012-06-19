@@ -31,4 +31,4 @@
   <% end %>
 </ul>
 
-<%= will_paginate @projects %>
+<%= will_paginate @projects, :renderer => PaginationListLinkRenderer %>

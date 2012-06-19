@@ -74,7 +74,9 @@ de:
       meta_description: "meet ideas ist die Idee-Plattform der Fachhochschule Salzburg."
       meta_keywords: "meet ideas, Ideen, Brainstorming, Teamfindung, Konzepte, FH Salzburg, Fachhochschule Salzburg"
       portfolio: "Portfolio"
+      projects: "Projekte"
       title_suffix: " - meet ideas - FH Salzburg"
+      users: "BenutzerInnen"
   pages:
     imprint:
       country: "Österreich"
