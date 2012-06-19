@@ -6,10 +6,11 @@ class FollowupsController < ApplicationController
 
     if @followup.save
       flash[:notice] = t("followups.following", :project => project.title)
-      redirect_to :back
+      session[:return_to] ||= request.referer
+      redirect_to session[:return_to]
     else
       flash[:error] = t("followups.fault", :project => project.title)
-      redirect_to :back
+      redirect_to session[:return_to]
     end
   end
 
@@ -19,6 +20,7 @@ class FollowupsController < ApplicationController
 
     @followup.destroy
     flash[:notice] = t("followups.unfollowing", :project => project.title)
-    redirect_to :back
+    session[:return_to] ||= request.referer
+    redirect_to session[:return_to]
   end
 end
