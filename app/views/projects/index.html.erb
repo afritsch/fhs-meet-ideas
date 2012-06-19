@@ -21,7 +21,7 @@
       <div class="left">
         <%= link_to truncate(project.title, :length => 60), url_for(project) %><br />
         <p>
-          <%= project.status %><br />
+          <strong><%= t("projects.show.status") %></strong> <%= project.status %><br />
           <%= truncate(project.description, :length => 160) %>
         </p>
       </div>
