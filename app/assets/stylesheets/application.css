@@ -157,12 +157,12 @@ h2 {
     -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
     background: #7cb9e5;
-    background: -webkit-linear-gradient(top, #7cb9e5 0%, #57a1d8 100%);
-    background: -moz-linear-gradient(top, #7cb9e5 0%, #57a1d8 100%);
-    background: -o-linear-gradient(top, #7cb9e5 0%, #57a1d8 100%);
-    background: -ms-linear-gradient(top, #7cb9e5 0%, #57a1d8 100%);
-    background: linear-gradient(top, #7cb9e5 0%, #57a1d8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7cb9e5', endColorstr='#57a1d8',GradientType=0 ); }
+    background: -webkit-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -moz-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -o-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -ms-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: linear-gradient(top, #ae3232 0%, #e24343 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ae3232', endColorstr='#e24343',GradientType=0 ); }
   .pagination li a:hover {
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
@@ -183,12 +183,12 @@ h2 {
     -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.9);
     background: #99cefc;
-    background: -webkit-linear-gradient(top, #99cefc 0%, #57a1d8 100%);
-    background: -moz-linear-gradient(top, #99cefc 0%, #57a1d8 100%);
-    background: -o-linear-gradient(top, #99cefc 0%, #57a1d8 100%);
-    background: -ms-linear-gradient(top, #99cefc 0%, #57a1d8 100%);
-    background: linear-gradient(top, #99cefc 0%, #57a1d8 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99cefc', endColorstr='#57a1d8',GradientType=0 ); }
+    background: -webkit-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -moz-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -o-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: -ms-linear-gradient(top, #ae3232 0%, #e24343 100%);
+    background: linear-gradient(top, #ae3232 0%, #e24343 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ae3232', endColorstr='#e24343',GradientType=0 ); }
 
 #outerWrapper {
   position: relative;
