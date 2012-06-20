@@ -11,9 +11,4 @@ class RoleTest < ActiveSupport::TestCase
     role = Role.new(:title => "Ti", :name => "Name")
     assert !role.save, "testcase 'title requires at least 3 characters' failed"
   end
-
-  test "should require name with at least 3 characters" do
-    role = Role.new(:title => "Title", :name => "Na")
-    assert !role.save, "testcase 'name requires at least 3 characters' failed"
-  end
 end

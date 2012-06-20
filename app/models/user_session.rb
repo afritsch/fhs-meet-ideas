@@ -9,7 +9,6 @@ class UserSession
   validates :password, :presence => true
 
   def initialize(options = {})
-    super
     self.login = options[:login]
     self.password = options[:password]
   end
