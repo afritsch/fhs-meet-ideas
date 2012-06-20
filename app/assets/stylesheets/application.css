@@ -306,7 +306,7 @@ h2 {
     float: left;
     margin-top: 5px; }
   #teaserBox > div.guest {
-    width: 690px; }
+    width: 685px; }
   #teaserBox > div.user {
     width: 600px; }
 
@@ -359,7 +359,8 @@ h2 {
   #commentlist .content {
     clear: both;
     margin-top: 30px;
-    margin-left: 20px; }
+    margin-left: 40px;
+    font-style: italic; }
 
 #commentForm {
   margin-top: 20px; }
