@@ -17,7 +17,7 @@
 
 <% if @roles.count > 0 # ugly but necessary, because @roles.exists? does not work here %>
   <h2><%= t("projects.headlines.roles") %></h2>
-  <ul id="roles" class="simleListStyle">
+  <ul id="roles" class="simpleListStyle">
     <% @roles.each do |role| %>
       <li><%= role.title %>: <%if role.name? %><%= link_to role.name, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
@@ -27,7 +27,7 @@
 
 <% if @appointments.exists? %>
   <h2><%= t("projects.headlines.appointments") %></h2>
-  <ul id="appointments" class="simleListStyle">
+  <ul id="appointments" class="simpleListStyle">
     <% @appointments.each do |appointment| %>
       <li><%= l(appointment.date) %> - <%= appointment.description %></li>
     <% end %>
@@ -50,7 +50,7 @@
 
 <% if @project.followups.exists? %>
   <h2><%= t("projects.headlines.followups") %></h2>
-  <ul id="followups" class="simleListStyle">
+  <ul id="followups" class="simpleListStyle">
     <% @project.followups.each do |followup| %>
       <li>
         <a href="<%= url_for(followup.user) %>">

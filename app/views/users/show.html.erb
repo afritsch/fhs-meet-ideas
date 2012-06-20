@@ -4,25 +4,27 @@
 <%= @user.fullname %> - <%= @user.email %>
 
 <h2><%= t(".involvements") %></h2>
-<ul>
+<ul id="userProjectList" class="simpleListStyle">
   <% @projects.each do |project| %>
     <li>
       <%= link_to project.title, url_for(project) %>
     </li>
   <% end %>
+  <div class="clear"></div>
 </ul>
 
 <% if @user.followups.exists? %>
   <h2><%= t(".followups") %></h2>
 
-  <ul>
-  <% @user.followups.each do |followup| %>
-    <li>
-      <%= link_to followup.project.title, url_for(followup.project) %>
-      <% if canUnfollow? %>
-        <%= link_to t("followups.links.unfollow"), followup, :method => :delete %>
-      <% end %>
-    </li>
-  <% end %>
+  <ul id="userFollowupList">
+    <% @user.followups.each do |followup| %>
+      <li>
+        <%= link_to followup.project.title, url_for(followup.project) %>
+        <% if canUnfollow? %>
+          <%= link_to t("followups.links.unfollow"), followup, :method => :delete, :class => "followButton followButtonRed right" %>
+        <% end %>
+      </li>
+    <% end %>
+    <div class="clear"></div>
   </ul>
 <% end %>
