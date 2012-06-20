@@ -19,7 +19,17 @@
   <h2><%= t("projects.headlines.roles") %></h2>
   <ul id="roles" class="simpleListStyle">
     <% @roles.each do |role| %>
-      <li><%= role.title %>: <%if role.name? %><%= link_to role.name, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
+      <li><%= role.title %>:
+      <% if role.name? %>
+        <% if role.user_id %>
+          <%= link_to role.name, user_path(role.user_id.to_i) %>
+        <% else %>
+          <%= role.name %>
+        <% end %>
+      <% else %>
+          <strong><%= link_to t(".wanted"), project_path(@project, :anchor => "comments") %></strong>
+      <%end %>
+      </li>
     <% end %>
     <div class="clear"></div>
   </ul>
