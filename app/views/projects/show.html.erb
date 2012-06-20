@@ -17,38 +17,40 @@
 
 <% if @roles.count > 0 # ugly but necessary, because @roles.exists? does not work here %>
   <h2><%= t("projects.headlines.roles") %></h2>
-  <ul>
+  <ul id="roles" class="simleListStyle">
     <% @roles.each do |role| %>
       <li><%= role.title %>: <%if role.name? %><%= link_to role.name, user_path(role.user_id.to_i) %><% else %><strong><%= t(".wanted") %></strong><%end %></li>
     <% end %>
+    <div class="clear"></div>
   </ul>
 <% end %>
 
 <% if @appointments.exists? %>
   <h2><%= t("projects.headlines.appointments") %></h2>
-  <ul>
+  <ul id="appointments" class="simleListStyle">
     <% @appointments.each do |appointment| %>
       <li><%= l(appointment.date) %> - <%= appointment.description %></li>
     <% end %>
+    <div class="clear"></div>
   </ul>
 <% end %>
 
 <% if @pictures.exists? %>
   <h2><%= t("projects.headlines.pictures") %></h2>
-  <ul>
+  <ul id="pictures">
     <% @pictures.each do |picture| %>
-      <div style="float:left;margin-right:10px;">
-        <%= picture.title %><br />
+      <li>
+        <span><%= picture.title %></span><br />
         <%= link_to image_tag(picture.image_url(:thumb), :alt => picture.title), picture.image_url, :class => "fancybox", :rel => "gallery1", :title => picture.title %>
-      </div>
+      </li>
     <% end %>
-    <div style="clear:both;"></div>
+    <div class="clear"></div>
   </ul>
 <% end %>
 
 <% if @project.followups.exists? %>
   <h2><%= t("projects.headlines.followups") %></h2>
-  <ul id="followups">
+  <ul id="followups" class="simleListStyle">
     <% @project.followups.each do |followup| %>
       <li>
         <a href="<%= url_for(followup.user) %>">
@@ -56,21 +58,22 @@
         </a>
       </li>
     <% end %>
+    <div class="clear"></div>
   </ul>
-  <div class="clear"></div>
 <% end %>
 
 <h2 id="comments"><%= t("projects.headlines.comments") %></h2>
 <ul id="commentlist">
 <% @comments.each do |comment| %>
-  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment), :alt => t("common.gravatar") %> <%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:<br />
-    <%= simple_format(h(comment.content)) %><br />
+  <li id="comment_<%= comment.id %>"><%= image_tag avatar_url(comment), :alt => t("common.gravatar") %> <div class="userinfo"><%= link_to comment.fullname, user_path(comment.user_id) %> <%= t(".timeText") %> <%= l(comment.created_at) %>:</div><br />
+    <div class="content"><%= simple_format(h(comment.content)) %></div><br />
   </li>
 <% end %>
 </ul>
 <%= will_paginate @comments, :param_name => "comments_page", :renderer => PaginationListLinkRenderer, :params => { :anchor => "comments" } %>
+<div class="clear"></div>
 <%= form_for [@project, @project.comments.build] do |f| %>
-  <div class="clear">
+  <div id="commentForm">
     <%= f.label :content, t("projects.form.label_comment") %><br />
     <%= f.text_area :content, :rows => 3 %>
   </div>
