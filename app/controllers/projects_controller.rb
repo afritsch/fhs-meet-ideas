@@ -77,7 +77,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
 
-    flash[:notice] = t("projects.show.destroyed") + " #{undo_link}"
+    flash[:notice] = t("projects.show.destroyed")
     redirect_to projects_path
   end
 

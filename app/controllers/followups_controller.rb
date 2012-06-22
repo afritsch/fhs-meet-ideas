@@ -4,7 +4,7 @@ class FollowupsController < ApplicationController
     @followup = current_user.followups.build(:project_id => params[:project_id])
     project = Project.find(params[:project_id])
 
-    flash[:notice] = @followup.save ? t("followups.following", :project => project.title) : flash[:error] = t("followups.fault", :project => project.title)
+    flash[:notice] = @followup.save ? t("followups.following", :project => project.title) : t("followups.fault", :project => project.title)
     redirect_to redirect_back_path
   end
 

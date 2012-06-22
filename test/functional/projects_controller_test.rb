@@ -60,7 +60,7 @@ class ProjectsControllerTest < ActionController::TestCase
       delete :destroy, :id => projects(:one).id
     end
     assert_not_nil assigns(:project)
-    assert_equal I18n.t("projects.show.destroyed") +  " <a href=\"/versions/1/revert\" data-method=\"post\" rel=\"nofollow\">#{I18n.t("paper_trail.undo")}</a>", flash[:notice]
+    assert_equal I18n.t("projects.show.destroyed"), flash[:notice]
     assert_redirected_to projects_path
   end
 end

@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   has_many :roles, :dependent => :destroy
   belongs_to :user
 
-  has_many :followups
+  has_many :followups, :dependent => :destroy
   has_many :users, :through => :followups
 
   accepts_nested_attributes_for :appointments, :reject_if => lambda { |a| a[:date].blank? || a[:description].blank? }, :allow_destroy => true
