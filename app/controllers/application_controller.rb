@@ -17,6 +17,11 @@ class ApplicationController < ActionController::Base
       controller.send(:add_breadcrumb, name, url)
     end
   end
+  
+  # handle redirect to last visited page with disabled referer
+  def redirect_back_path(default = projects_path)
+    (!request.env["HTTP_REFERER"].blank? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]) ? :back : default
+  end
 
   private
 
